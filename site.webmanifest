@@ -1,0 +1,13 @@
+{
+  "name": "BAS Hub",
+  "short_name": "BAS Hub",
+  "description": "One app for controls field work.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#17181A",
+  "theme_color": "#17181A",
+  "icons": [
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

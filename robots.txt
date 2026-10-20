@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bas-hub-app.github.io/sitemap.xml

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Versions — BAS Hub</title>
+<meta name="description" content="Every BAS Hub build, on the record. No public release exists yet: 0.9.0 is the internal first build, and the first public release — 0.9.1 — is in preparation.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BAS Hub">
+<meta property="og:title" content="Versions — BAS Hub">
+<meta property="og:description" content="Every BAS Hub build, on the record, with its full notes. First public release (0.9.1) in preparation.">
+<meta property="og:url" content="https://bas-hub-app.github.io/releases.html">
+<meta property="og:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Versions — BAS Hub">
+<meta name="twitter:description" content="Every BAS Hub build, on the record, with its full notes. First public release (0.9.1) in preparation.">
+<meta name="twitter:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#17181A">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "BAS Hub",
+  "url": "https://bas-hub-app.github.io/",
+  "description": "A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, and optional on-device BAS Copilot — one inventory, one backup system, one standard of care.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11, Linux"
+}
+</script>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="BAS Hub — home">
+      <img src="assets/img/hub-icon.png" alt="" width="34" height="34">
+      <span class="wordmark">BAS <em>HUB</em></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <div class="nav-group" data-nav-group>
+        <button class="nav-group-btn" type="button" aria-expanded="false" aria-controls="modules-menu" data-nav-group-btn>Explore modules <span class="caret" aria-hidden="true"></span></button>
+        <span class="nav-group-label" aria-hidden="true">Explore modules</span>
+        <div class="nav-dropdown" id="modules-menu" data-nav-dropdown>
+          <a href="index.html#home"><span class="nd-name">The Hub</span><span class="nd-spec">Home screen and launcher</span></a>
+          <a href="index.html#programmer"><span class="nd-name">Programmer+</span><span class="nd-spec">PPCL workbench — editor, builder, simulator</span></a>
+          <a href="index.html#network"><span class="nd-name">Network+</span><span class="nd-spec">Network workbench — find, watch, health, prove</span></a>
+          <a href="index.html#copilot"><span class="nd-name">BAS Copilot</span><span class="nd-spec">Optional assistant — runs on this computer</span></a>
+          <a class="nd-all" href="index.html#stage"><span class="nd-name">All modules — on stage</span><span class="nd-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <a href="index.html#screenshots">Screenshots</a>
+      <a href="index.html#trust">Trust</a>
+      <a href="releases.html" aria-current="page">Versions</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#support">Support</a>
+    </nav>
+    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Go to</span><kbd>Ctrl K</kbd></button>
+    <a class="btn btn-primary btn-sm header-cta" href="index.html#download">Download</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="section" aria-labelledby="versions-title" style="padding-top:72px;">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow teal">Index &middot; Versions</p>
+      <h2 id="versions-title" style="font-size:clamp(32px,4.5vw,44px);">Every release, on the record</h2>
+      <p class="lead">Each BAS Hub release ships with structured patch notes — a plain-language summary and the full notes — bundled into the product itself, so they read offline. This page carries the same record. Version numbers are semantic for the suite: a new module class or breaking change moves the major, new features move the minor, fixes move the patch.</p>
+    </div>
+
+    <div class="status-note">
+      <strong>How versions are supported.</strong> No public release exists yet — the first, 0.9.1, is in preparation. Once releases begin: the latest release is the supported one. Previous releases stay downloadable permanently as <strong>legacy builds — unsupported, kept for reference and rollback</strong> — and when a newer release fixes a known defect in an older one, the older release's entry says so plainly. The app itself only ever offers the latest release in its update check. <strong>1.0.0 is reserved</strong> for the first release proven end-to-end in the field; the 0.9.x line is the pre-1.0 line.
+    </div>
+
+    <!-- New release entries are added at the TOP of this list at each cut.
+         The previous "Current release" entry trades its badge-current for
+         badge-legacy and gains the legacy banner line. See MAINTAIN.md. -->
+
+    <article class="release-entry" aria-labelledby="rel-next-title">
+      <div class="rel-head">
+        <h3 id="rel-next-title">0.9.1</h3>
+        <span class="badge-next">In preparation</span>
+      </div>
+      <p class="rel-title">The first public release. It will appear here — with its full summary — when it ships.</p>
+    </article>
+
+    <article class="release-entry" aria-labelledby="rel-090-title">
+      <div class="rel-head">
+        <h3 id="rel-090-title">0.9.0</h3>
+        <span class="badge-legacy">Internal first build — not a public release</span>
+        <span class="rel-date">Built 2026-10-19</span>
+      </div>
+      <p class="rel-title">BAS Hub 0.9.0 — the suite, in one app</p>
+      <p><strong>Not publicly downloadable — by design.</strong> 0.9.0 is the internal first build. It never published; 0.9.1 supersedes it. Its notes below are the record of what the first build contained.</p>
+      <ul>
+        <li>BAS Hub is one app for controls work. Programmer+ and Network+ live side by side on one home screen and share one device inventory, so a device you find in Network+ is the same record everywhere.</li>
+        <li>Programmer+ is rebuilt inside the Hub: a PPCL editor that checks as you type, block diagrams, decision tables, a simulator and debugger, the point database, and the code library.</li>
+        <li>Network+ starts from jobs in plain language — find what's on this network, look at a device, watch traffic, check the network's health, prove a loop works, talk to a device, and see what changed since last time.</li>
+        <li>BAS Copilot is an optional assistant that runs entirely on your computer. It is off unless you choose it during install, and it never sends your data anywhere.</li>
+        <li>If BAS Hub ever crashes, it saves a plain-language crash report on the computer and tells you about it on the next launch. Nothing is ever sent automatically.</li>
+        <li>Updates are yours to start: Settings has a Check for updates button. BAS Hub never checks, downloads, or installs anything on its own.</li>
+      </ul>
+      <p style="margin-top:18px;"><strong>The full notes, as bundled with the product:</strong></p>
+      <h4>The Hub home</h4>
+      <ul>
+        <li>Your installed modules are tiles under Built-in Modules. Your own categories and shortcuts to other programs sit below them and can be rearranged by dragging.</li>
+        <li>BAS Copilot, when installed, is the icon at the top right. Settings is beside it, and the File / Modules / View / Help menu strip is at the top left.</li>
+        <li>There is no "active site" to pick. Sites appear only when you save or back something up, as a "Save to a site" option.</li>
+      </ul>
+      <h4>Programmer+</h4>
+      <ul>
+        <li>Editor with checks as you type and a findings panel that explains each finding — why it matters, the fix, and the manual page it comes from.</li>
+        <li>Block diagrams and decision tables that compile to PPCL, with plain-language refusals when something cannot compile.</li>
+        <li>Simulator and debugger: run a program against a plant, compare runs, scrub back through recorded passes, set breakpoints and watch points.</li>
+        <li>Point database, start/stop time optimization, vendor imports, and a code library that converts between text and blocks.</li>
+        <li>Programmer+ carries its own 21-topic help, available inside the module.</li>
+      </ul>
+      <h4>Network+</h4>
+      <ul>
+        <li>Find: discover what is on the network — BACnet, Modbus, and OPC UA devices land in the shared inventory.</li>
+        <li>Look: one page per device with its points and values.</li>
+        <li>Watch: capture traffic and read it back decoded in plain words, with a truth check from the capture's own counters.</li>
+        <li>Health: the full diagnostics catalog with a three-part health score that always expands into the findings behind it, plus "Why is this device offline?" evidence runs.</li>
+        <li>Prove: a test bench for checkout plans and changes. Every write goes preview, backup, confirm, verify — and can be rolled back.</li>
+        <li>Talk: a real terminal for SSH, Telnet, and serial sessions, prefilled from the device record.</li>
+        <li>Records: what changed since last time, baselines with drift, and hashed exports that re-verify every file.</li>
+      </ul>
+      <h4>BAS Copilot</h4>
+      <ul>
+        <li>Optional at install. Setup checks your computer first and only offers model sizes it can run well; bigger sizes stay locked with the reason in plain language.</li>
+        <li>Runs entirely on your computer. No account, no cloud, nothing phones home; the one download is the model file at install, verified against its checksum.</li>
+        <li>It can explain and draft, never act: no device writes, no sends, no file changes come from the assistant.</li>
+      </ul>
+      <h4>Installing and changing modules</h4>
+      <ul>
+        <li>You choose the install location. Your data stays in the standard data folder wherever the program lives.</li>
+        <li>Run Setup again on an installed computer and it opens a maintenance screen instead: Update, Change modules, and Uninstall.</li>
+        <li>The Npcap packet-capture driver is offered inside the Network+ choice — Capture needs it — and installs from its own signed installer.</li>
+        <li>Uninstall removes exactly what the install record lists. Your data is kept unless you explicitly choose "also remove my data".</li>
+      </ul>
+      <p>The release payload carries three modules (programmer-plus, network-plus, bas-copilot) and four Copilot model tiers. Installs are staged and committed as one move, so a failed install leaves the previous state untouched.</p>
+      <h4>Reliability</h4>
+      <ul>
+        <li>Crash reports are structured files kept on the computer — the last 10, size-capped, with secrets kept out — and the next launch says in plain language that one was saved and offers to open the folder.</li>
+        <li>Multi-step operations are transactional in effect: nothing half-installs, and every device write is backed up before it happens.</li>
+      </ul>
+      <p>The full automated verification harness passed 849 of 849 checks against this release's sources, including the write-safety loop against a test device and a full silent install, receipt audit, and uninstall cycle.</p>
+      <div class="status-note"><strong>Known shortfall, stated in the notes themselves:</strong> 0.9.0&rsquo;s update check looks for a published release manifest; none is published yet, so the check reports that plainly and changes nothing.</div>
+      <p>There is no download for this build — see <a href="index.html#download">Download</a> for the first public release, in preparation.</p>
+    </article>
+
+    <div class="status-note">
+      <strong>Looking for an older build?</strong> Every published release remains on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">releases page</a> permanently — release assets are never deleted and never changed after publishing. Builds older than the then-current release will be notated there as legacy and unsupported.
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/img/hub-icon.png" alt="" width="30" height="30">
+        <span style="font-weight:700;letter-spacing:.04em;">BAS <span style="color:var(--orange);">HUB</span></span>
+      </div>
+      <nav aria-label="Footer">
+        <a href="index.html#modules">Modules</a>
+        <a href="index.html#download">Download</a>
+        <a href="releases.html">Versions</a>
+        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">Releases</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#support">Support</a>
+        <a href="index.html#license">License</a>
+      </nav>
+    </div>
+    <p class="legal">BAS Hub is proprietary software · © 2026</p>
+  </div>
+</footer>
+
+<div class="palette" data-palette role="dialog" aria-modal="true" aria-label="Site navigator">
+  <div class="palette-box">
+    <div class="pal-head">
+      <span>Go to</span>
+      <input type="text" data-palette-input placeholder="Type a section, a module, an action&hellip;" aria-label="Filter destinations" autocomplete="off">
+    </div>
+    <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>
+    <div class="pal-foot"><span>&uarr;&darr; move</span><span>Enter opens</span><span>Esc closes</span><span>Ctrl K / &#8984;K anywhere</span></div>
+  </div>
+</div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
