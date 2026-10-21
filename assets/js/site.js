@@ -159,7 +159,7 @@
       { kind: "Section", title: "Trust, by design", url: function () { return dest("#trust"); } },
       { kind: "Section", title: "FAQ", url: function () { return dest("#faq"); } },
       { kind: "Page", title: "Versions — every release, on the record", url: function () { return "releases.html"; } },
-      { kind: "Action", title: "Download — first public release in preparation", url: function () { return "https://github.com/JacobHamrac/bas-hub-releases/releases"; } },
+      { kind: "Action", title: "Download — current release 0.9.1", url: function () { return "https://github.com/JacobHamrac/bas-hub-releases/releases/latest"; } },
       { kind: "Support", title: "Report a bug", url: function () { return dest("#support-bug"); } },
       { kind: "Support", title: "Send feedback", url: function () { return dest("#support-feedback"); } }
     ];
@@ -369,7 +369,7 @@
       hNone.style.display = visible === 0 ? "block" : "none";
       hCount.textContent = q
         ? visible + " of " + total + " topics match \u201C" + hInput.value.trim() + "\u201D"
-        : total + " topics \u2014 the complete index, as shipped in 0.9.0";
+        : total + " topics \u2014 the complete index, as shipped in 0.9.1";
     });
   }
 
@@ -580,7 +580,7 @@
       sentence = "BAS Hub is 64-bit only — no package for this machine.";
     } else if (d.os.key === "windows") {
       if (d.arch.isArm) {
-        sentence = "Your download: the Windows package — the ARM64 build, in preparation.";
+        sentence = "Your download: the Windows package (x64) — the native ARM64 build is in preparation; x64 runs under Windows emulation, as your explicit choice.";
         highlight("windows", "This machine · ARM64 build");
       } else if (d.arch.known) {
         sentence = "Your download: the Windows package (x64).";
