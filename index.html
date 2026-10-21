@@ -80,7 +80,7 @@
       <p class="tagline">One app for controls field work.</p>
       <p class="positioning">A desktop suite for building-automation controls work. Instead of a pocketful of separate tools &mdash; one for programming, one for discovery, one for captures, one for the terminal, a spreadsheet for the records &mdash; BAS Hub is one app whose modules share <strong>one device inventory, one backup system, and one standard of care</strong>.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#download">Download BAS Hub 0.9.1</a>
+        <a class="btn btn-primary" href="#download">First public release — in preparation</a>
         <a class="btn btn-ghost" href="#demo">Watch the demo</a>
       </div>
       <p class="hero-modules">Programmer+ &nbsp;&middot;&nbsp; Network+ &nbsp;&middot;&nbsp; BAS Copilot <span>(optional)</span></p>
@@ -117,7 +117,7 @@
   </div>
   <div class="wrap">
     <dl class="spec-strip" aria-label="Product facts">
-      <div><dt>Release</dt><dd>0.9.1 &mdash; current</dd></div>
+      <div><dt>Release</dt><dd>First release &mdash; in preparation</dd></div>
       <div><dt>Platform</dt><dd>Windows x64</dd></div>
       <div><dt>Modules</dt><dd>3</dd></div>
       <div><dt>Telemetry</dt><dd>None</dd></div>
@@ -697,20 +697,20 @@
     </div>
     <div class="release-card">
       <div class="rc-head">
-        <h3>Current release — 0.9.1</h3>
-        <span class="badge-current">Current release</span>
-        <span class="rel-date">Published 2026-10-20</span>
+        <h3>First public release</h3>
+        <span class="badge-next">In preparation</span>
+        <span class="rel-date">No public release exists yet</span>
       </div>
       <div class="table-scroll">
         <table class="data">
-          <thead><tr><th scope="col">Package</th><th scope="col">What you get</th><th scope="col">Status</th></tr></thead>
+          <thead><tr><th scope="col">Package</th><th scope="col">What it will contain</th><th scope="col">Status</th></tr></thead>
           <tbody>
-            <tr data-pkg="windows"><td>Windows package</td><td><code>BAS-Hub-Setup-Windows-x64.exe</code> — one self-contained installer file, 175,051,721 bytes.<br>SHA-256 <code>7aff6a79c80972451d33fae68700ce7e5bdd874241c79932606448f8ea205d0a</code></td><td><a class="btn btn-primary btn-sm" href="https://github.com/JacobHamrac/bas-hub-releases/releases/latest/download/BAS-Hub-Setup-Windows-x64.exe">Download</a> <span class="gate-label">Tested on Windows</span></td></tr>
-            <tr data-pkg="linux"><td>Linux package</td><td><code>BAS-Hub-Setup-Linux-x64</code> — one self-contained installer file, 175,880,270 bytes.<br>SHA-256 <code>19d6e6339b04111563e87cd911b431d6907099e6accd05ee9f3681babf1e8aa1</code></td><td><a class="btn btn-primary btn-sm" href="https://github.com/JacobHamrac/bas-hub-releases/releases/latest/download/BAS-Hub-Setup-Linux-x64">Download</a> <span class="gate-label">Tested on Linux</span></td></tr>
+            <tr data-pkg="windows"><td>Windows package</td><td><code>BAS Hub Setup.exe</code> — one self-contained installer file for Windows x64, with <code>SBOM.json</code> and the User Guide (<code>BAS-Hub-User-Guide.pdf</code>) beside it in the download set.</td><td>In preparation <span class="gate-label">Tested on Windows</span></td></tr>
+            <tr data-pkg="linux"><td>Linux package</td><td><code>BAS Hub Setup</code> — one self-contained installer file for Linux x64, with <code>SBOM.json</code> and the User Guide (<code>BAS-Hub-User-Guide.pdf</code>) beside it in the download set.</td><td>In preparation <span class="gate-label">Tested on Linux</span></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="rc-foot">Releases are published as <strong>separate per-OS packages — never a combined bundle</strong> — on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">releases repository</a>. <strong>Current release: 0.9.1, published 2026-10-20.</strong> The internal first build (0.9.0) never published. Setup verifies the contents inside the file before it stages a single file; the same check by hand is <code>sha256sum BAS-Hub-Setup-Windows-x64.exe</code> (or <code>certutil -hashfile BAS-Hub-Setup-Windows-x64.exe SHA256</code> on Windows) against the SHA-256 in the table. The release also carries <code>SBOM.json</code> (the software bill of materials) and the full User Guide as <code>BAS-Hub-User-Guide-0.9.1.pdf</code>. A Windows ARM64 package exists as a candidate build and is not published until it is verified on ARM64 hardware; on an ARM64 PC, the x64 package above is the download — it runs under Windows emulation, as your explicit choice.</p>
+      <p class="rc-foot">Releases are published as <strong>separate per-OS packages — never a combined bundle</strong> — on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">releases repository</a>. <strong>Nothing is publicly downloadable yet. First public release: in preparation.</strong> The internal first build (0.9.0) never published; 0.9.1 was published briefly on 2026-10-20 and withdrawn the same day — it is held as an internal build (see <a href="releases.html">Versions</a>). When the first public release lands, this card takes its real file names, exact sizes, and SHA-256 values — per OS — and the steps below are the install, exactly as designed. Setup will verify the contents inside the file before it stages a single file; the same check by hand is <code>sha256sum</code> (or <code>certutil -hashfile … SHA256</code> on Windows) against the SHA-256 published with the release. The release will also carry <code>SBOM.json</code> (the software bill of materials) and the full User Guide as a PDF. A Windows ARM64 package exists as a candidate build and is not published until it is verified on ARM64 hardware; on an ARM64 PC, the x64 package will be the download — it runs under Windows emulation, as your explicit choice.</p>
     </div>
     <div class="pccheck" id="pccheck" data-pccheck hidden>
       <div class="pcc-head">
@@ -901,7 +901,7 @@
     </details>
     <details class="deep">
       <summary>What does "0.9.0" mean — is this finished software?</summary>
-      <div class="deep-body"><p>The version number means what it says. 0.9.x is the pre-1.0 line: 0.9.0 is the suite&rsquo;s internal first build — it did not pass the Windows-install verification a public release requires, so the first public release is 0.9.1, published 2026-10-20 — and <strong>1.0.0 is reserved for the first release proven end-to-end in the field</strong>. Every version ships with its own release notes, and this site is updated with every release — a site that no longer matches the shipped build is treated as a defect, same as stale help. See <a href="releases.html">Versions</a> for each release's summary.</p></div>
+      <div class="deep-body"><p>The version number means what it says. 0.9.x is the pre-1.0 line: 0.9.0 is the suite&rsquo;s internal first build — it did not pass the Windows-install verification a public release requires. 0.9.1 passed that verification and was published briefly on 2026-10-20, then withdrawn the same day by the owner&rsquo;s decision — the build was not appropriate as a live release — so the first public release is in preparation — and <strong>1.0.0 is reserved for the first release proven end-to-end in the field</strong>. Every version ships with its own release notes, and this site is updated with every release — a site that no longer matches the shipped build is treated as a defect, same as stale help. See <a href="releases.html">Versions</a> for each release's summary.</p></div>
     </details>
   </div>
 </section>
@@ -964,7 +964,7 @@
       <h2 id="license-title">Proprietary software</h2>
       <p class="lead" style="margin-left:auto;margin-right:auto;">BAS Hub is <strong>proprietary software</strong>. © 2026. All rights reserved. Downloads are binaries only — no source code is published. Your use of the software is governed by the proprietary terms stated in the download.</p>
       <div class="cta-row" style="margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-primary" href="#download">Download BAS Hub 0.9.1</a>
+        <a class="btn btn-primary" href="#download">First public release — in preparation</a>
         <a class="btn btn-ghost" href="releases.html">See all versions</a>
       </div>
     </div>
