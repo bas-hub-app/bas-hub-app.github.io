@@ -143,23 +143,23 @@
     }
     var ENTRIES = [
       { kind: "Section", title: "The demo", url: function () { return dest("#demo"); } },
-      { kind: "Section", title: "Who it's for — one hub, not a folder of tools", url: function () { return dest("#modules"); } },
-      { kind: "Module", title: "Modules — the index", url: function () { return dest("#modules"); } },
-      { kind: "Module", title: "On stage — each module in turn", url: function () { return dest("#stage"); } },
-      { kind: "Module", title: "The Hub — home screen", url: function () { return dest("#home"); } },
-      { kind: "Module", title: "Programmer+ — the PPCL workbench", url: function () { return dest("#programmer"); } },
-      { kind: "Module", title: "Network+ — the network workbench", url: function () { return dest("#network"); } },
+      { kind: "Section", title: "Who it's for, one hub, not a folder of tools", url: function () { return dest("#modules"); } },
+      { kind: "Module", title: "Modules, the index", url: function () { return dest("#modules"); } },
+      { kind: "Module", title: "On stage, each module in turn", url: function () { return dest("#stage"); } },
+      { kind: "Module", title: "The Hub, home screen", url: function () { return dest("#home"); } },
+      { kind: "Module", title: "Programmer+, the PPCL workbench", url: function () { return dest("#programmer"); } },
+      { kind: "Module", title: "Network+, the network workbench", url: function () { return dest("#network"); } },
       { kind: "Module", title: "The device page, taken apart (tour)", url: function () { return dest("#tour"); } },
-      { kind: "Module", title: "BAS Copilot — help that stays on the machine", url: function () { return dest("#copilot"); } },
-      { kind: "Section", title: "Screenshots — the real app, as shipped", url: function () { return dest("#screenshots"); } },
-      { kind: "Section", title: "Help, built in — the topic index", url: function () { return dest("#help"); } },
+      { kind: "Module", title: "BAS Copilot: help that stays on the machine", url: function () { return dest("#copilot"); } },
+      { kind: "Section", title: "Screenshots, the real app, as shipped", url: function () { return dest("#screenshots"); } },
+      { kind: "Section", title: "Help, built in, the topic index", url: function () { return dest("#help"); } },
       { kind: "Section", title: "Download & install", url: function () { return dest("#download"); } },
-      { kind: "Action", title: "Check this PC — what this machine runs", url: function () { return dest("#pccheck"); } },
-      { kind: "Section", title: "Updates — when you say so", url: function () { return dest("#updates"); } },
+      { kind: "Action", title: "Check this PC: what this machine runs", url: function () { return dest("#pccheck"); } },
+      { kind: "Section", title: "Updates, when you say so", url: function () { return dest("#updates"); } },
       { kind: "Section", title: "Trust, by design", url: function () { return dest("#trust"); } },
       { kind: "Section", title: "FAQ", url: function () { return dest("#faq"); } },
-      { kind: "Page", title: "Versions — every release, on the record", url: function () { return "releases.html"; } },
-      { kind: "Action", title: "Download — first public release, in preparation", url: function () { return dest("#download"); } },
+      { kind: "Page", title: "Versions, every release, on the record", url: function () { return "releases.html"; } },
+      { kind: "Action", title: "Download BAS Hub 0.9.2 beta", url: function () { return dest("#download"); } },
       { kind: "Support", title: "Report a bug", url: function () { return dest("#support-bug"); } },
       { kind: "Support", title: "Send feedback", url: function () { return dest("#support-feedback"); } }
     ];
@@ -259,11 +259,11 @@
   var tour = document.querySelector("[data-tour]");
   if (tour) {
     var TOUR = [
-      { title: "Identity and state", body: "The page leads with what the device is and whether it is answering: its name, protocol, address, and model \u2014 here a BACnet controller, device 100204 at 192.168.14.21 \u2014 and a state card that says how it was found and when it last answered. Values on this page are read live from the device, labelled with how they were read." },
-      { title: "The health axes", body: "Connected, Performing, Clean \u2014 the three axes of the 40-check health catalog, carried on the device\u2019s own page. An axis fills in when a health run has evidence for it; until then it says Not measured yet instead of guessing. The health check fills these in, and this device\u2019s slice lands here with its findings." },
-      { title: "Look \u2014 points, schedules, history", body: "Everything the controller reports, live, in plain units: points and values, the schedule and calendar as the device itself reports them, and trend history \u2014 graphs first, tables second, exportable with the report. A Modbus device\u2019s page reads its registers the same way; an OPC UA device shows its endpoints the same way." },
-      { title: "Watch & Check", body: "Watch these points move, or open Watch filtered to this device \u2014 its questions, answers, and announcements in plain sentences. \u201CWhy is this device offline?\u201D runs the evidence: name, ping, switch testimony, and this laptop as witness, landing on one verdict card. Audit lists out-of-service points, stale flags, and held priorities as sentences." },
-      { title: "Change & Talk \u2014 the only door that writes", body: "Commanding lives here, and only here: a command opens the points list and the change itself goes through the safety path \u2014 preview \u2192 backup \u2192 confirm \u2192 log. Prove runs a checkout plan in the Test Bench; the console opens SSH, Telnet, or serial prefilled from this record, the host key judged before any password; and a baseline saves how this device should look, so the next visit can flag what moved." }
+      { title: "Identity and state", body: "The page leads with what the device is and whether it is answering: its name, protocol, address, and model (here a BACnet controller, device 100204 at 192.168.14.21) and a state card that says how it was found and when it last answered. Values on this page are read live from the device, labelled with how they were read." },
+      { title: "The health axes", body: "Connected, Performing, Clean, the three axes of the 40-check health catalog, carried on the device\u2019s own page. An axis fills in when a health run has evidence for it; until then it says Not measured yet instead of guessing. The health check fills these in, and this device\u2019s slice lands here with its findings." },
+      { title: "Look: points, schedules, history", body: "Everything the controller reports, live, in plain units: points and values, the schedule and calendar as the device itself reports them, and trend history, graphs first, tables second, exportable with the report. A Modbus device\u2019s page reads its registers the same way; an OPC UA device shows its endpoints the same way." },
+      { title: "Watch & Check", body: "Watch these points move, or open Watch filtered to this device, its questions, answers, and announcements in plain sentences. \u201CWhy is this device offline?\u201D runs the evidence: name, ping, switch port table, and this laptop's local measurements, landing on one verdict card. Audit lists out-of-service points, stale flags, and held priorities as sentences." },
+      { title: "Change & Talk: the only door that writes", body: "Commanding lives here, and only here: a command opens the points list and the change itself goes through the safety path, preview \u2192 backup \u2192 confirm \u2192 log. Prove runs a checkout plan in the Test Bench; the console opens SSH, Telnet, or serial prefilled from this record, the host key judged before any password; and a baseline saves how this device should look, so the next visit can flag what moved." }
     ];
     var btns = tour.querySelectorAll("[data-tour-btn]");
     var tEye = tour.querySelector("[data-tour-eyebrow]");
@@ -298,7 +298,7 @@
         c.classList.remove("offered", "locked", "recommended");
         var st = c.querySelector(".tc-state");
         if (min <= ram) { c.classList.add("offered"); st.textContent = "Offered by Setup"; best = c; }
-        else { c.classList.add("locked"); st.textContent = "Locked \u2014 needs " + min + " GB RAM"; }
+        else { c.classList.add("locked"); st.textContent = "Locked: needs " + min + " GB RAM"; }
       });
       if (best) {
         best.classList.remove("offered");
@@ -369,7 +369,7 @@
       hNone.style.display = visible === 0 ? "block" : "none";
       hCount.textContent = q
         ? visible + " of " + total + " topics match \u201C" + hInput.value.trim() + "\u201D"
-        : total + " topics \u2014 the complete index, as shipped in 0.9.1";
+        : total + " topics, the complete index, as shipped in 0.9.1";
     });
   }
 
@@ -509,27 +509,27 @@
     if (d.os.key === "windows") osV = "Windows package below";
     else if (d.os.key === "linux") osV = "Linux package below";
     else if (d.os.key === "unknown") osV = "Packages: Windows, Linux";
-    else osV = "No package — Windows and Linux only";
+    else osV = "No package: Windows and Linux only";
     set("os", d.os.label, d.os.key === "unknown" ? "Not reported" : "Reported", d.os.key === "unknown" ? "" : "reported");
     set("os-v", osV);
 
     // --- Architecture ---
     var archV;
     if (!d.arch.known) {
-      archV = d.os.key === "windows" ? "Pick x64 or ARM64 at download — Setup verifies"
+      archV = d.os.key === "windows" ? "Pick x64 or ARM64 at download: Setup verifies"
         : d.os.key === "linux" ? "The Linux package is x64"
-        : "—";
+        : "Not applicable";
       set("arch", d.arch.label, "Not reported", "");
     } else if (d.arch.is32) {
       archV = "BAS Hub is 64-bit only";
       set("arch", d.arch.label, "Reported", "reported");
     } else if (d.arch.isArm) {
-      archV = d.os.key === "windows" ? "The ARM64 build — in preparation"
-        : d.os.key === "linux" ? "The Linux package is x64 — no ARM64 Linux build"
-        : "—";
+      archV = d.os.key === "windows" ? "The ARM64 build, in preparation"
+        : d.os.key === "linux" ? "The Linux package is x64, no ARM64 Linux build"
+        : "Not applicable";
       set("arch", d.arch.label, "Reported", "reported");
     } else {
-      archV = d.os.key === "macos" || d.os.key === "other" ? "—" : "The x64 build";
+      archV = d.os.key === "macos" || d.os.key === "other" ? "Not applicable" : "The x64 build";
       set("arch", d.arch.label, "Reported", "reported");
     }
     set("arch-v", archV);
@@ -554,7 +554,7 @@
         if (t.min <= d.dm) tiersInClass.push(t.name); else tiersAbove.push(t.name);
       });
       var dmLabel = d.dm >= 8
-        ? "8 GB class or more — this browser caps its report at 8"
+        ? "8 GB class or more, this browser caps its report at 8"
         : (d.dm >= 1 ? d.dm + " GB class" : "Under 1 GB class");
       set("ram", dmLabel, "Reported", "reported");
       var rv = cell("ram-v");
@@ -563,7 +563,7 @@
         rv.appendChild(document.createTextNode(tiersInClass.join(", ") + ": in class. " + tiersAbove.join(", ") + ": "));
         rv.appendChild(makeTag("Confirmed by the installer", "installer"));
       } else if (tiersAbove.length) {
-        rv.appendChild(document.createTextNode("No Copilot tier starts below the 4 GB class — the Hub itself sets no memory minimum. Tiers: "));
+        rv.appendChild(document.createTextNode("No Copilot tier starts below the 4 GB class: the Hub itself sets no memory minimum. Tiers: "));
         rv.appendChild(makeTag("Confirmed by the installer", "installer"));
       } else {
         rv.appendChild(document.createTextNode("Every tier: in class."));
@@ -577,30 +577,30 @@
     if (d.dm !== null) parts.push(d.dm >= 8 ? "memory in the 8 GB class or above" : "memory in the " + d.dm + " GB class");
     var sentence;
     if (d.arch.is32) {
-      sentence = "BAS Hub is 64-bit only — no package for this machine.";
+      sentence = "BAS Hub is 64-bit only, no package for this machine.";
     } else if (d.os.key === "windows") {
       if (d.arch.isArm) {
-        sentence = "Your download: the Windows package (x64) — the native ARM64 build is in preparation; x64 runs under Windows emulation, as your explicit choice.";
+        sentence = "Your download: the Windows package (x64) of the 0.9.2 beta, the native ARM64 build is in preparation; x64 runs under Windows emulation, as your explicit choice.";
         highlight("windows", "This machine · ARM64 build");
       } else if (d.arch.known) {
-        sentence = "Your download: the Windows package (x64).";
+        sentence = "Your download: the Windows package (x64) of the 0.9.2 beta.";
         highlight("windows", "This machine");
       } else {
-        sentence = "Your download: the Windows package — this browser did not report x64 or ARM64.";
+        sentence = "Your download: the Windows package of the 0.9.2 beta: this browser did not report x64 or ARM64.";
         highlight("windows", "This machine · architecture not reported");
       }
     } else if (d.os.key === "linux") {
       if (d.arch.isArm) {
-        sentence = "The Linux package is x64 — no package for this machine's architecture.";
+        sentence = "The Linux package is x64, no package for this machine's architecture.";
         highlight("linux", "This machine · Linux package is x64");
       } else {
-        sentence = "Your download: the Linux package.";
+        sentence = "Your download: the Linux package of the 0.9.2 beta.";
         highlight("linux", "This machine");
       }
     } else if (d.os.key === "unknown") {
-      sentence = "This browser reported too little to name a package — the packages are Windows and Linux.";
+      sentence = "This browser reported too little to name a package: the packages are Windows and Linux.";
     } else {
-      sentence = "BAS Hub runs on Windows and Linux — no package for this OS.";
+      sentence = "BAS Hub runs on Windows and Linux, no package for this OS.";
     }
     summary.textContent = "This machine: " + parts.join(" · ") + ". " + sentence;
 
