@@ -1,7 +1,22 @@
+/* Download behaviour (MAINTAIN.md, settled 2026-10-19): the Download action
+   is an IMMEDIATE download of the visitor's package, never a scroll or a
+   trip to another page. While 0.9.2 is a prerelease, /releases/latest
+   excludes it, so the buttons use the versioned asset URLs (MAINTAIN.md
+   step 2, prerelease exception). At the first stable release, change these
+   two constants to releases/latest/download/<asset> in the same pass as
+   the release card's per-OS buttons. */
+var BAS_DL_WIN = "https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.2/BAS-Hub-Setup-Windows-x64.exe";
+var BAS_DL_LINUX = "https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.2/BAS-Hub-Setup-Linux-x64";
+function basHubPackageUrl() {
+  var u = navigator.userAgent || "";
+  if (/Windows/i.test(u)) return BAS_DL_WIN;
+  if ((/Linux/i.test(u) || /X11/i.test(u)) && !/Android/i.test(u)) return BAS_DL_LINUX;
+  return null;
+}
+
 (function () {
   "use strict";
 
-  
   document.documentElement.classList.add("js");
   if ("IntersectionObserver" in window &&
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -159,7 +174,7 @@
       { kind: "Section", title: "Trust, by design", url: function () { return dest("#trust"); } },
       { kind: "Section", title: "FAQ", url: function () { return dest("#faq"); } },
       { kind: "Page", title: "Versions, every release, on the record", url: function () { return "releases.html"; } },
-      { kind: "Action", title: "Download BAS Hub 0.9.2 beta", url: function () { return dest("#download"); } },
+      { kind: "Action", title: "Download BAS Hub 0.9.2 beta", url: function () { return basHubPackageUrl() || dest("#download"); } },
       { kind: "Support", title: "Report a bug", url: function () { return dest("#support-bug"); } },
       { kind: "Support", title: "Send feedback", url: function () { return dest("#support-feedback"); } }
     ];
@@ -612,5 +627,21 @@
 
   runBtn.addEventListener("click", function () {
     detect().then(render);
+  });
+})();
+
+(function () {
+  "use strict";
+  /* Download CTAs: the header, hero and closing buttons labelled Download
+     start the visitor's package download immediately (MAINTAIN.md,
+     Download behaviour). When no package matches the visitor's system
+     (macOS, Android, unreported), the buttons keep their #download
+     anchor and land on the release card, where both packages are listed
+     with their checksums. The card's per-OS buttons are the fallback
+     for every visitor and are not touched here. */
+  var url = basHubPackageUrl();
+  if (!url) return;
+  document.querySelectorAll('a.btn[href="#download"]').forEach(function (a) {
+    a.setAttribute("href", url);
   });
 })();
