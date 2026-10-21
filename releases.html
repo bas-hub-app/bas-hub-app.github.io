@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Versions — BAS Hub</title>
-<meta name="description" content="Every BAS Hub build, on the record. 0.9.1 is the current public release; 0.9.0 was the internal first build and never published.">
+<meta name="description" content="Every BAS Hub build, on the record. No public release yet — the first is in preparation; 0.9.1 and 0.9.0 are internal builds and are not publicly downloadable.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BAS Hub">
 <meta property="og:title" content="Versions — BAS Hub">
-<meta property="og:description" content="Every BAS Hub build, on the record, with its full notes. Current public release: 0.9.1.">
+<meta property="og:description" content="Every BAS Hub build, on the record, with its full notes. No public release yet — the first is in preparation.">
 <meta property="og:url" content="https://bas-hub-app.github.io/releases.html">
 <meta property="og:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Versions — BAS Hub">
-<meta name="twitter:description" content="Every BAS Hub build, on the record, with its full notes. Current public release: 0.9.1.">
+<meta name="twitter:description" content="Every BAS Hub build, on the record, with its full notes. No public release yet — the first is in preparation.">
 <meta name="twitter:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
@@ -78,21 +78,29 @@
     </div>
 
     <div class="status-note">
-      <strong>How versions are supported.</strong> Releases have begun: <strong>0.9.1 is the current public release</strong>, and the latest release is the supported one. Previous releases stay downloadable permanently as <strong>legacy builds — unsupported, kept for reference and rollback</strong> — and when a newer release fixes a known defect in an older one, the older release's entry says so plainly. The app itself only ever offers the latest release in its update check. <strong>1.0.0 is reserved</strong> for the first release proven end-to-end in the field; the 0.9.x line is the pre-1.0 line.
+      <strong>How versions are supported.</strong> No public release exists yet — <strong>the first public release is in preparation</strong>. Once releases begin: the latest release is the supported one. Previous releases stay downloadable permanently as <strong>legacy builds — unsupported, kept for reference and rollback</strong> — and when a newer release fixes a known defect in an older one, the older release's entry says so plainly. The app itself only ever offers the latest release in its update check. <strong>1.0.0 is reserved</strong> for the first release proven end-to-end in the field; the 0.9.x line is the pre-1.0 line.
     </div>
 
     <!-- New release entries are added at the TOP of this list at each cut.
          The previous "Current release" entry trades its badge-current for
          badge-legacy and gains the legacy banner line. See MAINTAIN.md. -->
 
+    <article class="release-entry" aria-labelledby="rel-next-title">
+      <div class="rel-head">
+        <h3 id="rel-next-title">The first public release</h3>
+        <span class="badge-next">In preparation</span>
+      </div>
+      <p><strong>The first public release.</strong> It will appear here — with its full summary — when it ships.</p>
+    </article>
+
     <article class="release-entry" aria-labelledby="rel-091-title">
       <div class="rel-head">
         <h3 id="rel-091-title">0.9.1</h3>
-        <span class="badge-current">Current release</span>
-        <span class="rel-date">Published 2026-10-20</span>
+        <span class="badge-legacy">Internal build — not a public release</span>
+        <span class="rel-date">Built 2026-10-20</span>
       </div>
       <p class="rel-title">BAS Hub 0.9.1 — installs you can watch, failures you can hand over</p>
-      <p><strong>The first public release.</strong> Download it from the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.1">release page</a>: the Windows installer <code>BAS-Hub-Setup-Windows-x64.exe</code> or the Linux installer <code>BAS-Hub-Setup-Linux-x64</code> — separate per-OS packages, never a combined bundle — with the SBOM and the full User Guide (PDF) on the same release. A Windows ARM64 package exists as a candidate build and is not published until it is verified on ARM64 hardware.</p>
+      <p><strong>Not publicly downloadable.</strong> 0.9.1 was published briefly on 2026-10-20 and withdrawn the same day by the owner&rsquo;s decision — the build was not appropriate as a live release. It is held as an internal build; its notes below are the record of what the build contained. A Windows ARM64 package exists as a candidate build and is not published until it is verified on ARM64 hardware.</p>
       <ul>
         <li>Installing now shows real percentages: an overall number for the whole install and, under the bar, the current step's own numbers — files done out of files total, megabytes downloaded out of the model's size. Every number is computed from the work itself, so a moving number means real progress.</li>
         <li>If anything goes wrong anywhere in BAS Hub, you get a popup that explains it in plain language — what happened, what it means, what to do — with an Open log folder button and a Close button. (If the app itself froze, the popup offers Close and relaunch instead.) The same moment, a log file is saved that you can hand to whoever helps you.</li>
@@ -101,7 +109,7 @@
         <li>The full User Guide now ships with BAS Hub: the PDF sits beside the installer and is installed with the app, and Help → User guide opens the same book inside the app — same chapters, same pictures, one source.</li>
         <li>Settings is filled in: your data folder, safety backups with a keep-count and sizes, a Back up everything export, a diagnostics bundle for support, proxy settings, BACnet defaults, a start-page choice, and Copilot model management. Settings also ends with an About section — versions at a glance and a Copy version info button for bug reports.</li>
       </ul>
-      <p>The full section-by-section notes — install percentages, the failure popup and logs, the Windows install fix, the License Agreement gate, the settings bundle, protection, and the named known shortfalls — are the release's own notes on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.1">release page</a> and inside the app (Help → Release notes).</p>
+      <p>The full section-by-section notes — install percentages, the failure popup and logs, the Windows install fix, the License Agreement gate, the settings bundle, protection, and the named known shortfalls — are bundled inside the app (Help → Release notes). There is no download for this build — see <a href="index.html#download">Download</a> for the first public release, in preparation.</p>
     </article>
 
     <article class="release-entry" aria-labelledby="rel-090-title">
@@ -165,8 +173,8 @@
         <li>Multi-step operations are transactional in effect: nothing half-installs, and every device write is backed up before it happens.</li>
       </ul>
       <p>The full automated verification harness passed 849 of 849 checks against this release's sources, including the write-safety loop against a test device and a full silent install, receipt audit, and uninstall cycle.</p>
-      <div class="status-note"><strong>Known shortfall, stated in the notes themselves:</strong> 0.9.0&rsquo;s update check cannot accept the published 0.9.1 manifest — 0.9.0 embeds the pre-rotation trust key, so the check refuses the signature and changes nothing, by design for a superseded internal build. 0.9.1 is installed fresh from its download.</div>
-      <p>There is no download for this build — see <a href="index.html#download">Download</a> for the current release, 0.9.1.</p>
+      <div class="status-note"><strong>Known shortfall, stated in the notes themselves:</strong> 0.9.0&rsquo;s update check looks for a published release manifest; none is published, so the check reports that plainly and changes nothing. (0.9.0 also embeds the pre-rotation trust key, so it could not accept a current manifest in any case, by design for a superseded internal build.)</div>
+      <p>There is no download for this build — see <a href="index.html#download">Download</a> for the first public release, in preparation.</p>
     </article>
 
     <div class="status-note">
