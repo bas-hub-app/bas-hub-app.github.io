@@ -159,7 +159,7 @@
       { kind: "Section", title: "Trust, by design", url: function () { return dest("#trust"); } },
       { kind: "Section", title: "FAQ", url: function () { return dest("#faq"); } },
       { kind: "Page", title: "Versions — every release, on the record", url: function () { return "releases.html"; } },
-      { kind: "Action", title: "Download — current release 0.9.1", url: function () { return "https://github.com/JacobHamrac/bas-hub-releases/releases/latest"; } },
+      { kind: "Action", title: "Download — first public release, in preparation", url: function () { return dest("#download"); } },
       { kind: "Support", title: "Report a bug", url: function () { return dest("#support-bug"); } },
       { kind: "Support", title: "Send feedback", url: function () { return dest("#support-feedback"); } }
     ];
