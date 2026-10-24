@@ -266,7 +266,7 @@ a.shot-frame:hover { border-color: var(--text-3); text-decoration: none; }
 }
 .shot-frame .cap::before {
   counter-increment: fig;
-  content: "Fig. " counter(fig, decimal-leading-zero) " — ";
+  content: "Fig. " counter(fig, decimal-leading-zero) ": ";
   font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--teal);
 }
 .shot-frame .cap b { color: var(--text); }
@@ -296,6 +296,16 @@ a.shot-frame:hover { border-color: var(--text-3); text-decoration: none; }
   padding: 26px 24px 28px; background: transparent;
 }
 .module-card img { width: 46px; height: 46px; }
+.module-card .text-mark {
+  display: flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; border: 1px solid var(--border); border-radius: var(--radius);
+  font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--orange);
+}
+table.subjects td:first-child { white-space: normal; }
+table.subjects tr.subj-group td {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--orange); font-weight: 400; padding-top: 22px;
+}
 .module-card h3 { margin: 18px 0 4px; font-size: 19px; font-weight: 700; }
 .module-card h3 .opt {
   color: var(--text-3); font-family: var(--mono); font-size: 11px;
