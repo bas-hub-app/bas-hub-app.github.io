@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BAS Hub: One app for controls field work</title>
-<meta name="description" content="BAS Hub is a desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, and optional on-device BAS Copilot, one inventory and one backup system.">
+<meta name="description" content="BAS Hub is a desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot, one inventory and one backup system.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BAS Hub">
 <meta property="og:title" content="BAS Hub, One app for controls field work">
-<meta property="og:description" content="A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, and optional on-device BAS Copilot, one inventory and one backup system.">
+<meta property="og:description" content="A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot, one inventory and one backup system.">
 <meta property="og:url" content="https://bas-hub-app.github.io/">
 <meta property="og:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="BAS Hub, one app for controls field work: Programmer+, Network+, BAS Copilot">
+<meta property="og:image:alt" content="BAS Hub, one app for controls field work: Programmer+, Network+, Reports+, BAS Copilot">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BAS Hub, One app for controls field work">
-<meta name="twitter:description" content="A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, and optional on-device BAS Copilot.">
+<meta name="twitter:description" content="A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot.">
 <meta name="twitter:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
@@ -29,7 +29,7 @@
   "@type": "SoftwareApplication",
   "name": "BAS Hub",
   "url": "https://bas-hub-app.github.io/",
-  "description": "A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, and optional on-device BAS Copilot: one inventory and one backup system.",
+  "description": "A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot: one inventory and one backup system.",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Windows 10, Windows 11, Linux"
 }
@@ -54,6 +54,7 @@
           <a href="#home"><span class="nd-name">The Hub</span><span class="nd-spec">Home screen and launcher</span></a>
           <a href="#programmer"><span class="nd-name">Programmer+</span><span class="nd-spec">PPCL workbench (editor, builder, simulator</span></a>
           <a href="#network"><span class="nd-name">Network+</span><span class="nd-spec">Network workbench) find, watch, health, prove</span></a>
+          <a href="#reports"><span class="nd-name">Reports+</span><span class="nd-spec">The reporting studio: files and live subjects in, reports out</span></a>
           <a href="#copilot"><span class="nd-name">BAS Copilot</span><span class="nd-spec">Optional assistant: runs on this computer</span></a>
           <a class="nd-all" href="#stage"><span class="nd-name">All modules, on stage</span><span class="nd-arrow" aria-hidden="true">→</span></a>
         </div>
@@ -75,15 +76,15 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="hero-eyebrow">Desktop suite (building-automation controls) Build 0.9.2 (Beta)</p>
+      <p class="hero-eyebrow">Desktop suite (building-automation controls) Build 0.9.4</p>
       <h1 id="hero-title">BAS <em>HUB</em></h1>
       <p class="tagline">One app for controls field work.</p>
       <p class="positioning">A desktop suite for building-automation controls work. Instead of separate tools (one for programming, one for discovery, one for captures, one for the terminal, a spreadsheet for the records) BAS Hub is one app whose modules share <strong>one device inventory and one backup system</strong>.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#download">Download 0.9.2 beta</a>
+        <a class="btn btn-primary" href="#download">Download 0.9.4</a>
         <a class="btn btn-ghost" href="#demo">Watch the demo</a>
       </div>
-      <p class="hero-modules">Programmer+ &nbsp;&middot;&nbsp; Network+ &nbsp;&middot;&nbsp; BAS Copilot <span>(optional)</span></p>
+      <p class="hero-modules">Programmer+ &nbsp;&middot;&nbsp; Network+ &nbsp;&middot;&nbsp; Reports+ &nbsp;&middot;&nbsp; BAS Copilot <span>(optional)</span></p>
     </div>
     <figure class="hero-art">
       <svg class="hub-assembly" viewBox="35 40 250 222" role="img" aria-label="The BAS Hub R3 mark: a five-spoke hub with an orange centre and one teal live node, assembling spoke by spoke">
@@ -105,21 +106,21 @@
   </div>
   <div class="wrap">
     <div class="hero-stage">
-      <div class="app-window" role="img" aria-label="The BAS Hub home screen in the shipping 0.9.2 beta build: Built-in Modules tiles for Network+ and Programmer+, both Ready, above the New category button">
-        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>BAS HUB (HOME) 0.9.2</span></div>
+      <div class="app-window" role="img" aria-label="The BAS Hub home screen in the shipping 0.9.4 build: the digest panel with the BAS Hub mark and version beside the module readiness list, above the New category button">
+        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>BAS HUB (HOME) 0.9.4</span></div>
         <picture>
           <source srcset="assets/img/home.webp" type="image/webp">
           <img src="assets/img/home.png" alt="" width="1400" height="900">
         </picture>
       </div>
-      <p class="window-note"><em>The current build, as it opens.</em> Modules as tiles with earned ready states; your own categories and shortcuts below them. This is the shipping build's home screen, captured on its test rig.</p>
+      <p class="window-note"><em>The current build, as it opens.</em> The digest panel: the mark and version on the left, module readiness on the right; your own categories and shortcuts below. This is the shipping build's home screen, captured on its test rig.</p>
     </div>
   </div>
   <div class="wrap">
     <dl class="spec-strip" aria-label="Product facts">
-      <div><dt>Release</dt><dd>0.9.2 — Beta</dd></div>
+      <div><dt>Release</dt><dd>0.9.4, current</dd></div>
       <div><dt>Platform</dt><dd>Windows x64</dd></div>
-      <div><dt>Modules</dt><dd>3</dd></div>
+      <div><dt>Modules</dt><dd>4</dd></div>
       <div><dt>Telemetry</dt><dd>None</dd></div>
       <div><dt>License</dt><dd>Proprietary</dd></div>
     </dl>
@@ -140,7 +141,7 @@
         <a class="film-poster" href="assets/img/demo.gif" aria-label="Play the 26-second demo of BAS Hub in use">
           <picture>
             <source srcset="assets/img/demo-poster.webp" type="image/webp">
-            <img class="poster-img" src="assets/img/demo-poster.png" alt="First frame of the demo: the BAS Hub home screen" width="1000" height="649">
+            <img class="poster-img" src="assets/img/demo-poster.png" alt="First frame of the demo: the BAS Hub home screen" width="1000" height="643">
           </picture>
           <span class="film-play" aria-hidden="true"><span class="disc"></span><span>Play, 26 sec</span></span>
         </a>
@@ -170,6 +171,7 @@
           <tr><td>Change something on a live controller</td><td>Command it and rely on your own ritual for safety</td><td><strong>Preview → backup → confirm → verify → rollback</strong>, the same path every time</td></tr>
           <tr><td>Read a packet capture</td><td>Raw hex and a protocol reference open beside it</td><td><strong>Plain sentences first</strong>, full decode underneath</td></tr>
           <tr><td>Know whether the network is healthy</td><td>Gut feel and spot checks</td><td>A <strong>40-check catalog</strong> whose score always shows its findings</td></tr>
+          <tr><td>Turn the work into a report</td><td>A document assembled by hand: screenshots, re-typed numbers, a spreadsheet&rsquo;s totals</td><td><strong>Reports+</strong>: 59 report subjects in one studio, fed by your files or handed over from Network+ and Programmer+; PDF, XLSX, CSV, TXT out</td></tr>
           <tr><td>Get a second pair of eyes</td><td>A cloud chatbot, and your site data on someone else's server</td><td><strong>BAS Copilot</strong>: optional, on-device, or not installed at all</td></tr>
         </tbody>
       </table>
@@ -182,14 +184,14 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow teal">03 &middot; Modules</p>
-      <h2 id="modules-title">Three modules, one inventory</h2>
-      <p class="lead">A device you find in Network+ is the same record everywhere. A write to a live controller goes through the same safety path every time. Your data lives on your laptop, in one folder, and nothing leaves it unless you send it.</p>
+      <h2 id="modules-title">Four modules, one inventory</h2>
+      <p class="lead">A device you find in Network+ is the same record everywhere. A write to a live controller goes through the same safety path every time. And the work itself — the files, the runs, the evidence — becomes finished reports in Reports+. Your data lives on your laptop, in the Library&rsquo;s real folders, and nothing leaves it unless you send it.</p>
     </div>
     <div class="module-grid">
       <article class="module-card">
         <img src="assets/img/icon-hub.png" alt="Hub icon" width="62" height="62">
         <h3>The Hub</h3>
-        <p>The home screen and launcher. Your modules as tiles, your own categories of shortcuts to the tools you already use, one settings home.</p>
+        <p>The home screen and launcher. The digest: module readiness in plain words, your own categories of shortcuts to the tools you already use, one settings home.</p>
         <a class="more" href="#home">See the home screen →</a>
       </article>
       <article class="module-card">
@@ -203,6 +205,12 @@
         <h3>Network+</h3>
         <p>The network workbench: find devices, look at them, watch traffic, check health, prove changes, talk, and keep records.</p>
         <a class="more" href="#network">Explore Network+ →</a>
+      </article>
+      <article class="module-card">
+        <span class="text-mark" aria-hidden="true">R+</span>
+        <h3>Reports+</h3>
+        <p>The reporting studio: 59 report subjects, built, previewed, edited, and exported in one place — fed by vendor files, and by live subjects handed over from Network+ and Programmer+. Audiences and redaction per build; configurations saved as definitions.</p>
+        <a class="more" href="#reports">Explore Reports+ &rarr;</a>
       </article>
       <article class="module-card">
         <img src="assets/img/icon-copilot.png" alt="BAS Copilot icon" width="62" height="62">
@@ -220,19 +228,19 @@
     <div class="section-head">
       <p class="eyebrow">04 &middot; On stage</p>
       <h2 id="stage-title">Each module, in turn</h2>
-      <p class="lead">Scroll, and the stage changes hands: the home screen, the programming workbench, the network workbench, and the optional assistant, each with the facts that define it. (With reduced motion set, the stage unpins and every module simply follows its text.)</p>
+      <p class="lead">Scroll, and the stage changes hands: the home screen, the programming workbench, the network workbench, the reporting studio, and the optional assistant, each with the facts that define it. (With reduced motion set, the stage unpins and every module simply follows its text.)</p>
     </div>
     <div class="stage" data-stage>
       <div class="stage-steps">
-        <article class="stage-step" data-stage-step data-img="assets/img/home.png" data-eyebrow="Stage 01: The Hub" data-cap="<b>The home screen.</b> Built-in Modules pinned at top; your categories and shortcuts below.">
+        <article class="stage-step" data-stage-step data-img="assets/img/home.png" data-eyebrow="Stage 01: The Hub" data-cap="<b>The home screen.</b> The digest panel: mark and version at the left, module readiness at the right; your categories and shortcuts below.">
           <h3>The Hub</h3>
-          <p>One launcher for the suite. Installed modules sit pinned at the top with honest ready states; below them, your own categories hold shortcuts to the external tools you already use.</p>
+          <p>One launcher for the suite. The digest panel states, module by module, what is installed, what is ready, and what needs attention, in plain words; below it, your own categories hold shortcuts to the external tools you already use.</p>
           <ul class="specs">
-            <li><b>Ready states are earned</b>, a tile says Ready only when the module checks out</li>
+            <li><b>Ready states are earned</b>, the digest says Ready only when the module checks out</li>
             <li class="o"><b>No site mode</b>: nothing to pick before your tools open</li>
             <li><b>One settings home</b> for the whole suite</li>
           </ul>
-          <figure class="step-fig plain-frame"><img width="1400" height="900" src="assets/img/home.png" alt="The BAS Hub home screen: Built-in Modules tiles for Network+ and Programmer+, both Ready, above a New category button" loading="lazy"><span class="cap"><b>The home screen</b>, modules as tiles; your categories below.</span></figure>
+          <figure class="step-fig plain-frame"><img width="1400" height="900" src="assets/img/home.png" alt="The BAS Hub home screen: the digest panel with the BAS Hub mark and version beside the module readiness list (Network+, Reports+ and Programmer+ Ready, BAS Copilot not installed), above a New category button" loading="lazy"><span class="cap"><b>The home screen</b>, the digest: readiness at the right; your categories below.</span></figure>
         </article>
         <article class="stage-step" data-stage-step data-img="assets/img/editor.png" data-eyebrow="Stage 02: Programmer+" data-cap="<b>The PPCL editor.</b> Checks run as you type; the findings panel says what to do and why.">
           <h3>Programmer+</h3>
@@ -254,7 +262,17 @@
           </ul>
           <figure class="step-fig plain-frame"><img width="1400" height="900" src="assets/img/device-page.png" alt="A Network+ device page for a BACnet controller: state and health cards, then the cards for every job on that device" loading="lazy"><span class="cap"><b>The device page</b>, one device, one page.</span></figure>
         </article>
-        <article class="stage-step" data-stage-step data-img="assets/img/copilot.png" data-eyebrow="Stage 04: BAS Copilot" data-cap="<b>BAS Copilot.</b> States its terms on its face: everything runs on this computer.">
+        <article class="stage-step" data-stage-step data-img="assets/img/reportsplus-studio-build.png" data-eyebrow="Stage 04: Reports+" data-cap="<b>Reports+ Build.</b> The catalog by subject; a report the sources cannot feed states the source it needs.">
+          <h3>Reports+</h3>
+          <p>The reporting studio. Vendor files and live subjects in; finished reports out — built, previewed, edited, and exported in one place, from one catalog the studio and its coverage page both read, so they cannot drift apart.</p>
+          <ul class="specs">
+            <li><b>59 report subjects</b>, grouped by the job: inventory, programs, files, captures, network, commissioning, live, compare, site</li>
+            <li class="o"><b>File-fed and module-fed</b>: files you add, and subjects handed over by Network+ and Programmer+ with Report on this&hellip;</li>
+            <li><b>Audiences, redaction, depth</b> per build; configurations saved as named definitions; PDF, XLSX, CSV, TXT out</li>
+          </ul>
+          <figure class="step-fig plain-frame"><img width="1400" height="900" src="assets/img/reportsplus-studio-build.png" alt="The Reports+ studio at the Build stage: report cards grouped by subject, each stating what it answers and the source it needs" loading="lazy"><span class="cap"><b>Reports+ Build</b>: the catalog, by subject.</span></figure>
+        </article>
+        <article class="stage-step" data-stage-step data-img="assets/img/copilot.png" data-eyebrow="Stage 05: BAS Copilot" data-cap="<b>BAS Copilot.</b> States its terms on its face: everything runs on this computer.">
           <h3>BAS Copilot <span class="opt">(optional)</span></h3>
           <p>An assistant that runs entirely on your computer: chosen at install, sized to your hardware, and absent without a trace if you skip it. It explains and drafts; it never acts.</p>
           <ul class="specs">
@@ -266,7 +284,7 @@
         </article>
       </div>
       <div class="stage-visual" aria-hidden="true">
-        <div class="stage-progress"><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="stage-progress"><i class="on"></i><i></i><i></i><i></i><i></i></div>
         <div class="stage-frame">
           <img width="1400" height="900" data-stage-img src="assets/img/home.png" alt="">
           <div class="stage-cap"><span class="sc-eyebrow" data-stage-eyebrow>Stage 01: The Hub</span><span data-stage-cap><b>The home screen.</b> Built-in Modules pinned at top; your categories and shortcuts below.</span></div>
@@ -283,17 +301,19 @@
       <div>
         <p class="eyebrow">05 &middot; The Hub, home</p>
         <h3 id="home-title" style="font-size:30px;margin:0 0 14px;">One launcher, one inventory</h3>
-        <p>Installed modules sit pinned at the top with honest ready states. Below them, your own categories hold shortcuts to the external tools you already use: drag them into the order you work in.</p>
+        <p>The digest panel states, module by module, what is installed, what is ready, and what needs attention, in plain words. Below it, your own categories hold shortcuts to the external tools you already use: drag them into the order you work in.</p>
         <ul class="checklist">
           <li><strong>No "site mode."</strong> There is no site picker standing in front of your tools: all work is siteless.</li>
-          <li><strong>Sites where they belong</strong>, as a <em>Save to a site</em> option when you save or back something up, and in the records view when you want to browse what's filed.</li>
+          <li><strong>Nothing is saved automatically.</strong> Everything a module finds this session lives in the one session working set, where every module can use it; unsaved work is forgotten when the app closes.</li>
+          <li><strong>Saving is Save to My Files &amp; Library, and a site name is required.</strong> Nothing is filed without one. What you save lands in category folders under <code>&lt;site&gt; / Exports /</code> in the Library — and the Library is your real folders on this computer, not a database inside the app.</li>
+          <li><strong>Device backups are asked-first.</strong> A backup starts by asking what it should include and files into the Library under Device Backups; declining the backup means no backup is made.</li>
           <li><strong>Evidence, not memory.</strong> The things you file (captures, reports, backups, session logs) collect against the device and the site, so the next visit starts from evidence.</li>
         </ul>
       </div>
       <div class="split-media">
-        <a class="shot-frame" href="assets/img/home.png" data-lightbox data-alt="The BAS Hub home screen: Built-in Modules tiles for Network+ and Programmer+, both Ready, above a New category button" data-caption="Home: modules as tiles with earned ready states; your categories and shortcuts below.">
-          <img width="1400" height="900" src="assets/img/home.png" alt="The BAS Hub home screen: Built-in Modules tiles for Network+ and Programmer+, both Ready, above a New category button" loading="lazy">
-          <span class="cap"><b>Home</b>: modules as tiles with earned ready states; your categories and shortcuts below.</span>
+        <a class="shot-frame" href="assets/img/home.png" data-lightbox data-alt="The BAS Hub home screen: the digest panel with the BAS Hub mark and version beside the module readiness list (Network+, Reports+ and Programmer+ Ready, BAS Copilot not installed), above a New category button" data-caption="Home: the digest panel with module readiness in plain words; your categories and shortcuts below.">
+          <img width="1400" height="900" src="assets/img/home.png" alt="The BAS Hub home screen: the digest panel with the BAS Hub mark and version beside the module readiness list (Network+, Reports+ and Programmer+ Ready, BAS Copilot not installed), above a New category button" loading="lazy">
+          <span class="cap"><b>Home</b>: the digest panel with module readiness in plain words; your categories and shortcuts below.</span>
         </a>
       </div>
     </div>
@@ -320,7 +340,8 @@
           <li class="orange"><strong>An editor that checks as you type.</strong> Syntax colouring and a findings panel driven by 97 named diagnostics and logic checks. Every finding says what to do, why it matters, and where the rule comes from, including cross-line logic checks that catch a start command cancelling itself within the same pass.</li>
           <li><strong>A builder that compiles to PPCL.</strong> Block diagrams (31 block types), sequences written as structured lines, and decision tables, all compiling to program text, with plain-language refusals when something can't compile instead of silent guesses.</li>
           <li class="orange"><strong>Library, point database, and imports.</strong> A file-based code library with collections, tags, and provenance; the point database with unresolved-reference marks in the editor; and vendor imports that arrive with a fidelity report stating, per item, what mapped cleanly, what was approximated, and what didn't map at all.</li>
-          <li><strong>Help inside the module.</strong> A searchable 21-topic help, including the block reference, offline, like everything else.</li>
+          <li class="orange"><strong>Report on this&hellip;, straight to Reports+.</strong> The Editor hands over its current program (<em>Report on this program&hellip;</em>) or its whole session set as a findings subject; the Simulator hands over a bench run, a run comparison, or a debug session; the Library hands over a panel report, a conversion, or the library itself; the Builder hands over a sequence import; the module chrome hands over the loaded point database. Reports+ opens with the subject in place and its report preselected. If Reports+ is not installed, the action stays visible and says so.</li>
+          <li><strong>Help inside the module.</strong> A searchable 22-topic help, including the block reference, offline, like everything else.</li>
         </ul>
       </div>
     </div>
@@ -331,9 +352,9 @@
         <p>Plants can inject faults, and a free-run mode runs your logic against a bare point store whose inputs never move on their own, so the trace is evidence about the logic, and only the logic.</p>
       </div>
       <div class="split-media">
-        <a class="shot-frame" href="assets/img/simulator.png" data-lightbox data-alt="The Programmer+ simulator running a sample program against a single-zone air-handler plant, with the discharge-air trend drawn below" data-caption="Programmer+ simulator, a sample program running against a plant, the trend as evidence.">
-          <img width="1400" height="900" src="assets/img/simulator.png" alt="The Programmer+ simulator running a sample program against a single-zone air-handler plant, with the discharge-air trend drawn below" loading="lazy">
-          <span class="cap"><b>Simulator</b>, a sample program running against a plant, the trend as evidence.</span>
+        <a class="shot-frame" href="assets/img/simulator.png" data-lightbox data-alt="The Programmer+ Simulator: plant and weather cards with the free_run plant selected, a completed run&rsquo;s summary, and its notes and warnings stated on the surface" data-caption="Programmer+ simulator: a completed free-run, its notes and warnings on the surface.">
+          <img width="1400" height="900" src="assets/img/simulator.png" alt="The Programmer+ Simulator: plant and weather cards with the free_run plant selected, a completed run&rsquo;s summary, and its notes and warnings stated on the surface" loading="lazy">
+          <span class="cap"><b>Simulator</b>: a completed free-run — the trace is evidence about the logic, and the surface states what the program does not drive.</span>
         </a>
       </div>
     </div>
@@ -354,7 +375,8 @@
           <li>Sequence documents: describe the sequence in structured lines (points, modes, a decision table); the compiler writes the PPCL; sequences round-trip exactly between their text form and the model.</li>
           <li>Block diagrams: 31 block types, an expression-first compiler, and cycle refusal in plain language.</li>
           <li>Plain-English sequence-of-operations import: paste the SOO text and each item lands with a citation to the line it came from, and an honest list of what couldn't be resolved.</li>
-          <li>Vendor imports: block-diagram files and Desigo panel exports (.P2), each with a mapped / approximated / unmapped fidelity report. The .P2 importer is labelled inside the app for what it is: built and fixture-tested, <strong>not yet validated against a real panel export</strong>: the first thing it will tell you, in its own window.</li>
+          <li>Vendor imports: block-diagram files and Desigo panel exports (.P2), each with a mapped / approximated / unmapped fidelity report. The .P2 importer is platform-first (D-123): real exports are decoded by the platform P2Parser, repaired and pinned against all 13 real held exports — 1,268 points, the module's counts equal to the platform's per file, point-name sets and program counts equal — with present values flowing through the decode (214 values, 125 of them carrying units). The older native grammar remains as a fallback for shapes the platform parser does not take, and the surface says so when the fallback is the one that decoded: its counts are checked against Desigo CC before they are trusted.</li>
+          <li>Siemens ABT job archives (.ABTArchive) open through an in-house 7-Zip subset reader: the archive is analysed from its member index alone, the import popup lists the detected content groups (Controllers &amp; programs, Device parameters, Application types, Project information, Station, Balancer lists) for you to choose between, and only the checked groups import. Credential and key material is counted and classed from the index only — it carries no checkbox and is never imported. An archive outside the reader's subset (a solid archive, another compression coder, an encrypted archive) is refused honestly, by name.</li>
           <li>Redact-for-sharing: strip a program for sending with the point-name mapping kept on your machine only.</li>
         </ul>
         <h4>Simulation &amp; debugging</h4>
@@ -388,7 +410,8 @@
     <div class="split">
       <div>
         <ul class="checklist" style="margin-top:0;">
-          <li><strong>Find.</strong> Ask the network who's out there. BACnet/IP discovery, Modbus, and OPC UA devices all land in the one shared inventory, you never re-type an address or a device number anywhere else in the app.</li>
+          <li><strong>Find.</strong> Ask the network who's out there. BACnet/IP discovery, Modbus, and OPC UA devices all land in the one shared inventory, you never re-type an address or a device number anywhere else in the app. The results land in one grid: the column headers and a per-column filter row stay in place while the rows scroll, the tick column and the Name block stay frozen at the left, and the grid is windowed — only the rows near the scroll position are drawn, however long the list is. Tick rows and the batch bar raises: back up the selection, save it, open its web interface, or report on it.</li>
+          <li class="orange"><strong>Report on this&hellip;</strong> Find (a completed run, or just the ticked rows), the device page, Health, the Test Bench, Records, and the backup surface all hand their subjects to Reports+: the studio opens with the subject as a source and its report preselected.</li>
           <li class="orange"><strong>The device page is the spine.</strong> One page per device: its state, how it was found, its health axes, and every job for that device: points and values, schedules, trend history, its traffic, the console, its baseline. Protocols are capabilities of the device, never separate rooms to visit.</li>
           <li><strong>Watch.</strong> Packet capture that reads back in plain sentences (who asked, who answered, what changed) with a Capture completeness (interface drop counters) computed from the capture file's own counters, so you know what the capture can and cannot prove.</li>
           <li class="orange"><strong>Health.</strong> A 40-check diagnostics catalog over your device records, your laptop's own readings, and a capture if you give it one. The score comes in three axes (Connected, Performing, Clean) and always arrives with the findings that moved it. An axis with no evidence says <em>Not measured</em> instead of guessing.</li>
@@ -408,9 +431,9 @@
         <p>A built-in Lab (a simulated peer with fault injection) lets you practise a plan against a device that misbehaves <em>before</em> a site visit depends on it. The Console is a real VT terminal for SSH, Telnet, and serial: SSH host keys are judged <strong>before</strong> any password is sent, and passwords live in session memory only, never stored.</p>
       </div>
       <div class="split-media">
-        <a class="shot-frame" href="assets/img/test-bench.png" data-lightbox data-alt="The Test Bench previewing a damper stroke-check plan against a simulated copy of a controller, listing each write step before anything runs" data-caption="Test Bench, a plan previewed against a simulated copy before it ever runs against a real device.">
-          <img width="1400" height="900" src="assets/img/test-bench.png" alt="The Test Bench previewing a damper stroke-check plan against a simulated copy of a controller, listing each write step before anything runs" loading="lazy">
-          <span class="cap"><b>Test Bench</b>, a plan previewed against a simulated copy before it ever runs against a real device.</span>
+        <a class="shot-frame" href="assets/img/test-bench.png" data-lightbox data-alt="The Test Bench previewing a plan against a simulated copy of a controller: fault toggles for the copy, the previewed read step with its current and target values, and the write-safety path stated on the surface" data-caption="Test Bench: the preview against a simulated copy, before the plan ever runs against a real device.">
+          <img width="1400" height="900" src="assets/img/test-bench.png" alt="The Test Bench previewing a plan against a simulated copy of a controller: fault toggles for the copy, the previewed read step with its current and target values, and the write-safety path stated on the surface" loading="lazy">
+          <span class="cap"><b>Test Bench</b>: preview &rarr; backup &rarr; confirm &rarr; run, stated on the surface; the simulated copy takes the rehearsal.</span>
         </a>
       </div>
     </div>
@@ -423,6 +446,8 @@
           <li>Discovery across BACnet/IP (its own BACnet stack, including BBMD foreign-device registration for reaching across subnets), Modbus, and OPC UA, plus an ARP / ping scan of what is answering on the wire.</li>
           <li>Everything found lands in the shared Inventory Core as a DeviceRecord. Identity merges on BACnet instance + network first, then MAC, then IP, so re-finding a device updates its record instead of duplicating it.</li>
           <li>Field changes are logged against the record; snapshots diff as ADDED / REMOVED / CHANGED.</li>
+          <li>The results grid: sticky column headers and filter row, the tick and Name columns frozen at the left, per-column filters that combine, sorting that never drops a selection, and windowing — only the rows near the scroll position are drawn, so a 10,000-device session set scrolls like a ten-device one.</li>
+          <li>The batch bar (with anything ticked): Back up selected, Report on selected&hellip; (the ticked devices become Reports+'s live device scope), Save selected list, Web interface, Clear selection. A completed run is reported separately, by Report on this run&hellip; beside the run summary.</li>
         </ul>
         <h4>Look (the device page)</h4>
         <ul>
@@ -598,16 +623,16 @@
     <div class="section-head">
       <p class="eyebrow teal">10 &middot; Screenshots</p>
       <h2 id="shots-title">The real app, as shipped</h2>
-      <p class="lead">Real captures of the current build (0.9.2) and its test rigs, no mockups, no staged data presented as a real site. Select any screenshot to view it full-size.</p>
+      <p class="lead">Real captures of the current build (0.9.4) and its test rigs, no mockups, no staged data presented as a real site. Select any screenshot to view it full-size.</p>
     </div>
     <div class="gallery">
-      <a class="shot-frame" href="assets/img/device-page.png" data-lightbox data-alt="A Network+ device page for a BACnet controller: state and health cards at the top, then Look, Watch and Check, and Change and Talk cards for every job on that device" data-caption="The device page, one device, one page; every job for it starts from the same record.">
-        <img width="1400" height="900" src="assets/img/device-page.png" alt="A Network+ device page for a BACnet controller: state and health cards at the top, then Look, Watch and Check, and Change and Talk cards for every job on that device" loading="lazy">
-        <span class="cap"><b>The device page</b>, one device, one page; every job for it starts from the same record.</span>
+      <a class="shot-frame" href="assets/img/device-page.png" data-lightbox data-alt="Rig capture of the Network+ device page in 0.9.4, Properties tab: the constant header with device actions, the alarm banner, and the three across fact sheet for a fictional seed controller" data-caption="<b>The device page (rig capture)</b>, Properties first: identity, state, and network facts for one device, with fictional seed data.">
+        <img width="1400" height="900" src="assets/img/device-page.png" alt="Rig capture of the Network+ device page in 0.9.4, Properties tab: the constant header with device actions, the alarm banner, and the three across fact sheet for a fictional seed controller" loading="lazy">
+        <span class="cap"><b>The device page (rig capture)</b>, Properties first: identity, state, and network facts for one device, with fictional seed data.</span>
       </a>
-      <a class="shot-frame" href="assets/img/health.png" data-lightbox data-alt="A Network+ health run: overall score 80 with Connected, Performing, and Clean axes, and a fault finding card explaining one silent device with its evidence" data-caption="Health, the score always arrives with its findings; an axis with no evidence says Not measured.">
-        <img width="1400" height="900" src="assets/img/health.png" alt="A Network+ health run: overall score 80 with Connected, Performing, and Clean axes, and a fault finding card explaining one silent device with its evidence" loading="lazy">
-        <span class="cap"><b>Health</b>: the score always arrives with its findings; an axis with no evidence says <em>Not measured</em>.</span>
+      <a class="shot-frame" href="assets/img/health.png" data-lightbox data-alt="Rig capture of the Help window opened by Contextual Help in 0.9.4, resolved to the topic for the current screen and stamped Help for BAS Hub 0.9.4" data-caption="<b>Contextual Help (rig capture)</b>: Help opens at the topic for the screen you are on, stamped to this build.">
+        <img width="1400" height="900" src="assets/img/health.png" alt="Rig capture of the Help window opened by Contextual Help in 0.9.4, resolved to the topic for the current screen and stamped Help for BAS Hub 0.9.4" loading="lazy">
+        <span class="cap"><b>Contextual Help (rig capture)</b>: Help opens at the topic for the screen you are on, stamped to this build.</span>
       </a>
       <a class="shot-frame" href="assets/img/watch.png" data-lightbox data-alt="Network+ Watch reading a capture back as a list of plain-language sentences, one per conversation event" data-caption="Watch, a capture read back in plain sentences. (Demonstration capture file; live capture uses the optional Npcap step at install.)">
         <img width="1400" height="900" src="assets/img/watch.png" alt="Network+ Watch reading a capture back as a list of plain-language sentences, one per conversation event" loading="lazy">
@@ -617,12 +642,36 @@
         <img width="1400" height="900" src="assets/img/console.png" alt="The Network+ console in a terminal session, with canned commands and special keys offered beside the terminal" loading="lazy">
         <span class="cap"><b>Console</b>, a real VT terminal, your usual commands one tap away, session logs filed to Records.</span>
       </a>
-      <a class="shot-frame" href="assets/img/settings.png" data-lightbox data-alt="BAS Hub Settings: Back up everything, the Diagnostics bundle, and the Updates section with its Check for updates button" data-caption="Settings, the update check is a button you press; downloads verify by checksum and signature before anything changes.">
-        <img width="1400" height="900" src="assets/img/settings.png" alt="BAS Hub Settings: Back up everything, the Diagnostics bundle, and the Updates section with its Check for updates button" loading="lazy">
-        <span class="cap"><b>Settings</b>, the update check is a button you press; downloads verify before anything changes.</span>
+      <a class="shot-frame" href="assets/img/settings.png" data-lightbox data-alt="Rig capture of BAS Hub Settings, General page, in 0.9.4, on the test rig profile" data-caption="<b>Settings (rig capture)</b>: one Settings home for the suite and its modules, as shipped in 0.9.4.">
+        <img width="1400" height="900" src="assets/img/settings.png" alt="Rig capture of BAS Hub Settings, General page, in 0.9.4, on the test rig profile" loading="lazy">
+        <span class="cap"><b>Settings (rig capture)</b>: one Settings home for the suite and its modules, as shipped in 0.9.4.</span>
+      </a>
+      <a class="shot-frame" href="assets/img/prove-run.png" data-lightbox data-alt="Rig capture of the Programmer+ Editor in 0.9.4, in its honest empty state: no program open, nothing preloaded" data-caption="<b>Programmer+ (rig capture)</b>: the Editor as it opens, no program loaded until you open one.">
+        <img width="1400" height="900" src="assets/img/prove-run.png" alt="Rig capture of the Programmer+ Editor in 0.9.4, in its honest empty state: no program open, nothing preloaded" loading="lazy">
+        <span class="cap"><b>Programmer+ (rig capture)</b>: the Editor as it opens, no program loaded until you open one.</span>
+      </a>
+      <a class="shot-frame" href="assets/img/netplus-find-results.png" data-lightbox data-alt="Rig capture of the Network+ Scan Network page in 0.9.4: the connection pill at the top right, the scan strip, and the temporary network table in its honest empty state, with fictional seed devices in the tree" data-caption="<b>Scan Network (rig capture)</b>: one page, a temporary network for this session, devices in their kind bands. Fictional seed data.">
+        <img width="1400" height="900" src="assets/img/netplus-find-results.png" alt="Rig capture of the Network+ Scan Network page in 0.9.4: the connection pill at the top right, the scan strip, and the temporary network table in its honest empty state, with fictional seed devices in the tree" loading="lazy">
+        <span class="cap"><b>Scan Network (rig capture)</b>: one page, a temporary network for this session, devices in their kind bands. Fictional seed data.</span>
+      </a>
+      <a class="shot-frame" href="assets/img/netplus-find-grid.png" data-lightbox data-alt="Rig capture of the Scan Network connection control expanded in the Not connected state in 0.9.4: BACnet/IP fields, the adapter editor door, and the UDP port" data-caption="<b>The connection control (rig capture)</b>: one pill, three honest states; editable only while not connected.">
+        <img width="1400" height="900" src="assets/img/netplus-find-grid.png" alt="Rig capture of the Scan Network connection control expanded in the Not connected state in 0.9.4: BACnet/IP fields, the adapter editor door, and the UDP port" loading="lazy">
+        <span class="cap"><b>The connection control (rig capture)</b>: one pill, three honest states; editable only while not connected.</span>
+      </a>
+      <a class="shot-frame" href="assets/img/reportsplus-studio-sources.png" data-lightbox data-alt="The Reports+ studio at Sources: source cards with their verdicts, Read in full and Read in part, their coverage and counts, and the backup-drift analysis set-up below" data-caption="Reports+ Sources: every source read on the spot, its verdict on its card.">
+        <img width="1400" height="900" src="assets/img/reportsplus-studio-sources.png" alt="The Reports+ studio at Sources: source cards with their verdicts, Read in full and Read in part, their coverage and counts, and the backup-drift analysis set-up below" loading="lazy">
+        <span class="cap"><b>Reports+ Sources</b>: every source read on the spot, its verdict and coverage on its card.</span>
+      </a>
+      <a class="shot-frame" href="assets/img/reportsplus-studio-build.png" data-lightbox data-alt="The Reports+ studio at the Build stage: report cards grouped by subject, each stating what it answers and, where the sources cannot feed it, the source it needs" data-caption="Reports+ Build: the catalog by subject.">
+        <img width="1400" height="900" src="assets/img/reportsplus-studio-build.png" alt="The Reports+ studio at the Build stage: report cards grouped by subject, each stating what it answers and, where the sources cannot feed it, the source it needs" loading="lazy">
+        <span class="cap"><b>Reports+ Build</b>: the catalog by subject; a report the sources cannot feed says what it needs.</span>
+      </a>
+      <a class="shot-frame" href="assets/img/reportsplus-studio-comparison-panel.png" data-lightbox data-alt="The Sources stage&rsquo;s Comparison and site reports panel: the order-is-time rule stated on its face, the program findings subject&rsquo;s analyse action, and a program change subject being assembled from two panel exports" data-caption="Comparison panel: order is time, subjects assembled in the open.">
+        <img width="1400" height="900" src="assets/img/reportsplus-studio-comparison-panel.png" alt="The Sources stage&rsquo;s Comparison and site reports panel: the order-is-time rule stated on its face, the program findings subject&rsquo;s analyse action, and a program change subject being assembled from two panel exports" loading="lazy">
+        <span class="cap"><b>Comparison panel</b>: order is time; the findings and program-change subjects are assembled here, in the open.</span>
       </a>
       <a class="shot-frame" href="assets/img/demo.gif" data-lightbox data-alt="BAS Hub in use: from the home screen into Network+, the network health workspace, back home, and into the Programmer+ Builder" data-caption="In motion, home → Network+ → Health → Programmer+, live on the test rig.">
-        <img width="1000" height="649" src="assets/img/demo.gif" alt="BAS Hub in use: from the home screen into Network+, the network health workspace, back home, and into the Programmer+ Builder" loading="lazy">
+        <img width="1000" height="643" src="assets/img/demo.gif" alt="BAS Hub in use: from the home screen into Network+, the network health workspace, back home, and into the Programmer+ Builder" loading="lazy">
         <span class="cap"><b>In motion</b>, home → Network+ → Health → Programmer+, live on the test rig.</span>
       </a>
     </div>
@@ -635,15 +684,16 @@
     <div class="section-head">
       <p class="eyebrow">11 &middot; Help, built in</p>
       <h2 id="help-title">The manual is inside the app</h2>
-      <p class="lead">Every BAS Hub release ships a built-in, searchable help: version-stamped to the build it describes, fully offline, taught with screenshots of the real surfaces. These are its actual topics: the suite and Network+ sets, plus Programmer+'s own 21, which live inside the module. Type to filter the index, the way the app's own help search does.</p>
+      <p class="lead">Every BAS Hub release ships a built-in, searchable help: version-stamped to the build it describes, fully offline, taught with screenshots of the real surfaces. These are its actual topics: the suite, Network+ and Reports+ sets, plus Programmer+'s own 22, which live inside the module. Type to filter the index, the way the app's own help search does.</p>
     </div>
     <div class="help-search">
       <label for="help-filter">Filter the help index</label>
       <input id="help-filter" type="search" placeholder="Try &ldquo;failure&rdquo;, &ldquo;terminal&rdquo;, &ldquo;lint&rdquo;&hellip;" autocomplete="off" data-help-filter>
     </div>
-    <p class="help-count" data-help-count>35 topics, the complete index</p>
+    <p class="help-count" data-help-count>54 topics, the complete index</p>
     <div class="help-index" data-help-index>
       <p class="help-group">BAS Hub</p>
+      <div class="help-row" data-help-row><span class="hr-title">Accessibility: reduce motion and text size</span><span class="hr-tag">BAS Hub</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Failure logs and the error popup</span><span class="hr-tag">BAS Hub</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Installing and changing modules</span><span class="hr-tag">BAS Hub</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Privacy and BAS Copilot</span><span class="hr-tag">BAS Hub</span></div>
@@ -651,14 +701,32 @@
       <div class="help-row" data-help-row><span class="hr-title">Checking for updates and patch notes</span><span class="hr-tag">BAS Hub</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Welcome to BAS Hub</span><span class="hr-tag">BAS Hub</span></div>
       <p class="help-group">Network+</p>
+      <div class="help-row" data-help-row><span class="hr-title">Device backup and restore</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Classic Test Bench: staged rows</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Classic Capture: the original wire capture</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Classic diagnostics: ping, traceroute, port scan, and the other single-purpose tools</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Classic sites view: the original records browser</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Classic console: the original terminal</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Connect: reaching a BACnet network</span><span class="hr-tag">Network+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">The device page (Look)</span><span class="hr-tag">Network+</span></div>
-      <div class="help-row" data-help-row><span class="hr-title">Find: what's on this network</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Favorites: pinned points on the device page</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Find: the results grid, selection and the connection chip</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Find: what&#x27;s on this network</span><span class="hr-tag">Network+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">The Network+ front door: jobs, not tools</span><span class="hr-tag">Network+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Health: the score and the offline verdict</span><span class="hr-tag">Network+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Prove: the test bench and write safety</span><span class="hr-tag">Network+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Records: what changed</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Network+ settings: captures and BACnet defaults</span><span class="hr-tag">Network+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Talk: the terminal</span><span class="hr-tag">Network+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Trends: saving and viewing</span><span class="hr-tag">Network+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Watch: captures</span><span class="hr-tag">Network+</span></div>
+      <p class="help-group">Reports+</p>
+      <div class="help-row" data-help-row><span class="hr-title">Build: reports, audiences, sections, themes</span><span class="hr-tag">Reports+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Coverage, verdicts, and exports</span><span class="hr-tag">Reports+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Reports+ editing and corrections</span><span class="hr-tag">Reports+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Reporting from Network+ and Programmer+</span><span class="hr-tag">Reports+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Sources: files, live subjects, verdicts</span><span class="hr-tag">Reports+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Reports+ studio: the three stages</span><span class="hr-tag">Reports+</span></div>
       <p class="help-group">Programmer+</p>
       <div class="help-row" data-help-row><span class="hr-title">Getting started</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">What this tool will and will not do</span><span class="hr-tag">Programmer+</span></div>
@@ -673,15 +741,106 @@
       <div class="help-row" data-help-row><span class="hr-title">Point database</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Start/stop time optimization</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Where the language rules come from</span><span class="hr-tag">Programmer+</span></div>
-      <div class="help-row" data-help-row><span class="hr-title">Themes</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Chiller plant bench</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Settings</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Using this help</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">The code library</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Program Copilot</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">The official PPCL manuals</span><span class="hr-tag">Programmer+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Panel Inspector</span><span class="hr-tag">Programmer+</span></div>
+      <div class="help-row" data-help-row><span class="hr-title">Checking a program set</span><span class="hr-tag">Programmer+</span></div>
       <div class="help-row" data-help-row><span class="hr-title">Block reference</span><span class="hr-tag">Programmer+</span></div>
       <p class="help-none" data-help-none>No topic matches that filter, the index above is the whole of it; try a shorter word.</p>
+    </div>
+    <div class="reports-subjects" id="reports">
+      <h3 style="font-size:24px;margin:44px 0 10px;">Reports+, subject by subject</h3>
+      <p style="max-width:78ch;">Reports+ is the reporting studio: vendor files and live subjects in, finished reports out — PDF, XLSX, CSV, TXT. Its catalog holds <strong>59 report subjects</strong>, grouped by subject: Inventory, Programs, Files, Captures, Network, Commissioning, Live, Compare, Site. A report is offered only when the included sources can feed it; a report that cannot be built states the source it needs. Each report answers one question. This index explains every subject the same way the built-in help does: what it does, what feeds it — a file (and which types), an analysis, a live read, or a module surface's <em>Report on this&hellip;</em> door — and how it is configured.</p>
+      <h4 style="margin:26px 0 8px;">Audiences, redaction, depth, sections, definitions</h4>
+      <ul class="checklist">
+        <li><strong>Audiences.</strong> Tech: full detail, trade terms, provenance complete. Boss: summary first — headline numbers and totals lead, the detail follows. Customer: a copy for release. Switching audience in the Preview rebuilds the report and carries its edits across. The audience column below is each subject's own set, as the catalog states it.</li>
+        <li><strong>Redaction</strong> is a per-build choice, not an audience lock: on by default for Customer, off for Tech and Boss, flippable for any build. It covers IP addresses (masked to their first two octets), MAC addresses (masked out), account names, and network-identifying details. It never covers credential values, because credential values are never part of a report — parsers flag credential material by existence and role only. The cover states the choice either way, and every export's provenance prints it.</li>
+        <li><strong>Depth</strong> is an option on the report you picked, never a separate report: Summary keeps the headline facts and exceptions; Detailed keeps every section; Mixed (the default) is summary first, with the detail behind it.</li>
+        <li><strong>Sections.</strong> The point table, topology diagram, and charts can each be left out of the reports that build them, and any named section can be excluded at build time once the report has been built once in the session. Provenance is always included and cannot be left out.</li>
+        <li><strong>Saved definitions.</strong> A configuration can be saved as a named definition for its report — depth, section toggles, filters, excluded sections — and applied in one pick. For a live report the definition also carries its live configuration. The definition store is written only when you save or delete, never as you browse.</li>
+        <li><strong>Themes.</strong> Two print themes ship: BAS Hub Graphite and BAS Hub Light. The theme sets the printed palette only; it changes no content.</li>
+        <li><strong>Every build</strong> also picks its audience, redaction, depth and sections, so the configuration column below names only what is specific to the subject: its audience set and any picks of its own.</li>
+      </ul>
+      <div class="table-scroll" style="margin-top:26px;">
+        <table class="data subjects">
+          <thead><tr><th scope="col">Report</th><th scope="col">What it does</th><th scope="col">Fed by</th><th scope="col">Audiences &middot; configuration</th></tr></thead>
+          <tbody>
+            <tr class="subj-group"><td colspan="4">Inventory</td></tr>
+            <tr><td>Device and point inventory</td><td>Every device the source reports, its points, and the totals reconciled against the source's own counts.</td><td>File-fed: any file source carrying devices (station backups, panel exports, project files, discovery exports).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Point list</td><td>One row per point: device, point name, object, present value and units as the source states them. An ABT station's points come from its BALXR2 point-name table, decoded in-app.</td><td>File-fed: any file source carrying points.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Station dossier</td><td>One station backup read as a dossier: station identity, devices and their points, wiresheets, histories, and user accounts (names only; credential material is flagged by role, never read), plus a Licensing section — host ID, brand, Niagara version, license dates, and the SMA expiration, flagged in plain language when it has expired or expires within 12 months. A backup with no license members gets the section anyway, stating that plainly.</td><td>File-fed: a Tridium station backup (.dist).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Station user account list</td><td>Who can sign in to this station: account names with a per-account password-existence flag, and keystore/certificate entries by role. Credential values are never read.</td><td>File-fed: a Tridium station backup (.dist).</td><td>Audiences: Tech, Boss. The Boss copy carries counts only; there is no Customer copy, because account names are site security data.</td></tr>
+            <tr><td>Station history configuration report</td><td>Which histories this station keeps: history names grouped by parent device, with the count reconciled to the station dossier's history count.</td><td>File-fed: a Tridium station backup (.dist).</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>ECLYPSE controller backup report</td><td>What this controller backup holds: controller identity (name, instance, vendor, hostname), the area census, the BACnet network-ports table, root configuration facts, and credential material flagged by role only.</td><td>File-fed: a Distech ECLYPSE controller backup (.ecybackup).</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Panel point database report</td><td>A Siemens panel export read as a point database: panel identity, the full point table by record class, the record-class census reconciled to the corrected point census, and the gaps as they now stand named on the report.</td><td>File-fed: a Siemens panel export (.P2).</td><td>Audiences: Tech, Boss. Point-class filter: the record classes 0x02, I, P and B, any subset; a filtered build states it, with its counts, and the filter rides any saved definition.</td></tr>
+            <tr><td>Panel point values report</td><td>The values this panel export carries: TC24 present values with units, binary present states with their state texts, alarm limit pairs as decoded, 'B' parameter vectors by id, and 'P' schedule series and tuples. TC24 panels carry present values; BLN values exist only where a 'B' table or a 'P' series carries them, and none is invented where the export carries none.</td><td>File-fed: a Siemens panel export (.P2).</td><td>Audiences: Tech, Boss. Point-class filter, as for the panel point database report.</td></tr>
+            <tr><td>ABT project dossier</td><td>The whole ABT project read as one dossier: the device census by model with the station named, the distinct programs, the application types, the balancer coverage with tag origins kept separate, and the parameter totals. The project's named gaps are carried onto the report, not dropped.</td><td>File-fed: an ABT project — a folder tree, or an .ABTArchive imported through the analyse, choose, import popup.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>DXR parameter report</td><td>Every configured parameter the instances' parameter caches carry: per device, per object and property — description, unit, the value as stored, min/max, resolution and required access level. The values are the files' stored configuration, not live readings.</td><td>File-fed: sources whose instances carry parameter caches (ABT projects).</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Air balancing (TAB) report</td><td>The air balancer's reporting lists as filed: per list, per device, per tag — each value with its origin kept separate (an uploaded read against a device-stored recorded value, never merged), the list's created timestamp from its own file header, and read completeness stated per list; an empty list is named, not dropped.</td><td>File-fed: an ABT project carrying an air balancer reporting list.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Water balancing (TAB) report</td><td>The water balancer's reporting lists as filed, in the air report's grammar on the water-side tag set: per list, per device, per tag, each value's origin kept separate, its created timestamp from its file header, and read completeness per list.</td><td>File-fed: an ABT project carrying a water balancer reporting list.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Application type dossier</td><td>The application types this project runs: each distinct type document — its title, type and target controller, its export ID, its engineering-object census, and the instances running it. A document filed under several containers is counted once; its copies are named as copies.</td><td>File-fed: sources carrying application types (ABT projects).</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>PXC station structure report</td><td>The PXC station's BA model tree as BAINF2.pbf states it: every node in the order the file carries them, with its name, description and type id. The decoded records carry no parent links, so no hierarchy is drawn that the file does not state.</td><td>File-fed: sources carrying BAINF2.pbf (PXC station files).</td><td>Audiences: Tech.</td></tr>
+            <tr><td>Data acquisition configuration report</td><td>The station's data acquisition configuration from PLTDAQ.xml at element level: every zone — the LTE address it sits at, the block type and property it acquires, its direction, heartbeat and service property — in filed order, with the zones also counted by block type.</td><td>File-fed: sources carrying PLTDAQ.xml zones.</td><td>Audiences: Tech.</td></tr>
+            <tr class="subj-group"><td colspan="4">Programs</td></tr>
+            <tr><td>Program set report</td><td>The programs in the set: line counts, a statement census, and the points each program references.</td><td>File-fed: sources carrying programs (program listings, panel exports, project files). Module-fed: Programmer+ Editor's Report on this program… hands the current program over.</td><td>Audiences: Tech.</td></tr>
+            <tr><td>Wiresheet report</td><td>What this wiresheet is built from and how it is wired: the component census by type, the full link table (source slot to target slot), and every unresolved link named.</td><td>File-fed: a Tridium wiresheet (.bog).</td><td>Audiences: Tech.</td></tr>
+            <tr><td>GFX program report</td><td>What this GFX program contains: the function-block census by type, the binding counts, the internal point table, the per-block listing, and the Block parameters section — every block's scalar parameter values as stored in Main.xml, listed per block. Structured sub-values inside blocks are counted with their blocks, not read as scalar parameters.</td><td>File-fed: a Distech GFX project (.gfx).</td><td>Audiences: Tech.</td></tr>
+            <tr><td>PPCL program findings report</td><td>What the Programmer+ analysis engine found in these programs, and what to do about each finding: counts by severity and by rule with the worst programs named first, then every finding grouped by program with its rule, severity, line and the engine's own fix guidance. One findings subject builds the single form; two subjects, earlier first, build the longitudinal form, which prints movement only when both state the same engine configuration and otherwise states they are not comparable. A logic-check finding carries its provenance label wherever it renders.</td><td>Analysis-fed, never from a raw parse: Analyse included program sources in the studio; PPCL files via Add program files…; or Programmer+ Editor's Report on these programs…, which hands the session set over through the same adapter. Report on this program… in the Editor preselects the subject over the current program.</td><td>Audiences: Tech, Boss. Severity picks (error / warning / info / style) in Build; a rule filter is set in a saved definition only — the studio offers no rule picker.</td></tr>
+            <tr><td>Program execution state report</td><td>What is actually running in this panel: the programs one panel report record carries, each program's execution state as the record states it, and the panel identity. The Panel Inspector holds the .P2 decode and carries no report door.</td><td>Module-fed: a panel display report checked in the Programmer+ Library, handed over by the Library pane's Report on this panel report….</td><td>Audiences: Tech. Its state-class picks ride a saved definition.</td></tr>
+            <tr><td>SOO import report</td><td>What this sequence-of-operations import produced, and what it did not settle: the sequence as imported, the sentences that mapped, the ones that did not, named and never guessed, and the defaults the import applied, scanned from the import result's own words and labelled as scanned.</td><td>Module-fed: the Builder's held import, handed over by Report on this import….</td><td>Audiences: Tech, Boss. Its unresolved-only choice rides a saved definition.</td></tr>
+            <tr><td>Conversion fidelity report</td><td>What survived this conversion, and what did not: per-line fidelity classes, the lines that converted clean, the ones that converted with loss, named with their loss, and the conversion's coverage. Conversions that produce no fidelity record clear the held record rather than leaving a stale one to report from.</td><td>Module-fed: the Library's held conversion record, handed over by Report on this conversion… while that record is held.</td><td>Audiences: Tech, Boss. Its fidelity-class picks ride a saved definition.</td></tr>
+            <tr><td>Simulation test report</td><td>What this simulated run proved: one bench run of one program — the run's checks with their outcomes, the point traces and per-pass snapshots the run recorded, and the run's own verdict. Badged SIMULATION on the cover and every page, in every format.</td><td>Module-fed: a held bench run from the Programmer+ Simulator, handed over by Report on this run….</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Program library census report</td><td>What is in this code library: every item in the Programmer+ program library as listed when the report builds — kind, collection, equipment family and lint state per item, the census by kind and by equipment family as charts, and the items carrying lint errors named first. Listing recomputes automatic categorisation and lint, so the census is that fresh pass, and the report says so. An empty library's census is a true report of an empty library.</td><td>Module-fed: the Library pane's Report on this library…, which lists fresh when you click.</td><td>Audiences: Tech, Boss. Its collection, kind and lint-state picks ride a saved definition.</td></tr>
+            <tr><td>Debugger session report</td><td>Where this debug session stopped, and what it never reached: one Simulator debug session — the breakpoints set, every stop in order with its reason, the point overrides applied, the watch list, the executed lines, and the executable lines never executed, named. Badged SIMULATION throughout; its assessment leads with the write-watchpoint stops' own words.</td><td>Module-fed: the session the Simulator's Debug tab hands over with Report on this session…, once the session has executed.</td><td>Audiences: Tech. Its stop-kind picks ride a saved definition.</td></tr>
+            <tr><td>Point database report</td><td>What points this panel actually has, as the working database the Programmer+ checks run against: point counts by type, the full point table (name, type, descriptor, units, device, address, and the present value where the source carried one), the points-by-type chart, and the load record — the source and its kind (a Desigo CC / Insight / spreadsheet file export, a .P2 conversion, or a Network+ conversion), the column mapping as matched where the load retained one, and the unrecognised columns and load problems, reported and never guessed at. A JSON load and the converters retain no mapping, and the report states that rather than inventing one.</td><td>Module-fed: the point database loaded in Programmer+, handed over by the module chrome's Report on this database…. With no database loaded the door is disabled and states why. Not the Panel point database report under Inventory, which renders one .P2 file.</td><td>Audiences: Tech, Boss. Its point-type and has-value picks ride a saved definition.</td></tr>
+            <tr class="subj-group"><td colspan="4">Files</td></tr>
+            <tr><td>Reference data report</td><td>The reference tables a vendor file carries (vendor identifiers, property maps, group and recipe lists), including the AbtBaData BACnet device/object references an ABT station carries, decoded in-app.</td><td>File-fed: vendor files carrying reference tables.</td><td>Audiences: Tech.</td></tr>
+            <tr><td>Vendor file coverage report</td><td>How completely each source was read, with gaps and credential flags: every source's verdict — read in full, read in part (with the gaps named), or refused honestly (with the reason).</td><td>File-fed: the included file sources; the coverage rides each source's own read.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr class="subj-group"><td colspan="4">Captures</td></tr>
+            <tr><td>Capture summary</td><td>What a capture file holds at the container level: packet count, span, link type. Packet decode lives in Network+.</td><td>File-fed: packet captures (.pcap / .pcapng).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr class="subj-group"><td colspan="4">Network</td></tr>
+            <tr><td>Network health report</td><td>How healthy this network is, from a Network+ health run: a one-page score layer (the overall score and the Connected / Performing / Clean axes; an axis the run did not measure states Not measured, never zero), every check with its status and note, each finding in plain language with what it means, how to fix it and its evidence, and an offender appendix naming the devices behind every warning or fault, at every audience. Impact is stated as the finding's severity and statement — the run carries no impact percentage and no per-device scores, and none is invented. Its Source provenance section states the feed: the capture name, size, SHA-256 and window; the filed run's identity for a filed run; for a live run, that there is no source file.</td><td>Module- and file-fed, not a vendor file: a filed .health.json run file; a .pcap / .pcapng capture decoded and evaluated in Sources; or a live run handed over from Health's Report on this run….</td><td>Audiences: Tech, Boss, Customer. Tech and Boss also get the check detail table and a checks-by-status chart. The Customer copy keeps the score layer, the assessment, the source provenance and the offender appendix, with wire addresses masked under redaction and device names standing.</td></tr>
+            <tr class="subj-group"><td colspan="4">Commissioning</td></tr>
+            <tr><td>VAV commissioning report</td><td>The commissioning record for the VAV devices in the source, generated from the parsed application type: device identity, the application type and its target controller model as filed, the type's engineering-object set, each device's parameter values as configured, the program census, and completeness reconciled per section (objects in the type against objects found against parameters read; where the counts differ, both stand).</td><td>File-fed: an ABT project carrying VAV instances with parameter caches, or a Distech GFX project the file's own stated facts place as a VAV project (controller type ECY-VAV).</td><td>Audiences: Tech, Boss. Its point and parameter tables are named sections, excluded by the section exclusion, not by the charts toggle.</td></tr>
+            <tr><td>AHU commissioning report</td><td>The commissioning record for the air handler in the source, generated from the parsed project: device identity, the project and its controller family as the file states them (where the file states no controller type, the report says so rather than claiming one), the internal points, the function-block program census, the per-block parameter values as configured, and completeness reconciled per section. A GFX project whose stated facts place it in neither class is offered neither commissioning report.</td><td>File-fed: a Distech GFX project the file's stated facts place as an AHU project on the ECY-S1000 family.</td><td>Audiences: Tech, Boss. Its point and parameter tables are named sections, as for the VAV record.</td></tr>
+            <tr><td>Heat pump commissioning report</td><td>The commissioning record for the heat pump devices in the source, generated from the parsed application type in the same grammar as the VAV record: device identity, the application type and its target controller model as filed, the type's engineering-object set, each device's parameter values as configured, the program census, and completeness reconciled per section. The evidence is read from the parse, never from the container: an archive-fed VAV job offers the VAV report, a folder-fed heat-pump job offers this one, and a source with neither class of evidence is offered neither ABT commissioning report.</td><td>File-fed: an ABT project — a folder tree, or an .ABTArchive opened as the project tree it contains — whose parse itself states heat-pump evidence: an application-type document naming a heat-pump type, or at least half of the parameter-carrying devices named as heat-pump devices.</td><td>Audiences: Tech, Boss. Its point and parameter tables are named sections, as for the VAV record.</td></tr>
+            <tr class="subj-group"><td colspan="4">Live</td></tr>
+            <tr><td>Discovery census report</td><td>What a discovery run found: the device set grouped by how each device was found, per-scope outcomes, duplicate instances and addresses named first, and the run settings. The two forms — a live run and a saved filing — are labelled on the cover and never blended.</td><td>Module-fed: a completed Find run handed over from Network+ (Report on this run…). File-fed: a saved discovery filing added in Sources.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Live point values report</td><td>What the picked points read right now, read live at build time: a per-device roll-up (points read, points failed, flagged points), the full point table per device with each value's read time, and the read failures the read recorded.</td><td>Live read: the live device scope picked in Sources, read live at build time over Network+'s shared connection. Live values are never merged with file values.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Comfort report</td><td>Which spaces are not at their setpoint, by how much, and which are worst: space temperature against setpoint per device from the role picks you confirm, deviation bands against the tolerance stated on the report's face, worst deviators named first, damper and valve positions alongside where picked, and the match basis for every point used.</td><td>Live read: the live device scope, read live at build time; each candidate point is shown with the basis it was matched on, for you to confirm or correct.</td><td>Audiences: Tech, Boss, Customer. The tolerance and the confirmed role picks ride a saved definition; a malformed tolerance blocks the build with its reason — no default is substituted.</td></tr>
+            <tr><td>Live override report</td><td>Which points are being held, at which priority, with what value, right now: the priority arrays read live per device, held points by device and by priority with the manual priorities 1 to 8 named first, and the full slot table with relinquish defaults.</td><td>Live read: the live device scope, read live at build time.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Out-of-service points list</td><td>Which points are flagged out of service across the picked devices, read live, with each point's present value and read time, and the points and devices that did not answer listed separately from the read's own failure lines. A backup file carries no per-point out-of-service state, and the read carries no staleness, so no stale list is printed.</td><td>Live only: the live device scope, read live at build time.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Schedule census report</td><td>What schedules and calendars the picked devices carry and what each one commands: schedule and calendar counts per device, every object's contents as read in order, and the points each schedule drives where the object reports them. Two things the read cannot settle (schedules with no exceptions, calendars no schedule references) are not counted, and the report states that.</td><td>Live read: the live device scope, read live at build time.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Device health report</td><td>Whether a device is healthy and what exactly is wrong with it: one device's slice of a Network+ health run, its findings worst-first with evidence and fix paths, the run's scores stated as network context (the run carries no per-device score), and attention points from a live read in the same build where one is included.</td><td>Module- and file-fed: a health run subject (the same handovers as the network health report); its device pick is headed by All devices with findings.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Trend report</td><td>How these points behaved over the logged window: per trend log read live, the statistics computed from the samples themselves (count, first, last, minimum, maximum, mean), the series chart, and the sample table in the device's logged order. The read carries no device timestamps and none is invented.</td><td>Live read: trend logs on the scoped devices, read live at build time.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Point watch report</td><td>What changed on these points while we watched, and how often: per-point change counts busiest first, and the full notification table in time order. A point watched by polling is labelled polled wherever it appears.</td><td>Module-fed: one COV watch-board session, handed over from a Network+ device page's Report on this watch… (once a point is being watched). Nothing is re-read at build time.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Checkout report</td><td>Did this device pass its checkout, step by step, with the measured evidence: the graded Test Bench run, its failed steps named first, release steps as steps of their own, and the run's backup references. A simulated run is badged SIMULATED on the cover subtitle, in the summary and in the provenance; a blocked run renders its block reason and no grade.</td><td>Module-fed: a completed Test Bench run, handed over by Report on this run…. The bench's own Markdown report is the in-module form of the same run.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Write receipt report</td><td>What did we change, where, from what to what, and can it be undone: the write-safety receipts in scope, entries whose read-back did not verify named first, and each receipt's rollback state. A receipt records its backup file, not whether a rollback was later run from it, so a rollback state of 'used' is never printed; a receipt with no backup file is stated as such.</td><td>Module-fed: the session's write receipts, handed over from a device page's Report on these changes… (it wakes when a receipt exists for the device).</td><td>Audiences: Tech, Boss. An internal control record: Tech and Boss only.</td></tr>
+            <tr><td>Offline verdict report</td><td>Why this device is offline, proven layer by layer: one WhyOffline run's verdict headline, every evidence line in order (layers that could not run keep their lines), what the evidence ruled out, the next actions, and what would settle it. No before/after proof pair is printed: no record holds one.</td><td>Module-fed: one offline verdict run, handed over from the verdict card's Report on this run… (once a verdict exists).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>Modbus device report</td><td>What this Modbus device says, in our terms: register values read through the site's register map, named, scaled and unit-ed with the raw values beside them, every honest decode reading with the map's reading marked as chosen, and bus health lines where the read carries them. The register map carries no expected ranges, so no register is called out of range.</td><td>Module-fed: a Modbus read, handed over from a device page's Modbus Look, Report on this device… (after a successful read).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr><td>OPC UA endpoint and security report</td><td>What this OPC UA server offers and whether its security posture is sound: endpoints with security modes and policies as the server reported them in the session-free detection read, endpoints with security mode None named first, and the strongest and weakest policies in use. The read assesses no certificate trust, so no trust verdict is printed, and the report states that address-space browsing is not offered in this build.</td><td>Module-fed: a session-free OPC UA detection read, handed over from OPC UA Look's Report on this server….</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Laptop state report</td><td>Was our own laptop healthy on this job: one laptop probe's sections as tables, in the probe's own order, stamped with the machine it describes and the probe time.</td><td>Module-fed: one laptop probe, handed over from Health's Report on this laptop… (once a probe exists).</td><td>Audiences: Tech.</td></tr>
+            <tr><td>Device backup census report</td><td>What this device backup holds: one Network+ device backup — device identity, backup metadata, the object census with the census by BACnet object type, and the backup's gaps named.</td><td>Module-fed: a backup subject, never a parsed file — a .backup.json is not a file type BAS Hub reads. It arrives from the backup surface's Report on this backup…, or is assembled in Sources with Add device backup snapshot… over a filed snapshot.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Restore compare report</td><td>What this restore would change: the restore surface's own comparison of a filed snapshot against the device's current state — objects added, removed and changed with old and new values, and reconciled counts. The comparison is the surface's own, never recomputed here.</td><td>Module-fed: the compare the restore screen hands over with Report on this compare….</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Switch and port report</td><td>What this switch shows, port by port: one switch evidence record from a Network+ Health run — the switch identity, the port table with link state and speed, and the evidence's findings for the switch. Nothing is re-read at build time: the report renders the run's captured evidence as that run's.</td><td>Module-fed: a completed Health run's switch evidence, handed over with Report on this switch….</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Wi-Fi site report</td><td>What the wireless site looks like: one Wi-Fi evidence record from a Network+ Health run — the access points seen, their channels and signal facts as the evidence carries them, and its findings. As with the switch report, nothing is re-read at build time.</td><td>Module-fed: a completed Health run's Wi-Fi evidence, handed over with Report on this….</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+            <tr class="subj-group"><td colspan="4">Compare</td></tr>
+            <tr><td>Source drift report</td><td>What changed between two or more sources, earliest to latest: devices, points, programs and reference tables added, removed and changed, every changed field named old to new, and the key used per class stated. Two sources build the pair form; three or more build the series form — one section per step, and a net computed directly from the first and last, with any step that cannot reconcile to the net named, its transient items listed. A class a source's grammar cannot carry is stated as not compared, never as removed.</td><td>Selection-fed: the included sources together, consumed in the order they are listed in Sources — the studio never reorders them, and for these reports that order is the time order.</td><td>Audiences: Tech, Boss. Its Changed only card in Build keeps only the moved rows in the class tables; the choice rides a saved definition.</td></tr>
+            <tr><td>Discovery reconciliation report</td><td>What a network scan sees against what the engineering files claim: the devices in both, only in discovery, and only in configuration, the counts reconciled per side on the report's face, and pairs that agree on one identity key while contradicting another listed as mismatches, in neither set. Several sources on one side merge.</td><td>File-fed: a discovery export (Workbench discovery CSV, BDT, BQT) against a station backup or ABT project. The sides are set by file type, not by order.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Capture comparison report</td><td>How the network's health moved between two health subjects: the score delta printed only where both sides carry scores, a check-by-check delta over the union of checks, the device-set delta, and findings by severity per side, with both subjects' hashes on the report. A capture's summary parse alone does not count — the health subject beside it is the compared unit.</td><td>Module- and file-fed: two health subjects — captures decoded in Sources, filed .health.json runs, or a run handed over from Health. The first health subject is the earlier side, the last the later.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Program change report</td><td>What changed between two program sets, earlier against later: programs matched by name, line-level additions, deletions and changes from Programmer+'s renumber-aware ProgramDiff, the statement-census delta and the referenced-point delta, and programs on one side only named as added or removed. Wherever line diffs render, the text basis is stated: a listing's text is verbatim; a .P2 program's text is reconstructed from the export's records and is not the panel's original listing.</td><td>Assembled in Sources: mark the earlier and later program sets, name them in your own words, and press Assemble program change subject. The one assembled subject carries the comparison.</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Revisit diff report</td><td>What changed on this site between two visits: two filed visit snapshots from Network+ Records compared — devices added, removed and changed field by field, with the counts reconciled per side and the pair named by its own dates. The deltas are the Records comparison's own.</td><td>Module-fed: the pair the Records surface hands over with Report on this…, or a pair assembled in Sources with Add revisit pair….</td><td>Audiences: Tech, Boss.</td></tr>
+            <tr><td>Simulation comparison report</td><td>How these two simulated runs differ: two bench runs of the same bench in the Programmer+ Simulator compared — the check outcomes that moved and the trace deltas, with the runs named by their own labels. Badged SIMULATION throughout.</td><td>Module-fed: the two held runs the Simulator hands over with Report on this comparison….</td><td>Audiences: Tech, Boss. Its traced-points picks ride a saved definition.</td></tr>
+            <tr class="subj-group"><td colspan="4">Site</td></tr>
+            <tr><td>Whole-site dossier</td><td>One site as all of its evidence states it, composed across vendors: the site identity the sources state (a disagreement printed, never resolved), a unified device, point and program census merged across Tridium, Distech, Siemens and tool-export sources with per-source counts beside the unified totals and the reconciliation on the face, a station section per station backup with its licensing, the programs and findings where a findings subject is in the set, the network health where a health subject is in the set, and a section computed from the set stating what this evidence does not know. An ABT project enters as its one aggregate, never as its per-folder results beside it.</td><td>Selection-fed: two or more included sources, composed exactly as they stand.</td><td>Audiences: Tech, Boss, Customer. The Customer copy carries station account information as counts only, never names.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:18px;">One further report is fed by an analysis rather than by files or a catalog subject, and is set up in Sources: the <strong>Backup-vs-backup drift report</strong> — two device-backup snapshots compared, added, removed, and changed objects with old and new values side by side, reconciled counts, and a category taken in only one snapshot stated as not compared. It is deliberately not a 60th catalog subject: the catalog's source drift report, above, compares source files and subjects instead, and one backup snapshot on its own builds the Device backup census report under Live.</p>
     </div>
     <p style="margin-top:22px;">Help is a release-gate artifact: at every cut, each topic is checked against that version's changes and re-written where the build moved: help describing a previous version is a defect, same as a stale screenshot. The patch-notes viewer lives in the same Help window, so the notes for the version you are running are always one menu away, offline.</p>
   </div>
@@ -697,20 +856,20 @@
     </div>
     <div class="release-card">
       <div class="rc-head">
-        <h3>BAS Hub 0.9.2</h3>
-        <span class="badge-current">Current beta</span>
-        <span class="rel-date">Released 2026-10-21</span>
+        <h3>BAS Hub 0.9.4</h3>
+        <span class="badge-current">Current release</span>
+        <span class="rel-date">Released 2026-10-24</span>
       </div>
       <div class="table-scroll">
         <table class="data">
           <thead><tr><th scope="col">Package</th><th scope="col">File</th><th scope="col">Status</th></tr></thead>
           <tbody>
-            <tr data-pkg="windows"><td>Windows package</td><td><code>BAS-Hub-Setup-Windows-x64.exe</code>, one self-contained installer file for Windows x64, 176,302,025 bytes.<br>SHA-256 <code>04c1ddc84f5fc88602b5406e921a267c79f727388e8eb27c1b154245a864c27d</code><br><a class="btn btn-primary btn-sm" href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.2/BAS-Hub-Setup-Windows-x64.exe">Download for Windows</a></td><td>Beta <span class="gate-label">Tested on Windows</span></td></tr>
-            <tr data-pkg="linux"><td>Linux package</td><td><code>BAS-Hub-Setup-Linux-x64</code>, one self-contained installer file for Linux x64, 177,130,062 bytes.<br>SHA-256 <code>716e6103a9b27d1e6eb21384d1d6a3e77f6226c227297a715dcf66bc1d980500</code><br><a class="btn btn-primary btn-sm" href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.2/BAS-Hub-Setup-Linux-x64">Download for Linux</a></td><td>Beta <span class="gate-label">Tested on Linux</span></td></tr>
+            <tr data-pkg="windows"><td>Windows package</td><td><code>BAS-Hub-Setup-Windows-x64.exe</code>, one self-contained installer file for Windows x64, 185,844,105 bytes.<br>SHA-256 <code>29d6d5bc86fde9b650e3b74d9289b411b17238e2c93dc85d74e5222ba6f3a280</code><br><a class="btn btn-primary btn-sm" href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-Setup-Windows-x64.exe">Download for Windows</a></td><td>Current <span class="gate-label">Payload verified; Windows install proof is the owner pass</span></td></tr>
+            <tr data-pkg="linux"><td>Linux package</td><td><code>BAS-Hub-Setup-Linux-x64</code>, one self-contained installer file for Linux x64, 186,670,094 bytes.<br>SHA-256 <code>fb236d26152a8cec4e90734b75e1df98f8a9cb57fd9c306538f2944ad7e112a0</code><br><a class="btn btn-primary btn-sm" href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-Setup-Linux-x64">Download for Linux</a></td><td>Current <span class="gate-label">Tested on Linux</span></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="rc-foot">Releases are published as <strong>separate per-OS packages (never a combined bundle)</strong> on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">releases repository</a>. <strong>0.9.2 is a beta release.</strong> It is the current public download; the beta label stands because 1.0.0 is reserved for the first release proven end-to-end in the field. One consequence of the beta state: the app&rsquo;s own update check reads the latest stable release, so it does not offer this beta &mdash; the beta is downloaded from this page. Setup verifies the contents inside the file before it stages a single file; the same check by hand is <code>sha256sum</code> (or <code>certutil -hashfile &hellip; SHA256</code> on Windows) against the SHA-256 above. The release also carries <code>SBOM.json</code> (the software bill of materials, 13,018 bytes, SHA-256 <code>a37d8588367f332eecd08219b8ac8ae34ff65977c81fb7505b498871d760f25e</code>) and the full User Guide as a PDF (<a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.2/BAS-Hub-User-Guide-0.9.2.pdf"><code>BAS-Hub-User-Guide-0.9.2.pdf</code></a>, 3,466,537 bytes, SHA-256 <code>abc59473ea33dfbb4ae129794e900675350f784d9c841574d43926568e84a855</code>). A Windows ARM64 package is in preparation: it is published after an ARM64 device has verified that it installs and runs; on an ARM64 PC, the x64 package is the download: it runs under Windows emulation, as your explicit choice. 0.9.1 and 0.9.0 are internal builds and are not downloadable (see <a href="releases.html">Versions</a>).</p>
+      <p class="rc-foot">Releases are published as <strong>separate per-OS packages (never a combined bundle)</strong> on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">releases repository</a>. <strong>0.9.4 is the current release, and it is a stable release, not a beta:</strong> the beta label is gone because this release is published as the latest stable build, and the app&rsquo;s own update check, which reads the latest stable release, offers 0.9.4 to an installed 0.9.3 or 0.9.2. 1.0.0 remains reserved for the first release proven end-to-end in the field. Setup verifies the contents inside the file before it stages a single file; the same check by hand is <code>sha256sum</code> (or <code>certutil -hashfile &hellip; SHA256</code> on Windows) against the SHA-256 above. The release also carries <code>SBOM.json</code> (the software bill of materials, 13,344 bytes, SHA-256 <code>cc5774782817489c2022a37663e5b807fd69161b6ac685524fdfe32e0003814b</code>) and the full User Guide as a PDF (<a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-User-Guide-0.9.4.pdf"><code>BAS-Hub-User-Guide-0.9.4.pdf</code></a>, 2,543,178 bytes, SHA-256 <code>ab0c1673a8452d1d6277b369ce2c8b0aa64440ec2ed9b7726dfa6750b325df8c</code>). A Windows ARM64 package is published with this release as a <strong>candidate</strong> build (<code>BAS-Hub-Setup-Windows-ARM64.exe</code>, 183,157,147 bytes, SHA-256 <code>dd96ccb82c534f3174f812414f4e69ee4775d734f920ee94c2dc530719802cc2</code>): it has not been verified installing and running on ARM64 hardware, and on an ARM64 PC the x64 package remains the proven choice, running under Windows emulation as your explicit choice. For this one hop, install from the standalone installers above rather than the in-app download: the check for updates works and offers 0.9.4, but the in-app download step in 0.9.3 and 0.9.4 crashes as the download begins (a defect found on release day, 2026-10-24, named on the Versions page). The crash changes nothing on the computer it runs on. 0.9.3 was an internal staged build, superseded by 0.9.4 before publish; it was never a public release. 0.9.2 is a legacy build, unsupported, kept for reference and rollback. 0.9.1 and 0.9.0 are internal builds and are not downloadable (see <a href="releases.html">Versions</a>).</p>
     </div>
     <div class="pccheck" id="pccheck" data-pccheck hidden>
       <div class="pcc-head">
@@ -806,7 +965,7 @@
       </div>
     </details>
     <div class="status-note">
-      <strong>Your data, maintenance, and uninstalling.</strong> Everything (settings, device records, write-safety backups, Sites and what's filed to them, captures, reports, the activity log, Copilot's chat history) lives in one folder: <code>%LOCALAPPDATA%\BAS Hub\data</code>. Updates never touch it. Run Setup on a machine that already has BAS Hub and it opens as a maintenance screen instead: <strong>Update</strong>, <strong>Change modules</strong>, <strong>Verify</strong>, <strong>Uninstall</strong>. Uninstall removes exactly what the install receipt lists: the program, nothing else; your data is kept by default, and removing it too is an explicit choice, never the default. Exports never contain credentials.
+      <strong>Your data, maintenance, and uninstalling.</strong> Settings, logs and the activity log live in the suite's data folder, <code>%LOCALAPPDATA%\BAS Hub\data</code>. Device records do not live there: they live in the session working set while you work, and nothing is saved automatically — what you keep is what you file, into My Files &amp; Library, the real folders on this computer, grouped by site under <code>&lt;site&gt; / Exports /</code>. Write-safety backups, captures and reports live where they are filed. Updates never touch any of it. Run Setup on a machine that already has BAS Hub and it opens as a maintenance screen instead: <strong>Update</strong>, <strong>Change modules</strong>, <strong>Verify</strong>, <strong>Uninstall</strong>. Uninstall removes exactly what the install receipt lists: the program, nothing else; your data is kept by default, and removing it too is an explicit choice, never the default. Exports never contain credentials.
     </div>
   </div>
 </section>
@@ -900,8 +1059,20 @@
       <div class="deep-body"><p>No. Programmer+ is an authoring workbench: it works on program files (editing, checking, simulation, imports). It never communicates with a panel.</p></div>
     </details>
     <details class="deep">
+      <summary>What does Reports+ report on?</summary>
+      <div class="deep-body"><p>59 report subjects, fed two ways. <strong>Files you add in the studio</strong>: Tridium station backups (.dist) and wiresheets (.bog), Siemens panel exports (.P2) and ABT projects (a folder tree, or an .ABTArchive opened through its analyse, choose, import popup), Distech GFX projects (.gfx) and ECLYPSE controller backups (.ecybackup), packet captures, discovery exports, health run files, and PPCL program files. <strong>Live and module-fed subjects</strong>, handed over with Report on this&hellip;: a Find run or its selected rows, a device page and its watch session, a Health run or offline verdict, a Test Bench run, Records, a device backup — and from Programmer+, a program or session set, a Simulator bench run or debug session, a conversion, the code library, and the loaded point database. A family of Live reports needs no file at all: it reads the devices you picked, live, when you build. The full index of the 59, each explained, is in the <a href="#reports">help section above</a>.</p></div>
+    </details>
+    <details class="deep">
+      <summary>Who is a report for, and what does redaction do?</summary>
+      <div class="deep-body"><p>Every report is built for one of three audiences: <strong>Tech</strong> (full detail, trade terms, provenance complete), <strong>Boss</strong> (summary first; headline numbers and totals lead), or <strong>Customer</strong> (a copy for release). Some reports are Tech-only or Tech-and-Boss by their subject — station account names, for one, are site security data and have no Customer copy. <strong>Redaction is a per-build choice</strong>, on by default for the Customer audience and flippable for any build: IP addresses are masked to their first two octets, MAC addresses are masked out, and account names and network-identifying details are covered. Credential values are never part of a report in the first place — parsers flag credential material by existence and role only. The cover states the redaction choice either way, and every export's provenance prints it.</p></div>
+    </details>
+    <details class="deep">
+      <summary>What formats do reports come out in?</summary>
+      <div class="deep-body"><p>PDF, XLSX, CSV, and TXT — the preview and every export render the same built report, section for section. Depth (Summary, Detailed, or Mixed), the sections included, typed filters, and the print theme (BAS Hub Graphite or BAS Hub Light) are build-time choices, and a configuration can be saved as a named definition for its report and applied in one pick. In the Preview you edit the built report itself — title, sections, your own added text, and, under a per-report unlock, individual sourced values — before it exports; an export can also be filed into the Library in the same step, under the site you name.</p></div>
+    </details>
+    <details class="deep">
       <summary>What does "0.9.0" mean: is this finished software?</summary>
-      <div class="deep-body"><p>The version number means what it says. 0.9.x is the pre-1.0 line. The current release is <strong>0.9.2, published as a beta</strong>: it is the public download, and the beta label stands because <strong>1.0.0 is reserved for the first release proven end-to-end in the field</strong>. 0.9.0 and 0.9.1 are internal builds, not public releases. One beta fact worth knowing: the app&rsquo;s update check reads the latest stable release, so it will not offer the beta; the beta is downloaded from this site. Every version ships with its own release notes, and this site is updated with every release, a site that no longer matches the shipped build is treated as a defect, same as stale help. See <a href="releases.html">Versions</a> for each release's summary.</p></div>
+      <div class="deep-body"><p>The version number means what it says. 0.9.x is the pre-1.0 line. The current release is <strong>0.9.4, the first release published as stable</strong>: it is the public download, and because it is a stable release the app&rsquo;s update check (which reads the latest stable release) offers it to an installed 0.9.3 or 0.9.2. The stable label does not retire the reservation: <strong>1.0.0 is reserved for the first release proven end-to-end in the field</strong>. 0.9.3 was an internal staged build, superseded by 0.9.4 before publish and never publicly released. 0.9.2 is a legacy build, unsupported, kept for reference and rollback; 0.9.0 and 0.9.1 are internal builds, not public releases. Every version ships with its own release notes, and this site is updated with every release: a site that no longer matches the shipped build is treated as a defect, same as stale help. See <a href="releases.html">Versions</a> for each release&rsquo;s summary.</p></div>
     </details>
   </div>
 </section>
@@ -922,7 +1093,7 @@
         <label for="bug-title">Summary</label>
         <input type="text" id="bug-title" name="title" placeholder="One line: what broke, where" autocomplete="off">
         <label for="bug-version">BAS Hub version</label>
-        <input type="text" id="bug-version" name="version" value="0.9.2" autocomplete="off">
+        <input type="text" id="bug-version" name="version" value="0.9.4" autocomplete="off">
         <label for="bug-happened">What happened</label>
         <textarea id="bug-happened" name="what-happened" placeholder="What the app did, including the exact words of any message it showed"></textarea>
         <label for="bug-expected">What you expected</label>
@@ -964,7 +1135,7 @@
       <h2 id="license-title">Proprietary software</h2>
       <p class="lead" style="margin-left:auto;margin-right:auto;">BAS Hub is <strong>proprietary software</strong>. © 2026. All rights reserved. Downloads are binaries only: no source code is published. Your use of the software is governed by the proprietary terms stated in the download.</p>
       <div class="cta-row" style="margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-primary" href="#download">Download 0.9.2 beta</a>
+        <a class="btn btn-primary" href="#download">Download 0.9.4</a>
         <a class="btn btn-ghost" href="releases.html">See all versions</a>
       </div>
     </div>
@@ -982,6 +1153,7 @@
       </div>
       <nav aria-label="Footer">
         <a href="#modules">Modules</a>
+        <a href="#reports">Reports+</a>
         <a href="#download">Download</a>
         <a href="releases.html">Versions</a>
         <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">Releases</a>
