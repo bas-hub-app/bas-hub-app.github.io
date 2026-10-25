@@ -468,8 +468,11 @@ details.deep .table-scroll { margin: 12px 0; }
    the standard set's own 768 px tablet frames carried it unseen). The
    bar now collapses to the menu button at 940 px: the measured width
    plus slack for scrollbar and font variance. Content breakpoints
-   (type size, section padding, grids) stay at 760 px below. */
-@media (max-width: 940px) {
+   (type size, section padding, grids) stay at 760 px below.
+   RESTRUCTURE (2026-10-24): the multi-page bar (Modules and Download
+   added as page links, Trust kept) measures 1041 px in Chromium, so the
+   collapse moved to 1060 px — measured width plus the same slack. */
+@media (max-width: 1060px) {
   .main-nav {
     display: none; position: absolute; top: var(--header-h); left: 0; right: 0;
     background: var(--bg-deep); border-bottom: 1px solid var(--border);
@@ -526,7 +529,7 @@ html { scrollbar-color: #45464C var(--bg-deep); }
   font-family: var(--mono); font-size: 11px; color: var(--text-2);
   border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 3px; padding: 1px 5px;
 }
-@media (max-width: 940px) { .palette-btn { margin-left: auto; } .palette-btn .pb-label { display: none; } }
+@media (max-width: 1060px) { .palette-btn { margin-left: auto; } .palette-btn .pb-label { display: none; } }
 
 .hero-stage { position: relative; margin-top: 8px; }
 .app-window {
@@ -903,7 +906,7 @@ html:not(.js) .nav-group:focus-within .nav-dropdown,
 .nav-dropdown a.nd-all .nd-name { color: var(--teal); }
 .nav-dropdown a.nd-all .nd-arrow { color: var(--orange); font-weight: 700; }
 @media (max-width: 1380px) { .nav-group-btn { padding: 8px 8px; } }
-@media (max-width: 940px) {
+@media (max-width: 1060px) {
   .nav-group { display: block; }
   .nav-group-btn { display: none; }
   .nav-group-label {
@@ -965,3 +968,17 @@ html:not(.js) .nav-group:focus-within .nav-dropdown,
   .pcc-results { padding: 18px; }
   .pcc-head .btn { width: 100%; text-align: center; }
 }
+
+/* --- Multi-page restructure (2026-10-24) ---------------------------------
+   .first: a page-leading section takes the releases page's 72px top
+   measure instead of the mid-page 96px rhythm. Coarse pointers get the
+   full 44px tour hotspot: the 34px desktop disc is a mouse target, and
+   on the device-page tour a fingertip needs the larger disc. Long
+   checksum strings in prose break anywhere rather than pushing the
+   page sideways on a phone (verified at 390px in the WS-9 pass). */
+.section.first { padding-top: 72px; }
+@media (pointer: coarse) {
+  .hotspot { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+}
+.release-entry p code, .release-entry li code { overflow-wrap: anywhere; }
+.release-card .rc-foot code, .status-note code, .steps code { overflow-wrap: anywhere; }
