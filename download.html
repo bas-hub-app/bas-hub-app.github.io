@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download & install: BAS Hub</title>
+<meta name="description" content="Download BAS Hub 0.9.5 for Windows x64 or Linux x64: file names, byte counts and SHA-256 checksums, Check this PC, install steps, system requirements, silent-deployment switches and exit codes, and how updates work.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BAS Hub">
+<meta property="og:title" content="Download & install, BAS Hub">
+<meta property="og:description" content="Download BAS Hub 0.9.5 for Windows x64 or Linux x64, with checksums, install steps, and system requirements.">
+<meta property="og:url" content="https://bas-hub-app.github.io/download.html">
+<meta property="og:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BAS Hub, one app for controls field work: Programmer+, Network+, Reports+, BAS Copilot">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Download & install, BAS Hub">
+<meta name="twitter:description" content="Download BAS Hub 0.9.5 for Windows x64 or Linux x64, with checksums, install steps, and system requirements.">
+<meta name="twitter:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#17181A">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "BAS Hub",
+  "url": "https://bas-hub-app.github.io/",
+  "description": "A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot: one inventory and one backup system.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11, Linux"
+}
+</script>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="BAS Hub: home">
+      <img src="assets/img/hub-icon.png" alt="" width="34" height="34">
+      <span class="wordmark">BAS <em>HUB</em></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">☰</button>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <div class="nav-group" data-nav-group>
+        <button class="nav-group-btn" type="button" aria-expanded="false" aria-controls="modules-menu" data-nav-group-btn>Explore modules <span class="caret" aria-hidden="true"></span></button>
+        <span class="nav-group-label" aria-hidden="true">Explore modules</span>
+        <div class="nav-dropdown" id="modules-menu" data-nav-dropdown>
+          <a href="modules.html#home"><span class="nd-name">The Hub</span><span class="nd-spec">Home screen and launcher</span></a>
+          <a href="modules.html#programmer"><span class="nd-name">Programmer+</span><span class="nd-spec">PPCL workbench (editor, builder, simulator</span></a>
+          <a href="modules.html#network"><span class="nd-name">Network+</span><span class="nd-spec">Network workbench) find, watch, health, prove</span></a>
+          <a href="modules.html#reports"><span class="nd-name">Reports+</span><span class="nd-spec">The reporting studio: files and live subjects in, reports out</span></a>
+          <a href="modules.html#copilot"><span class="nd-name">BAS Copilot</span><span class="nd-spec">Optional assistant: runs on this computer</span></a>
+          <a class="nd-all" href="index.html#stage"><span class="nd-name">All modules, on stage</span><span class="nd-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <a href="modules.html">Modules</a>
+      <a href="index.html#screenshots">Screenshots</a>
+      <a href="index.html#trust">Trust</a>
+      <a href="download.html" aria-current="page">Download</a>
+      <a href="releases.html">Versions</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Go to</span><kbd>Ctrl K</kbd></button>
+    <a class="btn btn-primary btn-sm header-cta" data-dl href="download.html#download">Download</a>
+  </div>
+</header>
+
+<main id="main">
+<!-- ================= DOWNLOAD ================= -->
+<section class="section first" id="download" aria-labelledby="download-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">01 &middot; Download &amp; install</p>
+      <h2 id="download-title">Four steps, no administrator rights</h2>
+      <p class="lead">BAS Hub installs per-user, in a location you choose. Installs are staged and committed as one move: a failed or cancelled install leaves the previous state untouched, never a half-installed app.</p>
+    </div>
+    <div class="release-card">
+      <div class="rc-head">
+        <h3>BAS Hub 0.9.5</h3>
+        <span class="badge-current">Current release</span>
+        <span class="rel-date">Released 2026-10-25</span>
+      </div>
+      <div class="table-scroll" tabindex="0">
+        <table class="data">
+          <thead><tr><th scope="col">Package</th><th scope="col">File</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+            <tr data-pkg="windows"><td>Windows package</td><td><code>BAS-Hub-Setup-Windows-x64.exe</code>, one self-contained installer file for Windows x64, 178,578,313 bytes.<br>SHA-256 <code>bb57b602e8a756b21521f3207014531a76fcb8bda74cf1cfae770e56519a7d30</code><br><a class="btn btn-primary btn-sm" href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-Setup-Windows-x64.exe">Download for Windows</a></td><td>Current <span class="gate-label">Payload verified; Windows install proof is the owner pass</span></td></tr>
+            <tr data-pkg="linux"><td>Linux package</td><td><code>BAS-Hub-Setup-Linux-x64</code>, one self-contained installer file for Linux x64, 179,402,766 bytes.<br>SHA-256 <code>008fa5325760628f4ac0820ab2aff8a1ef8383949be4422f73fd5f60204407c5</code><br><a class="btn btn-primary btn-sm" href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-Setup-Linux-x64">Download for Linux</a></td><td>Current <span class="gate-label">Tested on Linux</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="rc-foot">Releases are published as <strong>separate per-OS packages (never a combined bundle)</strong> on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">releases repository</a>. <strong>0.9.5 is the current release, and it is a stable release, not a beta:</strong> it is published as the latest stable build, and the app&rsquo;s own update check, which reads the latest stable release, offers 0.9.5 to an installed 0.9.4, 0.9.3 or 0.9.2. 1.0.0 remains reserved for the first release proven end-to-end in the field. Setup verifies the contents inside the file before it stages a single file; the same check by hand is <code>sha256sum</code> (or <code>certutil -hashfile &hellip; SHA256</code> on Windows) against the SHA-256 above. The release also carries <code>SBOM.json</code> (the software bill of materials, 14,987 bytes, SHA-256 <code>30668d2d74ffb5c854830869412d968cf0800791be0746a1ebb87dbddc64c06a</code>) and the full User Guide as a PDF (<a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-User-Guide-0.9.5.pdf"><code>BAS-Hub-User-Guide-0.9.5.pdf</code></a>, 2,508,071 bytes, SHA-256 <code>576661218732d5f7ac42a881ce1842f5c102001666e6e1778a77827925ff0a27</code>). A Windows ARM64 package is published with this release as a <strong>candidate</strong> build (<code>BAS-Hub-Setup-Windows-ARM64.exe</code>, 175,887,259 bytes, SHA-256 <code>74a660f8d7edcc1a4387a894f1b6ad2e373afd373987c7728ba10c3565ee1cf3</code>): it has not been verified installing and running on ARM64 hardware, and on an ARM64 PC the x64 package remains the proven choice, running under Windows emulation as your explicit choice. 0.9.5 fixes the in-app update-download crash found in 0.9.3 and 0.9.4 on 2026-10-24: the fix is in 0.9.5 itself, so the hop <em>from</em> an installed 0.9.3 or 0.9.4 still goes through the standalone installers above (the crashing code is in the old app), and from 0.9.5 onward the in-app download carries the fix. The crash changed nothing on the computer it ran on. 0.9.4 is now a legacy build, unsupported, kept for reference and rollback. 0.9.3 was an internal staged build, superseded by 0.9.4 before publish; it was never a public release. 0.9.1 and 0.9.0 are internal builds and are not downloadable (see <a href="releases.html">Versions</a>).</p>
+    </div>
+    <div class="pccheck" id="pccheck" data-pccheck hidden>
+      <div class="pcc-head">
+        <div>
+          <h3>Check this PC</h3>
+          <p class="pcc-sub">Runs on this page, on your machine. Nothing is sent or recorded.</p>
+        </div>
+        <button class="btn btn-primary" type="button" data-pccheck-run>Check this PC</button>
+      </div>
+      <div class="pcc-results" data-pccheck-results aria-live="polite" hidden>
+        <p class="pcc-summary" tabindex="-1" data-pccheck-summary></p>
+        <div class="table-scroll" tabindex="0">
+          <table class="data">
+            <thead><tr><th scope="col">Check</th><th scope="col">This machine</th><th scope="col">Against BAS Hub</th></tr></thead>
+            <tbody>
+              <tr><td>Operating system</td><td data-pccell="os"></td><td data-pccell="os-v"></td></tr>
+              <tr><td>Architecture</td><td data-pccell="arch"></td><td data-pccell="arch-v"></td></tr>
+              <tr><td>Processor</td><td data-pccell="cores"></td><td data-pccell="cores-v"></td></tr>
+              <tr><td>Memory</td><td data-pccell="ram"></td><td data-pccell="ram-v"></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="pcc-close">Before anything installs, Setup runs this check on the real figures. This page is the quick answer: <strong>Setup is the authority.</strong></p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><strong>Get the file.</strong> Download the installer for your OS, Windows or Linux, each published separately. It is one self-contained file; Setup checks its own contents before installing anything.</li>
+      <li><strong>Run Setup.</strong> Double-click the installer (<code>BAS-Hub-Setup-Windows-x64.exe</code> on Windows). BAS Hub needs <strong>no administrator rights</strong> and installs for your user account only, in a location you choose.</li>
+      <li><strong>Pick your modules.</strong> The complete package, or just the modules you want. Two optional extras: <strong>BAS Copilot</strong> (Setup offers the model sizes this computer can run well, downloaded and checksum-verified) and <strong>Npcap</strong> (the packet-capture driver inside the Network+ choice: it runs its own signed installer, the one step that asks for administrator approval; everything else works without it).</li>
+      <li><strong>Launch BAS Hub</strong> from the Start menu or your desktop. Your data lives in <code>%LOCALAPPDATA%\BAS Hub\data</code> and is never removed by updates or by uninstalling.</li>
+    </ol>
+    <p style="margin-top:22px;">The release also carries <code>SBOM.json</code> (the software bill of materials for the release) and the full User Guide as a PDF; the install reference that used to be a separate file now lives in Setup itself, on its Welcome screen and in its <code>--help</code> text. The Linux package installs the same way. Previous builds stay available on the releases page, notated as legacy, see <a href="releases.html">Versions</a>.</p>
+
+    <details class="deep">
+      <summary>Install variants, silent deployment, module selection, exit codes (for IT)</summary>
+      <div class="deep-body">
+        <p>The installer (<code>BAS-Hub-Setup-Windows-x64.exe</code> on Windows) is scriptable end to end. Every switch is optional; an interactive install and a silent one produce the same receipt.</p>
+        <div class="table-scroll" tabindex="0">
+          <table class="data">
+            <thead><tr><th scope="col">Switch</th><th scope="col">Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>/silent</code></td><td>Install the complete package per-user, no UI</td></tr>
+              <tr><td><code>/modules=programmer-plus,network-plus,bas-copilot</code></td><td>Install only the listed modules</td></tr>
+              <tr><td><code>/ai=auto</code> or <code>/ai=&lt;tier&gt;</code></td><td>Copilot model handling: <code>auto</code> picks the best tier this machine runs well; a tier name (<code>helper</code>, <code>standard</code>, <code>solid</code>, <code>workshop</code>) picks that tier; leaving Copilot out of <code>/modules=</code> skips AI entirely</td></tr>
+              <tr><td><code>/npcap</code></td><td>Include the Npcap driver step (its own signed installer; will prompt for elevation)</td></tr>
+              <tr><td><code>/target=&lt;path&gt;</code></td><td>Override the install location</td></tr>
+              <tr><td><code>/update-check</code></td><td>Report whether an update is available; exit code 8 means yes</td></tr>
+              <tr><td><code>/verify</code></td><td>Verify an existing install against its receipt</td></tr>
+              <tr><td><code>/uninstall</code></td><td>Remove the install (program files only; data kept). Add <code>/purge</code> to also remove user data</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Exit codes:</strong> 0 ok · 1 error · 2 not installed · 3 bad arguments · 4 payload checksum mismatch · 5 downgrade refused · 6 cancelled · 7 verification failed · 8 update available (with <code>/update-check</code>).</p>
+        <p>Every install writes a receipt (<code>install.json</code>, inside the install folder) listing every file with its SHA-256, the modules chosen, and the Copilot tier, <code>/verify</code> re-checks a machine against it byte for byte.</p>
+      </div>
+    </details>
+
+    <h3 style="font-size:22px;margin:44px 0 18px;">System requirements</h3>
+    <div class="table-scroll" tabindex="0">
+      <table class="data">
+        <tbody>
+          <tr><td>Operating system</td><td>Windows, 64-bit, or Linux; each OS is published as its own package</td></tr>
+          <tr><td>Runtime prerequisites</td><td>None: BAS Hub is self-contained; there is no framework or runtime to install first</td></tr>
+          <tr><td>Disk</td><td>About 200 MB for the app itself; BAS Copilot adds ≈ 1.1–9.0 GB depending on the tier you choose</td></tr>
+          <tr><td>Memory</td><td>No special requirement for the Hub, Programmer+, or Network+; BAS Copilot tiers need 4–32 GB by tier. Setup only offers tiers your machine can run well</td></tr>
+          <tr><td>Admin rights</td><td>Not required. The single exception is the optional Npcap driver step, which uses Npcap's own signed installer</td></tr>
+          <tr><td>Internet</td><td>Not required to run. Only the actions you start use it: checking for updates, downloading a Copilot model</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= UPDATES ================= -->
+<section class="section panel-bg" id="updates" aria-labelledby="updates-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow teal">02 &middot; Updates</p>
+      <h2 id="updates-title">Updates happen when you say so</h2>
+      <p class="lead">BAS Hub <strong>never checks for updates on its own</strong>. <em>Settings → Check for updates</em> is the only update path, and it's a button you press when you're online. Every download is verified by checksum and signature before anything is applied, and the previous version is kept until the new one has launched successfully once.</p>
+    </div>
+    <details class="deep">
+      <summary>Update mechanics: how a release travels, step by step</summary>
+      <div class="deep-body">
+        <ol style="padding-left:22px;margin:8px 0;">
+          <li><strong>Check (only when you ask).</strong> The checker fetches the release manifest from the releases repository's latest release. Nothing is fetched in the background, ever; there is no schedule and no polling.</li>
+          <li><strong>Verify the manifest.</strong> The manifest is digitally signed (RSA) with the BAS Hub release key, whose public half is embedded in the app. A manifest that doesn't verify is refused outright.</li>
+          <li><strong>Plan.</strong> You see the new version, its notes, and exactly which modules would change, with sizes. Copilot items are separate and start unpicked.</li>
+          <li><strong>Download &amp; verify again.</strong> Each file is checked against its SHA-256 from the signed manifest before anything is applied. A mismatch refuses the update.</li>
+          <li><strong>Apply, keeping the way back.</strong> The current version is set aside, not deleted. The new version must launch successfully once before the old one is let go; an update that fails to launch is reverted.</li>
+          <li><strong>IT control.</strong> An IT-policy switch can disable update checking entirely on managed machines, the Settings surface then says so, in words, instead of failing mysteriously.</li>
+        </ol>
+      </div>
+    </details>
+    <div class="status-note">
+      <strong>Your data, maintenance, and uninstalling.</strong> Settings, logs and the activity log live in the suite's data folder, <code>%LOCALAPPDATA%\BAS Hub\data</code>. Device records do not live there: they live in the session working set while you work, and nothing is saved automatically — what you keep is what you file, into My Files &amp; Library, the real folders on this computer, grouped by site under <code>&lt;site&gt; / Exports /</code>. Write-safety backups, captures and reports live where they are filed. Updates never touch any of it. Run Setup on a machine that already has BAS Hub and it opens as a maintenance screen instead: <strong>Update</strong>, <strong>Change modules</strong>, <strong>Verify</strong>, <strong>Uninstall</strong>. Uninstall removes exactly what the install receipt lists: the program, nothing else; your data is kept by default, and removing it too is an explicit choice, never the default. Exports never contain credentials.
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/img/hub-icon.png" alt="" width="30" height="30">
+        <span style="font-weight:700;letter-spacing:.04em;">BAS <span style="color:var(--orange);">HUB</span></span>
+      </div>
+      <nav aria-label="Footer">
+        <a href="modules.html">Modules</a>
+        <a href="modules.html#reports">Reports+</a>
+        <a href="download.html">Download</a>
+        <a href="releases.html">Versions</a>
+        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">Releases</a>
+        <a href="support.html#faq">FAQ</a>
+        <a href="support.html">Support</a>
+        <a href="index.html#license">License</a>
+      </nav>
+    </div>
+    <p class="legal">BAS Hub is proprietary software · © 2026</p>
+  </div>
+</footer>
+
+<div class="palette" data-palette role="dialog" aria-modal="true" aria-label="Site navigator">
+  <div class="palette-box">
+    <div class="pal-head">
+      <span>Go to</span>
+      <input type="text" data-palette-input placeholder="Type a section, a module, an action&hellip;" aria-label="Filter destinations" autocomplete="off">
+    </div>
+    <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>
+    <div class="pal-foot"><span>&uarr;&darr; move</span><span>Enter opens</span><span>Esc closes</span><span>Ctrl K / &#8984;K anywhere</span></div>
+  </div>
+</div>
+
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+  <button class="lb-close" type="button" aria-label="Close viewer">✕</button>
+  <figure>
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
+</div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>

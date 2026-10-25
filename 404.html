@@ -24,18 +24,32 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="BAS Hub: home">
-      <img src="assets/img/hub-icon.png" alt="" width="32" height="32">
+      <img src="assets/img/hub-icon.png" alt="" width="34" height="34">
       <span class="wordmark">BAS <em>HUB</em></span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">☰</button>
     <nav class="main-nav" id="main-nav" aria-label="Main">
-      <a href="index.html#modules">Modules</a>
+      <div class="nav-group" data-nav-group>
+        <button class="nav-group-btn" type="button" aria-expanded="false" aria-controls="modules-menu" data-nav-group-btn>Explore modules <span class="caret" aria-hidden="true"></span></button>
+        <span class="nav-group-label" aria-hidden="true">Explore modules</span>
+        <div class="nav-dropdown" id="modules-menu" data-nav-dropdown>
+          <a href="modules.html#home"><span class="nd-name">The Hub</span><span class="nd-spec">Home screen and launcher</span></a>
+          <a href="modules.html#programmer"><span class="nd-name">Programmer+</span><span class="nd-spec">PPCL workbench (editor, builder, simulator</span></a>
+          <a href="modules.html#network"><span class="nd-name">Network+</span><span class="nd-spec">Network workbench) find, watch, health, prove</span></a>
+          <a href="modules.html#reports"><span class="nd-name">Reports+</span><span class="nd-spec">The reporting studio: files and live subjects in, reports out</span></a>
+          <a href="modules.html#copilot"><span class="nd-name">BAS Copilot</span><span class="nd-spec">Optional assistant: runs on this computer</span></a>
+          <a class="nd-all" href="index.html#stage"><span class="nd-name">All modules, on stage</span><span class="nd-arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <a href="modules.html">Modules</a>
+      <a href="index.html#screenshots">Screenshots</a>
+      <a href="index.html#trust">Trust</a>
+      <a href="download.html">Download</a>
       <a href="releases.html">Versions</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html#support">Support</a>
+      <a href="support.html">Support</a>
     </nav>
     <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Go to</span><kbd>Ctrl K</kbd></button>
-    <a class="btn btn-primary btn-sm header-cta" href="index.html#download">Download</a>
+    <a class="btn btn-primary btn-sm header-cta" data-dl href="download.html#download">Download</a>
   </div>
 </header>
 
@@ -49,10 +63,10 @@
     <div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
       <a class="btn btn-primary" href="index.html">BAS Hub home</a>
       <a class="btn btn-ghost" href="releases.html">Versions</a>
-      <a class="btn btn-ghost" href="index.html#download">Download</a>
+      <a class="btn btn-ghost" href="download.html#download">Download</a>
     </div>
     <dl class="spec-strip" style="margin-top:56px;" aria-label="Product facts">
-      <div><dt>Release</dt><dd>0.9.4, current</dd></div>
+      <div><dt>Release</dt><dd>0.9.5, current</dd></div>
       <div><dt>Platform</dt><dd>Windows x64</dd></div>
       <div><dt>Modules</dt><dd>4</dd></div>
       <div><dt>Telemetry</dt><dd>None</dd></div>
@@ -64,7 +78,23 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="legal">BAS Hub is proprietary software · © 2026</div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/img/hub-icon.png" alt="" width="30" height="30">
+        <span style="font-weight:700;letter-spacing:.04em;">BAS <span style="color:var(--orange);">HUB</span></span>
+      </div>
+      <nav aria-label="Footer">
+        <a href="modules.html">Modules</a>
+        <a href="modules.html#reports">Reports+</a>
+        <a href="download.html">Download</a>
+        <a href="releases.html">Versions</a>
+        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">Releases</a>
+        <a href="support.html#faq">FAQ</a>
+        <a href="support.html">Support</a>
+        <a href="index.html#license">License</a>
+      </nav>
+    </div>
+    <p class="legal">BAS Hub is proprietary software · © 2026</p>
   </div>
 </footer>
 <div class="palette" data-palette role="dialog" aria-modal="true" aria-label="Site navigator">
@@ -76,6 +106,13 @@
     <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>
     <div class="pal-foot"><span>&uarr;&darr; move</span><span>Enter opens</span><span>Esc closes</span><span>Ctrl K / &#8984;K anywhere</span></div>
   </div>
+</div>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+  <button class="lb-close" type="button" aria-label="Close viewer">✕</button>
+  <figure>
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
 </div>
 <script src="assets/js/site.js"></script>
 </body>

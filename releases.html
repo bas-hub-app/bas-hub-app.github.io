@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Versions: BAS Hub</title>
-<meta name="description" content="Every BAS Hub build, on the record. Current release: 0.9.4, the first stable release. 0.9.3 was an internal staged build and was never publicly released; 0.9.2 is a legacy build; 0.9.1 and 0.9.0 are internal builds and are not publicly downloadable.">
+<meta name="description" content="Every BAS Hub build, on the record. Current release: 0.9.5, a stable release (0.9.4 was the first published as stable). 0.9.3 was an internal staged build and was never publicly released; 0.9.2 is a legacy build; 0.9.1 and 0.9.0 are internal builds and are not publicly downloadable.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BAS Hub">
 <meta property="og:title" content="Versions, BAS Hub">
-<meta property="og:description" content="Every BAS Hub build, on the record, with its full notes. Current release: 0.9.4.">
+<meta property="og:description" content="Every BAS Hub build, on the record, with its full notes. Current release: 0.9.5.">
 <meta property="og:url" content="https://bas-hub-app.github.io/releases.html">
 <meta property="og:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Versions, BAS Hub">
-<meta name="twitter:description" content="Every BAS Hub build, on the record, with its full notes. Current release: 0.9.4.">
+<meta name="twitter:description" content="Every BAS Hub build, on the record, with its full notes. Current release: 0.9.5.">
 <meta name="twitter:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
@@ -50,21 +50,23 @@
         <button class="nav-group-btn" type="button" aria-expanded="false" aria-controls="modules-menu" data-nav-group-btn>Explore modules <span class="caret" aria-hidden="true"></span></button>
         <span class="nav-group-label" aria-hidden="true">Explore modules</span>
         <div class="nav-dropdown" id="modules-menu" data-nav-dropdown>
-          <a href="index.html#home"><span class="nd-name">The Hub</span><span class="nd-spec">Home screen and launcher</span></a>
-          <a href="index.html#programmer"><span class="nd-name">Programmer+</span><span class="nd-spec">PPCL workbench (editor, builder, simulator</span></a>
-          <a href="index.html#network"><span class="nd-name">Network+</span><span class="nd-spec">Network workbench) find, watch, health, prove</span></a>
-          <a href="index.html#copilot"><span class="nd-name">BAS Copilot</span><span class="nd-spec">Optional assistant: runs on this computer</span></a>
+          <a href="modules.html#home"><span class="nd-name">The Hub</span><span class="nd-spec">Home screen and launcher</span></a>
+          <a href="modules.html#programmer"><span class="nd-name">Programmer+</span><span class="nd-spec">PPCL workbench (editor, builder, simulator</span></a>
+          <a href="modules.html#network"><span class="nd-name">Network+</span><span class="nd-spec">Network workbench) find, watch, health, prove</span></a>
+          <a href="modules.html#reports"><span class="nd-name">Reports+</span><span class="nd-spec">The reporting studio: files and live subjects in, reports out</span></a>
+          <a href="modules.html#copilot"><span class="nd-name">BAS Copilot</span><span class="nd-spec">Optional assistant: runs on this computer</span></a>
           <a class="nd-all" href="index.html#stage"><span class="nd-name">All modules, on stage</span><span class="nd-arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
+      <a href="modules.html">Modules</a>
       <a href="index.html#screenshots">Screenshots</a>
       <a href="index.html#trust">Trust</a>
+      <a href="download.html">Download</a>
       <a href="releases.html" aria-current="page">Versions</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="index.html#support">Support</a>
+      <a href="support.html">Support</a>
     </nav>
     <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Go to</span><kbd>Ctrl K</kbd></button>
-    <a class="btn btn-primary btn-sm header-cta" href="index.html#download">Download</a>
+    <a class="btn btn-primary btn-sm header-cta" data-dl href="download.html#download">Download</a>
   </div>
 </header>
 
@@ -78,20 +80,44 @@
     </div>
 
     <div class="status-note">
-      <strong>How versions are supported.</strong> The current release is <strong>0.9.4, published as stable</strong>: it is the supported download, and the app&rsquo;s update check reads the latest stable release, so it offers 0.9.4 to an installed 0.9.3 or 0.9.2. <strong>1.0.0 is reserved</strong> for the first release proven end-to-end in the field; the 0.9.x line is the pre-1.0 line. 0.9.3 was built and staged internally and superseded by 0.9.4 before publish: it was never a public release. Published releases stay downloadable permanently; a superseded published release remains available as a <strong>legacy build (unsupported, kept for reference and rollback)</strong>, and when a newer release fixes a known defect in an older one, the older release&rsquo;s entry says so plainly.</div>
+      <strong>How versions are supported.</strong> The current release is <strong>0.9.5, published as stable</strong>: it is the supported download, and the app&rsquo;s update check reads the latest stable release, so it offers 0.9.5 to an installed 0.9.4, 0.9.3 or 0.9.2. <strong>1.0.0 is reserved</strong> for the first release proven end-to-end in the field; the 0.9.x line is the pre-1.0 line. 0.9.3 was built and staged internally and superseded by 0.9.4 before publish: it was never a public release. Published releases stay downloadable permanently; a superseded published release remains available as a <strong>legacy build (unsupported, kept for reference and rollback)</strong>, and when a newer release fixes a known defect in an older one, the older release&rsquo;s entry says so plainly.</div>
 
     <!-- New release entries are added at the TOP of this list at each cut.
          The previous "Current release" entry trades its badge-current for
          badge-legacy and gains the legacy banner line. See MAINTAIN.md. -->
 
+    <article class="release-entry" aria-labelledby="rel-095-title">
+      <div class="rel-head">
+        <h3 id="rel-095-title">0.9.5</h3>
+        <span class="badge-current">Current release</span>
+        <span class="rel-date">Released 2026-10-25</span>
+      </div>
+      <p class="rel-title">BAS Hub 0.9.5: the audit release — every surface checked, every failure given a home, and the suite&rsquo;s claims made honest</p>
+      <p><strong>Stable release, publicly downloadable.</strong> 0.9.5 is the current public release, published as stable: the app&rsquo;s update check reads the latest stable release, and this is it, so an installed 0.9.4, 0.9.3 or 0.9.2 is offered 0.9.5 by the app itself. 1.0.0 remains reserved for the first release proven end-to-end in the field. Downloads: <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-Setup-Windows-x64.exe">Windows x64</a> (178,578,313 bytes, SHA-256 <code>bb57b602e8a756b21521f3207014531a76fcb8bda74cf1cfae770e56519a7d30</code>) and <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-Setup-Linux-x64">Linux x64</a> (179,402,766 bytes, SHA-256 <code>008fa5325760628f4ac0820ab2aff8a1ef8383949be4422f73fd5f60204407c5</code>), with the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-User-Guide-0.9.5.pdf">User Guide (PDF)</a> (<code>BAS-Hub-User-Guide-0.9.5.pdf</code>, 2,508,071 bytes, SHA-256 <code>576661218732d5f7ac42a881ce1842f5c102001666e6e1778a77827925ff0a27</code>) and <code>SBOM.json</code> (14,987 bytes, SHA-256 <code>30668d2d74ffb5c854830869412d968cf0800791be0746a1ebb87dbddc64c06a</code>) in the same <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.5">release</a>. A Windows ARM64 package rides in the same release as a candidate build (<code>BAS-Hub-Setup-Windows-ARM64.exe</code>, 175,887,259 bytes, SHA-256 <code>74a660f8d7edcc1a4387a894f1b6ad2e373afd373987c7728ba10c3565ee1cf3</code>): it has not been verified on ARM64 hardware.</p>
+      <ul>
+        <li><strong>Setup, rebuilt to the standard the rest of the suite is held to.</strong> Setup was rebuilt page by page against the premium standard: the licence page, the module choices, the Copilot model tiers, the shortcuts recap, the installing progress, and the maintenance screen all carry the same craft as the app itself.</li>
+        <li><strong>A saved network opens on its own inspection page.</strong> Opening a saved network from My Library no longer loads it into your session.</li>
+        <li><strong>Programmer+: TEC points from your own library, and .P2 files checked before they are trusted.</strong> The Panel Inspector gains a TEC Points tab: pick a TEC application and Programmer+ generates its point list from your own WCIS application library, imported on your machine at run time — nothing about your library is bundled or leaves the machine.</li>
+        <li><strong>BAS Copilot answers from the manuals — and shows its working.</strong> Copilot&rsquo;s answers are now grounded in the suite&rsquo;s own manual corpus: a workflow answer cites the help it came from, and a question the corpus does not cover is answered as not covered, not improvised.</li>
+        <li><strong>The tree is the tree; the menu strip is the door to Settings and Help.</strong> The navigation tree no longer carries Settings and Help feet at its bottom, and Network+ no longer carries a Scan Network node: the Network+ root itself opens the Scan page, with the session&rsquo;s Devices branch directly under it.</li>
+        <li><strong>Reports+: an APOGEE census subject, and a Studio that counts honestly.</strong> Reports+ gains an APOGEE census subject (census type 60): file a saved network from a Siemens P1/P2 site and the census report builds from the record.</li>
+        <li><strong>More networks answer a scan.</strong> The network families Network+ can census grew, each proven against a bench peer before it was called supported: Modbus TCP and Modbus RTU, BACnet/SC, MQTT with Sparkplug B, SNMP (read-only), LLDP/CDP (listen-only), Siemens S7comm (read and diagnose), KNX IP, Johnson N2, and mDNS/SSDP discovery.</li>
+        <li><strong>Failures have one home, and every failure states its triad.</strong> The bottom dock&rsquo;s Failures tab is the suite&rsquo;s failure inbox: every failure the suite records lands there with what failed, why, and what you can do — the same triad the failure popup shows when a blocking failure needs you now.</li>
+      </ul>
+      <div class="status-note"><strong>Known shortfalls, stated in the notes themselves:</strong> The full on-screen audit of this version is not finished: the last pixel-pair sheets (P-30 to P-35) and one bar-pass surface (B-45) still await the owner&rsquo;s Windows pass, and the Copilot panel&rsquo;s available (model-present) state has no rig capture because the rig carries no model. They are named, with their rig jobs, in the cut record filed with this version&rsquo;s source. Two long-standing trend checks (the trend chart render and its filing companion) fail in this build exactly as they did in the 0.9.4 baseline, for a headless-rig reason (a chart file the headless renderer cannot write). They are dispositioned by name in the cut record; the trend feature itself is unchanged. File sizes are not stated the same way everywhere yet: Setup states them decimally (1 KB = 1,000 bytes) while parts of the suite state them in binary. Unifying them is an owner decision that has not been taken; the one place the two contradicted each other on a single screen was fixed in this version. The pinned research items stay pinned: Ethernet AP2 transport, the BACnet-tunnelled AP2 form, the Commissioner application&rsquo;s remaining features, routed WCIS transports, the TEC backup (.cis) reader, and the Design Tool job-database import each wait on the named evidence listed in the research record — none is claimed, hinted, or half-built in this version. The Windows packages for this version are verified at the publish step, not in these notes: a package is claimed install-proven on Windows only after the exact published package is installed and run on Windows, and that proof belongs to the publish record. Live network families are proven against bench peers and in-memory devices. A family proven on the bench is not thereby claimed proven against every vendor&rsquo;s field firmware; the per-family bench records are filed with this version&rsquo;s source.</div>
+      <div class="status-note"><strong>The 0.9.4 update-download defect is fixed in this release:</strong> the in-app download step in 0.9.3 and 0.9.4 crashed as the download began. The fix is in 0.9.5, so the hop from an installed 0.9.3 or 0.9.4 still goes through the standalone Setup (the crashing code is in the old app); checking for updates works in those versions and offers 0.9.5, and from 0.9.5 onward the in-app download carries the fix.</div>
+      <p>The full notes (each item&rsquo;s detail and screenshots) are bundled inside the app (Help &rarr; Release notes) and on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.5">0.9.5 release page</a>.</p>
+    </article>
+
     <article class="release-entry" aria-labelledby="rel-094-title">
       <div class="rel-head">
         <h3 id="rel-094-title">0.9.4</h3>
-        <span class="badge-current">Current release</span>
+        <span class="badge-legacy">Legacy — unsupported</span>
         <span class="rel-date">Released 2026-10-24</span>
       </div>
       <p class="rel-title">BAS Hub 0.9.4: Network+ rebuilt around the scan, the connection, and the device page</p>
-      <p><strong>Stable release, publicly downloadable.</strong> 0.9.4 is the current public release and the first published as stable: the app&rsquo;s update check reads the latest stable release, and this is it, so an installed 0.9.3 or 0.9.2 is offered 0.9.4 by the app itself. 1.0.0 remains reserved for the first release proven end-to-end in the field. Downloads: <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-Setup-Windows-x64.exe">Windows x64</a> (185,844,105 bytes, SHA-256 <code>29d6d5bc86fde9b650e3b74d9289b411b17238e2c93dc85d74e5222ba6f3a280</code>) and <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-Setup-Linux-x64">Linux x64</a> (186,670,094 bytes, SHA-256 <code>fb236d26152a8cec4e90734b75e1df98f8a9cb57fd9c306538f2944ad7e112a0</code>), with the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-User-Guide-0.9.4.pdf">User Guide (PDF)</a> (<code>BAS-Hub-User-Guide-0.9.4.pdf</code>, 2,543,178 bytes, SHA-256 <code>ab0c1673a8452d1d6277b369ce2c8b0aa64440ec2ed9b7726dfa6750b325df8c</code>) and <code>SBOM.json</code> (13,344 bytes, SHA-256 <code>cc5774782817489c2022a37663e5b807fd69161b6ac685524fdfe32e0003814b</code>) in the same <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.4">release</a>. A Windows ARM64 package rides in the same release as a candidate build (<code>BAS-Hub-Setup-Windows-ARM64.exe</code>, 183,157,147 bytes, SHA-256 <code>dd96ccb82c534f3174f812414f4e69ee4775d734f920ee94c2dc530719802cc2</code>): it has not been verified on ARM64 hardware.</p>
+      <p><strong>Legacy build — unsupported. Kept for reference and rollback; the supported release is the latest.</strong> 0.9.5, above, fixes the in-app update-download crash named in this entry.</p>
+      <p><strong>Stable release, publicly downloadable.</strong> 0.9.4 was the first release published as stable: the app&rsquo;s update check reads the latest stable release, and an installed 0.9.3 or 0.9.2 was offered 0.9.4 by the app itself; it is in turn offered 0.9.5. 1.0.0 remains reserved for the first release proven end-to-end in the field. Downloads: <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-Setup-Windows-x64.exe">Windows x64</a> (185,844,105 bytes, SHA-256 <code>29d6d5bc86fde9b650e3b74d9289b411b17238e2c93dc85d74e5222ba6f3a280</code>) and <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-Setup-Linux-x64">Linux x64</a> (186,670,094 bytes, SHA-256 <code>fb236d26152a8cec4e90734b75e1df98f8a9cb57fd9c306538f2944ad7e112a0</code>), with the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.4/BAS-Hub-User-Guide-0.9.4.pdf">User Guide (PDF)</a> (<code>BAS-Hub-User-Guide-0.9.4.pdf</code>, 2,543,178 bytes, SHA-256 <code>ab0c1673a8452d1d6277b369ce2c8b0aa64440ec2ed9b7726dfa6750b325df8c</code>) and <code>SBOM.json</code> (13,344 bytes, SHA-256 <code>cc5774782817489c2022a37663e5b807fd69161b6ac685524fdfe32e0003814b</code>) in the same <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.4">release</a>. A Windows ARM64 package rides in the same release as a candidate build (<code>BAS-Hub-Setup-Windows-ARM64.exe</code>, 183,157,147 bytes, SHA-256 <code>dd96ccb82c534f3174f812414f4e69ee4775d734f920ee94c2dc530719802cc2</code>): it has not been verified on ARM64 hardware.</p>
       <ul>
         <li><strong>Scan Network: one page, a temporary network, devices in their kind bands.</strong> Network+ now opens on a single Scan Network page.</li>
         <li><strong>The connection is one control, with three honest states.</strong> The connection lives in one pill at the top right of the Scan Network page.</li>
@@ -178,7 +204,7 @@
         <li>The full User Guide now ships with BAS Hub: the PDF sits beside the installer and is installed with the app, and Help → User guide opens the same book inside the app, same chapters, same pictures, one source.</li>
         <li>Settings is filled in: your data folder, safety backups with a keep-count and sizes, a Back up everything export, a diagnostics bundle for support, proxy settings, BACnet defaults, a start-page choice, and Copilot model management. Settings also ends with an About section, versions at a glance and a Copy version info button for bug reports.</li>
       </ul>
-      <p>The full section-by-section notes (install percentages, the failure popup and logs, the Windows install fix, the License Agreement gate, the settings bundle, protection, and the named known shortfalls) are bundled inside the app (Help → Release notes). There is no download for this build, see <a href="index.html#download">Download</a> for the current release, 0.9.4.</p>
+      <p>The full section-by-section notes (install percentages, the failure popup and logs, the Windows install fix, the License Agreement gate, the settings bundle, protection, and the named known shortfalls) are bundled inside the app (Help → Release notes). There is no download for this build, see <a href="download.html#download">Download</a> for the current release, 0.9.5.</p>
     </article>
 
     <article class="release-entry" aria-labelledby="rel-090-title">
@@ -243,7 +269,7 @@
       </ul>
       <p>The full automated verification harness passed 849 of 849 checks against this release's sources, including the write-safety loop against a test device and a full silent install, receipt audit, and uninstall cycle.</p>
       <div class="status-note"><strong>Known shortfall, stated in the notes themselves:</strong> 0.9.0&rsquo;s update check looks for a published release manifest; none is published, so the check reports that plainly and changes nothing. (0.9.0 also embeds the pre-rotation trust key, so it could not accept a current manifest in any case, by design for a superseded internal build.)</div>
-      <p>There is no download for this build, see <a href="index.html#download">Download</a> for the current release, 0.9.4.</p>
+      <p>There is no download for this build, see <a href="download.html#download">Download</a> for the current release, 0.9.5.</p>
     </article>
 
     <div class="status-note">
@@ -261,12 +287,13 @@
         <span style="font-weight:700;letter-spacing:.04em;">BAS <span style="color:var(--orange);">HUB</span></span>
       </div>
       <nav aria-label="Footer">
-        <a href="index.html#modules">Modules</a>
-        <a href="index.html#download">Download</a>
+        <a href="modules.html">Modules</a>
+        <a href="modules.html#reports">Reports+</a>
+        <a href="download.html">Download</a>
         <a href="releases.html">Versions</a>
         <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">Releases</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#support">Support</a>
+        <a href="support.html#faq">FAQ</a>
+        <a href="support.html">Support</a>
         <a href="index.html#license">License</a>
       </nav>
     </div>
@@ -283,6 +310,13 @@
     <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>
     <div class="pal-foot"><span>&uarr;&darr; move</span><span>Enter opens</span><span>Esc closes</span><span>Ctrl K / &#8984;K anywhere</span></div>
   </div>
+</div>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
+  <button class="lb-close" type="button" aria-label="Close viewer">✕</button>
+  <figure>
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
 </div>
 <script src="assets/js/site.js"></script>
 </body>
