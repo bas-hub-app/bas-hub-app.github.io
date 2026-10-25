@@ -1,6 +1,6 @@
 /* Download behaviour (MAINTAIN.md, settled 2026-10-19): the Download action
    is an IMMEDIATE download of the visitor's package, never a scroll or a
-   trip to another page. 0.9.4 is a stable (non-prerelease) release and
+   trip to another page. 0.9.5 is a stable (non-prerelease) release and
    is the release marked latest, so these constants use
    releases/latest/download/<asset>, which resolves to the current
    stable release (MAINTAIN.md step 2: the prerelease exception that
@@ -101,7 +101,7 @@ function basHubPackageUrl() {
     var gBtn = group.querySelector("[data-nav-group-btn]");
     var gPanel = group.querySelector("[data-nav-dropdown]");
     var gLinks = gPanel.querySelectorAll("a");
-    var mobileMq = window.matchMedia("(max-width: 760px)");
+    var mobileMq = window.matchMedia("(max-width: 1060px)");
     // With JS running, .open alone owns the panel (the CSS hover /
     // focus-within reveal applies only in the no-JS path — see site.css).
     function setOpen(open) {
@@ -153,8 +153,20 @@ function basHubPackageUrl() {
     var list = palette.querySelector("[data-palette-list]");
     var lastFocus = null, items = [], sel = 0;
 
+    var PAGE_FOR = {
+      "#demo": "index.html", "#modules": "index.html", "#stage": "index.html",
+      "#screenshots": "index.html", "#trust": "index.html", "#license": "index.html",
+      "#home": "modules.html", "#programmer": "modules.html",
+      "#network": "modules.html", "#reports": "modules.html",
+      "#tour": "modules.html", "#copilot": "modules.html", "#help": "modules.html",
+      "#download": "download.html", "#pccheck": "download.html",
+      "#updates": "download.html",
+      "#faq": "support.html", "#support": "support.html",
+      "#support-bug": "support.html", "#support-feedback": "support.html"
+    };
     function dest(hash) {
-      return document.querySelector(hash) ? hash : "index.html" + hash;
+      return document.querySelector(hash) ? hash
+        : (PAGE_FOR[hash] || "index.html") + hash;
     }
     var ENTRIES = [
       { kind: "Section", title: "The demo", url: function () { return dest("#demo"); } },
@@ -165,7 +177,7 @@ function basHubPackageUrl() {
       { kind: "Module", title: "Programmer+, the PPCL workbench", url: function () { return dest("#programmer"); } },
       { kind: "Module", title: "Network+, the network workbench", url: function () { return dest("#network"); } },
       { kind: "Module", title: "Reports+, the reporting studio", url: function () { return dest("#reports"); } },
-      { kind: "Section", title: "Reports+ subjects, all 59 explained", url: function () { return dest("#reports"); } },
+      { kind: "Section", title: "Reports+ subjects, all 60 explained", url: function () { return dest("#reports"); } },
       { kind: "Module", title: "The device page, taken apart (tour)", url: function () { return dest("#tour"); } },
       { kind: "Module", title: "BAS Copilot: help that stays on the machine", url: function () { return dest("#copilot"); } },
       { kind: "Section", title: "Screenshots, the real app, as shipped", url: function () { return dest("#screenshots"); } },
@@ -176,7 +188,7 @@ function basHubPackageUrl() {
       { kind: "Section", title: "Trust, by design", url: function () { return dest("#trust"); } },
       { kind: "Section", title: "FAQ", url: function () { return dest("#faq"); } },
       { kind: "Page", title: "Versions, every release, on the record", url: function () { return "releases.html"; } },
-      { kind: "Action", title: "Download BAS Hub 0.9.4", url: function () { return basHubPackageUrl() || dest("#download"); } },
+      { kind: "Action", title: "Download BAS Hub 0.9.5", url: function () { return basHubPackageUrl() || dest("#download"); } },
       { kind: "Support", title: "Report a bug", url: function () { return dest("#support-bug"); } },
       { kind: "Support", title: "Send feedback", url: function () { return dest("#support-feedback"); } }
     ];
@@ -386,7 +398,7 @@ function basHubPackageUrl() {
       hNone.style.display = visible === 0 ? "block" : "none";
       hCount.textContent = q
         ? visible + " of " + total + " topics match \u201C" + hInput.value.trim() + "\u201D"
-        : total + " topics, the complete index, as shipped in 0.9.4";
+        : total + " topics, the complete index, as shipped in 0.9.5";
     });
   }
 
@@ -597,13 +609,13 @@ function basHubPackageUrl() {
       sentence = "BAS Hub is 64-bit only, no package for this machine.";
     } else if (d.os.key === "windows") {
       if (d.arch.isArm) {
-        sentence = "Your download: the Windows package (x64) of 0.9.4; a native ARM64 candidate package is published with the release, and x64 runs under Windows emulation, as your explicit choice.";
+        sentence = "Your download: the Windows package (x64) of 0.9.5; a native ARM64 candidate package is published with the release, and x64 runs under Windows emulation, as your explicit choice.";
         highlight("windows", "This machine · ARM64 build");
       } else if (d.arch.known) {
-        sentence = "Your download: the Windows package (x64) of 0.9.4.";
+        sentence = "Your download: the Windows package (x64) of 0.9.5.";
         highlight("windows", "This machine");
       } else {
-        sentence = "Your download: the Windows package of 0.9.4: this browser did not report x64 or ARM64.";
+        sentence = "Your download: the Windows package of 0.9.5: this browser did not report x64 or ARM64.";
         highlight("windows", "This machine · architecture not reported");
       }
     } else if (d.os.key === "linux") {
@@ -611,7 +623,7 @@ function basHubPackageUrl() {
         sentence = "The Linux package is x64, no package for this machine's architecture.";
         highlight("linux", "This machine · Linux package is x64");
       } else {
-        sentence = "Your download: the Linux package of 0.9.4.";
+        sentence = "Your download: the Linux package of 0.9.5.";
         highlight("linux", "This machine");
       }
     } else if (d.os.key === "unknown") {
@@ -637,13 +649,13 @@ function basHubPackageUrl() {
   /* Download CTAs: the header, hero and closing buttons labelled Download
      start the visitor's package download immediately (MAINTAIN.md,
      Download behaviour). When no package matches the visitor's system
-     (macOS, Android, unreported), the buttons keep their #download
-     anchor and land on the release card, where both packages are listed
+     (macOS, Android, unreported), the buttons keep their download-page
+     href and land on the release card, where both packages are listed
      with their checksums. The card's per-OS buttons are the fallback
      for every visitor and are not touched here. */
   var url = basHubPackageUrl();
   if (!url) return;
-  document.querySelectorAll('a.btn[href="#download"]').forEach(function (a) {
+  document.querySelectorAll('a.btn[data-dl]').forEach(function (a) {
     a.setAttribute("href", url);
   });
 })();
