@@ -66,7 +66,7 @@
       <a href="releases.html">Versions</a>
       <a href="support.html" aria-current="page">Support</a>
     </nav>
-    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Go to</span><kbd>Ctrl K</kbd></button>
+    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Site index</span><kbd>Ctrl K</kbd></button>
     <a class="btn btn-primary btn-sm header-cta" data-dl href="download.html#download">Download</a>
   </div>
 </header>
@@ -77,7 +77,7 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow teal">01 &middot; FAQ</p>
-      <h2 id="faq-title">Questions, answered straight</h2>
+      <h1 id="faq-title">Questions, answered straight</h1>
     </div>
     <details class="deep">
       <summary>Is BAS Hub open source?</summary>
@@ -109,7 +109,7 @@
     </details>
     <details class="deep">
       <summary>Can IT deploy it silently?</summary>
-      <div class="deep-body"><p>Yes. Silent per-user deployment with module and Copilot selection, verification and uninstall verbs, and documented exit codes (full table in the Download section above and in the installer's own <code>--help</code> text). An SBOM ships with every release, and an IT-policy switch can disable update checking on managed machines.</p></div>
+      <div class="deep-body"><p>Yes. Silent per-user deployment with module and Copilot selection, verification and uninstall verbs, and documented exit codes (full table on the <a href="download.html">Download page</a> and in the installer's own <code>--help</code> text). An SBOM ships with every release, and an IT-policy switch can disable update checking on managed machines.</p></div>
     </details>
     <details class="deep">
       <summary>Does Programmer+ download programs to panels?</summary>
@@ -117,7 +117,7 @@
     </details>
     <details class="deep">
       <summary>What does Reports+ report on?</summary>
-      <div class="deep-body"><p>60 report subjects, fed two ways. <strong>Files you add in the studio</strong>: Tridium station backups (.dist) and wiresheets (.bog), Siemens panel exports (.P2) and ABT projects (a folder tree, or an .ABTArchive opened through its analyse, choose, import popup), Distech GFX projects (.gfx) and ECLYPSE controller backups (.ecybackup), packet captures, discovery exports, health run files, and PPCL program files. <strong>Live and module-fed subjects</strong>, handed over with Report on this&hellip;: a Find run or its selected rows, a device page and its watch session, a Health run or offline verdict, a Test Bench run, Records, a device backup — and from Programmer+, a program or session set, a Simulator bench run or debug session, a conversion, the code library, and the loaded point database. A family of Live reports needs no file at all: it reads the devices you picked, live, when you build. The full index of the 60, each explained, is in the <a href="modules.html#reports">help section above</a>.</p></div>
+      <div class="deep-body"><p>60 report subjects, fed two ways. <strong>Files you add in the studio</strong>: Tridium station backups (.dist) and wiresheets (.bog), Siemens panel exports (.P2) and ABT projects (a folder tree, or an .ABTArchive opened through its analyse, choose, import popup), Distech GFX projects (.gfx) and ECLYPSE controller backups (.ecybackup), packet captures, discovery exports, health run files, and PPCL program files. <strong>Live and module-fed subjects</strong>, handed over with Report on this&hellip;: a Find run or its selected rows, a device page and its watch session, a Health run or offline verdict, a Test Bench run, Records, a device backup — and from Programmer+, a program or session set, a Simulator bench run or debug session, a conversion, the code library, and the loaded point database. A family of Live reports needs no file at all: it reads the devices you picked, live, when you build. The full index of the 60, each explained, is on the <a href="modules.html#reports">Modules page, under Reports+</a>.</p></div>
     </details>
     <details class="deep">
       <summary>Who is a report for, and what does redaction do?</summary>
@@ -129,7 +129,7 @@
     </details>
     <details class="deep">
       <summary>What does "0.9.0" mean: is this finished software?</summary>
-      <div class="deep-body"><p>The version number means what it says. 0.9.x is the pre-1.0 line. The current release is <strong>0.9.5, a stable release</strong> (0.9.4 was the first release published as stable): it is the public download, and because it is a stable release the app&rsquo;s update check (which reads the latest stable release) offers it to an installed 0.9.4, 0.9.3 or 0.9.2. 0.9.4 is now a legacy build, unsupported, kept for reference and rollback. The stable label does not retire the reservation: <strong>1.0.0 is reserved for the first release proven end-to-end in the field</strong>. 0.9.3 was an internal staged build, superseded by 0.9.4 before publish and never publicly released. 0.9.2 is a legacy build, unsupported, kept for reference and rollback; 0.9.0 and 0.9.1 are internal builds, not public releases. Every version ships with its own release notes, and this site is updated with every release: a site that no longer matches the shipped build is treated as a defect, same as stale help. See <a href="releases.html">Versions</a> for each release&rsquo;s summary.</p></div>
+      <div class="deep-body"><p>The version number means what it says. 0.9.x is the pre-1.0 line. The current release is <strong>0.9.6, a stable release</strong> (0.9.4 was the first release published as stable): it is the public download, and because it is a stable release the app&rsquo;s update check (which reads the latest stable release) offers it to an installed 0.9.5, 0.9.4, 0.9.3 or 0.9.2. 0.9.5 is now a legacy build, unsupported, kept for reference and rollback, as is 0.9.4. The stable label does not retire the reservation: <strong>1.0.0 is reserved for the first release proven end-to-end in the field</strong>. 0.9.3 was an internal staged build, superseded by 0.9.4 before publish and never publicly released. 0.9.2 is a legacy build, unsupported, kept for reference and rollback; 0.9.0 and 0.9.1 are internal builds, not public releases. Every version ships with its own release notes, and this site is updated with every release: a site that no longer matches the shipped build is treated as a defect, same as stale help. See <a href="releases.html">Versions</a> for each release&rsquo;s summary.</p></div>
     </details>
   </div>
 </section>
@@ -151,7 +151,7 @@
         <label for="bug-title">Summary</label>
         <input type="text" id="bug-title" name="title" placeholder="One line: what broke, where" autocomplete="off">
         <label for="bug-version">BAS Hub version</label>
-        <input type="text" id="bug-version" name="version" value="0.9.5" autocomplete="off">
+        <input type="text" id="bug-version" name="version" value="0.9.6" autocomplete="off">
         <label for="bug-happened">What happened</label>
         <textarea id="bug-happened" name="what-happened" placeholder="What the app did, including the exact words of any message it showed"></textarea>
         <label for="bug-expected">What you expected</label>
@@ -176,7 +176,7 @@
         <label for="fb-body">The feedback</label>
         <textarea id="fb-body" name="feedback" placeholder="What you would change, add, or keep, and the work it comes from, if that matters" style="min-height:150px;"></textarea>
         <p class="sf-note">Feedback is filed as a public issue labelled as feedback, so its outcome is visible too. Say what the field work needs; feature claims on this site are only ever made for what has shipped, and good requests are how the next release earns them.</p>
-        <button class="btn btn-ghost" type="submit">Continue on GitHub &rarr;</button>
+        <button class="btn btn-primary" type="submit">Continue on GitHub &rarr;</button>
       </form>
     </div>
     <div class="status-note">
@@ -200,7 +200,7 @@
         <a href="modules.html#reports">Reports+</a>
         <a href="download.html">Download</a>
         <a href="releases.html">Versions</a>
-        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">Releases</a>
+        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">GitHub downloads</a>
         <a href="support.html#faq">FAQ</a>
         <a href="support.html">Support</a>
         <a href="index.html#license">License</a>
@@ -213,7 +213,7 @@
 <div class="palette" data-palette role="dialog" aria-modal="true" aria-label="Site navigator">
   <div class="palette-box">
     <div class="pal-head">
-      <span>Go to</span>
+      <span>Site index</span>
       <input type="text" data-palette-input placeholder="Type a section, a module, an action&hellip;" aria-label="Filter destinations" autocomplete="off">
     </div>
     <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>

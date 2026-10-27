@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Versions: BAS Hub</title>
-<meta name="description" content="Every BAS Hub build, on the record. Current release: 0.9.5, a stable release (0.9.4 was the first published as stable). 0.9.3 was an internal staged build and was never publicly released; 0.9.2 is a legacy build; 0.9.1 and 0.9.0 are internal builds and are not publicly downloadable.">
+<meta name="description" content="Every BAS Hub build, on the record. Current release: 0.9.6, a stable release (0.9.4 was the first published as stable). 0.9.3 was an internal staged build and was never publicly released; 0.9.2 is a legacy build; 0.9.1 and 0.9.0 are internal builds and are not publicly downloadable.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BAS Hub">
 <meta property="og:title" content="Versions, BAS Hub">
-<meta property="og:description" content="Every BAS Hub build, on the record, with its full notes. Current release: 0.9.5.">
+<meta property="og:description" content="Every BAS Hub build, on the record, with its full notes. Current release: 0.9.6.">
 <meta property="og:url" content="https://bas-hub-app.github.io/releases.html">
 <meta property="og:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Versions, BAS Hub">
-<meta name="twitter:description" content="Every BAS Hub build, on the record, with its full notes. Current release: 0.9.5.">
+<meta name="twitter:description" content="Every BAS Hub build, on the record, with its full notes. Current release: 0.9.6.">
 <meta name="twitter:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
@@ -65,7 +65,7 @@
       <a href="releases.html" aria-current="page">Versions</a>
       <a href="support.html">Support</a>
     </nav>
-    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Go to</span><kbd>Ctrl K</kbd></button>
+    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Site index</span><kbd>Ctrl K</kbd></button>
     <a class="btn btn-primary btn-sm header-cta" data-dl href="download.html#download">Download</a>
   </div>
 </header>
@@ -75,23 +75,47 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow teal">Index &middot; Versions</p>
-      <h2 id="versions-title" style="font-size:clamp(32px,4.5vw,44px);">Every release, on the record</h2>
-      <p class="lead">Each BAS Hub release ships with structured patch notes (a plain-language summary and the full notes) bundled into the product itself, so they read offline. This page carries the same record. Version numbers are semantic for the suite: a new module class or breaking change moves the major, new features move the minor, fixes move the patch.</p>
+      <h1 id="versions-title" style="font-size:clamp(32px,4.5vw,44px);">Every release, on the record</h1>
+      <p class="lead">Each BAS Hub release ships with structured patch notes (a plain-language summary and the full notes) bundled into the product itself, so they read offline. This page carries a summary of that record: each entry gives the item headlines, the opening of each item's text, and the known shortfalls in full; the complete notes are the ones bundled in the app and posted on each release's page. Version numbers are semantic for the suite: a new module class or breaking change moves the major, new features move the minor, fixes move the patch.</p>
     </div>
 
     <div class="status-note">
-      <strong>How versions are supported.</strong> The current release is <strong>0.9.5, published as stable</strong>: it is the supported download, and the app&rsquo;s update check reads the latest stable release, so it offers 0.9.5 to an installed 0.9.4, 0.9.3 or 0.9.2. <strong>1.0.0 is reserved</strong> for the first release proven end-to-end in the field; the 0.9.x line is the pre-1.0 line. 0.9.3 was built and staged internally and superseded by 0.9.4 before publish: it was never a public release. Published releases stay downloadable permanently; a superseded published release remains available as a <strong>legacy build (unsupported, kept for reference and rollback)</strong>, and when a newer release fixes a known defect in an older one, the older release&rsquo;s entry says so plainly.</div>
+      <strong>How versions are supported.</strong> The current release is <strong>0.9.6, published as stable</strong>: it is the supported download, and the app&rsquo;s update check reads the latest stable release, so it offers 0.9.6 to an installed 0.9.5, 0.9.4, 0.9.3 or 0.9.2. <strong>1.0.0 is reserved</strong> for the first release proven end-to-end in the field; the 0.9.x line is the pre-1.0 line. 0.9.3 was built and staged internally and superseded by 0.9.4 before publish: it was never a public release. Published releases stay downloadable permanently; a superseded published release remains available as a <strong>legacy build (unsupported, kept for reference and rollback)</strong>, and when a newer release fixes a known defect in an older one, the older release&rsquo;s entry says so plainly.</div>
 
     <!-- New release entries are added at the TOP of this list at each cut.
          The previous "Current release" entry trades its badge-current for
          badge-legacy and gains the legacy banner line. See MAINTAIN.md. -->
 
+    <article class="release-entry" aria-labelledby="rel-096-title">
+      <div class="rel-head">
+        <h3 id="rel-096-title">0.9.6</h3>
+        <span class="badge-current">Current release</span>
+        <span class="rel-date">Released 2026-10-26</span>
+      </div>
+      <p class="rel-title">BAS Hub 0.9.6: Connections state one thing, damaged files are named, and nothing fails in silence</p>
+      <p><strong>Stable release, publicly downloadable.</strong> 0.9.6 is the current public release, published as stable: the app&rsquo;s update check reads the latest stable release, and this is it, so an installed 0.9.5, 0.9.4, 0.9.3 or 0.9.2 is offered 0.9.6 by the app itself. 1.0.0 remains reserved for the first release proven end-to-end in the field. Downloads: <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.6/BAS-Hub-Setup-Windows-x64.exe">Windows x64</a> (174,781,321 bytes, SHA-256 <code>577c85b829bdfcf4f6b9cfba222e2b12307f1c8d6400c96d86255c03abfa79c9</code>) and <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.6/BAS-Hub-Setup-Linux-x64">Linux x64</a> (175,606,798 bytes, SHA-256 <code>5765357aba7cef8f479366bd37b6bd6554291d978af492bc03f74be306b8d644</code>), with the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.6/BAS-Hub-User-Guide-0.9.6.pdf">User Guide (PDF)</a> (<code>BAS-Hub-User-Guide-0.9.6.pdf</code>, 2,781,260 bytes, SHA-256 <code>0cba8931fc671ebb8ce6024aff3e45ce4f3f858f70aa01e9a726695f1347536d</code>) and <code>SBOM.json</code> (14,987 bytes, SHA-256 <code>3c67f398847e6dcf63d049c36518b93eed0f7114f557672a63e184ebc8544f36</code>) in the same <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.6">release</a>. A Windows ARM64 package rides in the same release as a candidate build (<code>BAS-Hub-Setup-Windows-ARM64.exe</code>, 172,090,267 bytes, SHA-256 <code>50fd8394e0f2910804f5efd9471280fecef36d5967386806c8de01fb747b477f</code>): it has not been verified on ARM64 hardware.</p>
+      <p>0.9.6 is the fix release for the owner-driven nitpick audit of 0.9.5 (343 findings, every one looked for by hand on the shipped build): 336 are fixed and re-proven on the fixed build; the 7 that remain open are named in the shortfalls below and in the full notes.</p>
+      <ul>
+        <li><strong>Connection state means one thing everywhere, and disconnect asks only when there is something to lose.</strong> Bound and listening is Connected. Whether any device answered is a scan result, and it is never again stated as a connection state.</li>
+        <li><strong>EtherNet/IP devices answer a scan, as their own connection type.</strong> EtherNet/IP is a separate connection option, next to BACnet/IP, not inside it. A scan asks each address for its identity and files what answers as a device.</li>
+        <li><strong>Connection menus rebuilt per protocol: short fields, help behind the question mark.</strong> Each connection type shows its own short form. The paragraphs that stood under every field are gone; the detail is behind the circled ? beside the field, on hover.</li>
+        <li><strong>Setup: a skipped model is recorded, the guard watches the engine too, and space is measured where the work lands.</strong> When the Copilot model step skips, Setup now writes a failure record and the finish page states the actual cause. "In use, missing, or could not be written" is no longer the whole answer.</li>
+        <li><strong>Programmer+: unsaved work cannot vanish, and the Simulator says when a program does not parse.</strong> The Editor shows a dirty marker, closing or opening over unsaved edits asks first, and a program that does not parse is the Simulator's headline result, never RUN COMPLETE.</li>
+        <li><strong>Reports+: a damaged source is named and kept out of the totals.</strong> An empty, checksum-failed or truncated source no longer flows silently into headline counts. It is flagged on its card, enters unticked, and the document states the exclusion per source.</li>
+        <li><strong>Nothing fails in silence: folder opens, update checks, and the freeze watchdog.</strong> A folder that cannot open says so. Check for updates always lands on a stated result. The stopped-responding watchdog no longer declares a freeze during ordinary navigation.</li>
+        <li><strong>Help: every picture re-captured from the current screens, and topics for removed screens are gone.</strong> Sixty-five of the help's seventy-four images were stale in 0.9.5. Forty-four were re-captured from the current interface; twenty-one topics that taught surfaces which no longer ship were removed.</li>
+      </ul>
+      <div class="status-note"><strong>Known shortfalls, stated in the notes themselves:</strong> The Alarms tab still has no in-place "run the alarm query" action (NET-22): the alarm pass runs with the scan, and its result is stated there. One Programmer+ pane still spreads row actions over a long scroll (PRG-24 layout half). Its selected-row contrast is fixed; the restructure needs a design decision, not a repair. Settings folder rows can still overflow at 150% scaling in windows near the minimum size in the shell's hosting: the remaining fix is a small-window layout decision for the shell (rail and path row), named here rather than improvised. Two owner exhibits are Windows-only observations (the Connect window's duplicate close control and title-bar gap, SEED-14/15). The code path is fixed; this rig runs Linux and cannot re-prove the Windows chrome. Copilot conversation quality is unproven on the computer that ran this programme: it carries no usable model. The corpus, wording and honesty rules were fixed and read in full; no conversation verdict is claimed. One help figure is outstanding (HIM-44) and the Find topic's screenshot is not yet re-captured from the fixed tree; both wait on captures that depict the current screens honestly. Check for updates: the could-not-check outcome is proven on every surface. The available and up-to-date outcomes are code-proven only, because this rig's network policy blocks the app's feed. Four checks in the Setup GUI install path fail identically before and after this programme, at identical positions; their mechanism was not isolated in this pass and they are carried as named, unexplained failures in the fix ledger, not absorbed. Moving from 0.9.3 or 0.9.4: use the standalone Setup package. The in-app update download in those versions crashes; inside 0.9.6, in-app updating works. Live network families are proven against bench peers. A family proven on the bench is not thereby claimed proven against every vendor's field firmware.</div>
+      <p>The full notes (each item&rsquo;s detail and screenshots) are bundled inside the app (Help &rarr; Release notes) and on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.6">0.9.6 release page</a>.</p>
+    </article>
+
     <article class="release-entry" aria-labelledby="rel-095-title">
       <div class="rel-head">
         <h3 id="rel-095-title">0.9.5</h3>
-        <span class="badge-current">Current release</span>
+        <span class="badge-legacy">Legacy — unsupported</span>
         <span class="rel-date">Released 2026-10-25</span>
       </div>
+      <p><strong>Legacy build — unsupported. Kept for reference and rollback; the supported release is the latest.</strong> 0.9.6, above, is the fix release for the full nitpick audit of this version.</p>
       <p class="rel-title">BAS Hub 0.9.5: the audit release — every surface checked, every failure given a home, and the suite&rsquo;s claims made honest</p>
       <p><strong>Stable release, publicly downloadable.</strong> 0.9.5 is the current public release, published as stable: the app&rsquo;s update check reads the latest stable release, and this is it, so an installed 0.9.4, 0.9.3 or 0.9.2 is offered 0.9.5 by the app itself. 1.0.0 remains reserved for the first release proven end-to-end in the field. Downloads: <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-Setup-Windows-x64.exe">Windows x64</a> (178,578,313 bytes, SHA-256 <code>bb57b602e8a756b21521f3207014531a76fcb8bda74cf1cfae770e56519a7d30</code>) and <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-Setup-Linux-x64">Linux x64</a> (179,402,766 bytes, SHA-256 <code>008fa5325760628f4ac0820ab2aff8a1ef8383949be4422f73fd5f60204407c5</code>), with the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/download/v0.9.5/BAS-Hub-User-Guide-0.9.5.pdf">User Guide (PDF)</a> (<code>BAS-Hub-User-Guide-0.9.5.pdf</code>, 2,508,071 bytes, SHA-256 <code>576661218732d5f7ac42a881ce1842f5c102001666e6e1778a77827925ff0a27</code>) and <code>SBOM.json</code> (14,987 bytes, SHA-256 <code>30668d2d74ffb5c854830869412d968cf0800791be0746a1ebb87dbddc64c06a</code>) in the same <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.5">release</a>. A Windows ARM64 package rides in the same release as a candidate build (<code>BAS-Hub-Setup-Windows-ARM64.exe</code>, 175,887,259 bytes, SHA-256 <code>74a660f8d7edcc1a4387a894f1b6ad2e373afd373987c7728ba10c3565ee1cf3</code>): it has not been verified on ARM64 hardware.</p>
       <ul>
@@ -128,7 +152,7 @@
         <li><strong>Web interfaces open in your browser; there is no internal viewer in this build.</strong> Where a device web interface is proven, Open web interface appears (in the tree device menu, on the device page header, and on the Scan page device card and table menu) and opens the answering address in your external browser.</li>
         <li><strong>Programmer+ and Reports+ in this version.</strong> Programmer+ and Reports+ carry their 0.9.3 capabilities forward unchanged in this version; the 0.9.4 work is the Network+ rethink and the shell around it.</li>
       </ul>
-      <div class="status-note"><strong>Known shortfalls, stated in the notes themselves:</strong> MS/TP token passing is not field proven in this build. The Windows adapter apply in the connection editor is field proof pending. There is no internal web viewer in this build. BACnet/SC cannot connect yet. Serial cannot connect as a BACnet data link yet. File Import ships disabled in this build. View Theme offers only the Graphite theme in this build. Snapshot does not create a dock Job in this build. The Scan page strip carries both the legacy Save this network button and the Snapshot and Backup buttons in this build. The verification battery does not pass clean in this build, and this note does not present it as doing so. The BAS Copilot corpus and its deferred items (D2 to D8) are untouched in this version. Live reads and writes remain proven against simulated and in memory devices, and on the rig, not against physical controllers on a live site network. The Windows packages are verified by carving, hashing, and probing their payloads on the build machine. The website device page gallery slot is a rig capture of the new device page (the Properties tab, with fictional seed data), not a field screenshot from a live site device.</div>
+      <div class="status-note"><strong>Known shortfalls, stated in the notes themselves:</strong> MS/TP token passing is not field proven in this build. The Windows adapter apply in the connection editor is field proof pending. There is no internal web viewer in this build. BACnet/SC cannot connect yet. Serial cannot connect as a BACnet data link yet. File Import ships disabled in this build. View Theme offers only the Graphite theme in this build. Snapshot does not create a dock Job in this build. The Scan page strip carries both the legacy Save this network button and the Snapshot and Backup buttons in this build. The verification battery does not pass clean in this build, and this note does not present it as doing so. The BAS Copilot corpus and its deferred items are untouched in this version. Live reads and writes remain proven against simulated and in memory devices, and on the rig, not against physical controllers on a live site network. The Windows packages are verified by carving, hashing, and probing their payloads on the build machine. The website device page gallery slot is a rig capture of the new device page (the Properties tab, with fictional seed data), not a field screenshot from a live site device.</div>
       <div class="status-note"><strong>Update download defect, found 2026-10-24 after this release shipped:</strong> checking for updates works (field-proven on Windows the same day: an installed 0.9.3 verified the 0.9.4 manifest and was offered the update), but the in-app download step in 0.9.3 and 0.9.4 crashes as the download begins, on the update-state change in Settings. Nothing is downloaded or changed by the crash. For the 0.9.4 hop, the standalone Setup on this page is the install route.</div>
       <p>The full notes (each item&rsquo;s detail and screenshots) are bundled inside the app (Help &rarr; Release notes) and on the <a href="https://github.com/JacobHamrac/bas-hub-releases/releases/tag/v0.9.4">0.9.4 release page</a>.</p>
     </article>
@@ -148,7 +172,7 @@
         <li><strong>Reports+ is complete: 59 subjects, designed reports, not data dumps.</strong> Reports+ reaches its full catalog in this version: 59 subjects across vendor files, Network+, and Programmer+, each producing a designed report (a summary or detailed document with charts, tables, and per-subject options) in PDF, XLSX, CSV, or TXT. You pick sources, pick the subjects those sources can honestly support, set the options for each, preview, and file the finished report under its site.</li>
         <li><strong>Reports that compare, and a report for the whole site.</strong> A new family of Reports+ subjects works across sources instead of inside one file: mark sources as earlier and later, and Reports+ can build a source drift report, a program change report, a findings comparison, and a whole-site dossier that assembles what every selected source knows about one site into a single document.</li>
         <li><strong>Live reports: read the devices, then report on them.</strong> Reports+ can now report on live subjects as well as files: pick devices from the session, let BAS Hub enumerate their points over the connection you already have open, pick the roles and points the report needs, and build the report from what was actually read. Live configuration, live health, census, override, and trend subjects are all in this family.</li>
-        <li><strong>Panel census fixed, archives opened selectively, backups reported.</strong> Three filing and panel jobs are finished in this version. A panel export (.P2) is now decoded by the one platform decoder, so Programmer+ and Reports+ count the same panel the same way: the thirteen held real exports now total 1,268 recognised modules where the module importer previously found 944, and panel point present values now flow through with the points. A Desigo ABT archive (.7z) can be imported selectively, group by group. And the backup family in Reports+ reports on the backups filed in the Library.</li>
+        <li><strong>Panel census fixed, archives opened selectively, backups reported.</strong> Three filing and panel jobs are finished in this version. A panel export (.P2) is now decoded by the one platform decoder, so Programmer+ and Reports+ count the same panel the same way: the thirteen held real exports now total 1,268 recognised points where the module importer previously found 944, and panel point present values now flow through with the points. A Desigo ABT archive (.7z) can be imported selectively, group by group. And the backup family in Reports+ reports on the backups filed in the Library.</li>
         <li><strong>Reports under your control: licensing, redaction, and saved definitions.</strong> Reports+ adds the controls a report needs before it leaves the building: a licensing section that states the terms a report is issued under, a redaction control that removes what you mark before the file is written, and saved report definitions, so a report you build once (its sources pattern, subjects, and options) can be reopened and rerun as the same report.</li>
         <li><strong>Network health and commissioning, as reports.</strong> Two report families join the catalog. The network health report turns a Health run (yours, or one handed over from Network+) into a finished report with its verdict, findings, and evidence in report form. The commissioning family (VAV, AHU, and heat pump commissioning) reports a unit against its schedule and its tested modes, in the same designed form as every other Reports+ subject.</li>
         <li><strong>Programmer+: Programs in the tree, the Editor as the door, the Panel Inspector as a pane.</strong> Programmer+ is wired into the suite filing in this version. Programs filed under a site appear in the navigation tree under Programs, and opening one opens it in the Editor, with its origin stated on the Editor state line. Save to a site is an Editor door that files through the one save dialog. The Panel Inspector is now its own pane in the module, beside the Library, opening a panel file (.P2) in place and inspecting the decoded panel as tables.</li>
@@ -204,7 +228,7 @@
         <li>The full User Guide now ships with BAS Hub: the PDF sits beside the installer and is installed with the app, and Help → User guide opens the same book inside the app, same chapters, same pictures, one source.</li>
         <li>Settings is filled in: your data folder, safety backups with a keep-count and sizes, a Back up everything export, a diagnostics bundle for support, proxy settings, BACnet defaults, a start-page choice, and Copilot model management. Settings also ends with an About section, versions at a glance and a Copy version info button for bug reports.</li>
       </ul>
-      <p>The full section-by-section notes (install percentages, the failure popup and logs, the Windows install fix, the License Agreement gate, the settings bundle, protection, and the named known shortfalls) are bundled inside the app (Help → Release notes). There is no download for this build, see <a href="download.html#download">Download</a> for the current release, 0.9.5.</p>
+      <p>The full section-by-section notes (install percentages, the failure popup and logs, the Windows install fix, the License Agreement gate, the settings bundle, protection, and the named known shortfalls) are bundled inside the app (Help → Release notes). There is no download for this build, see <a href="download.html#download">Download</a> for the current release, 0.9.6.</p>
     </article>
 
     <article class="release-entry" aria-labelledby="rel-090-title">
@@ -269,7 +293,7 @@
       </ul>
       <p>The full automated verification harness passed 849 of 849 checks against this release's sources, including the write-safety loop against a test device and a full silent install, receipt audit, and uninstall cycle.</p>
       <div class="status-note"><strong>Known shortfall, stated in the notes themselves:</strong> 0.9.0&rsquo;s update check looks for a published release manifest; none is published, so the check reports that plainly and changes nothing. (0.9.0 also embeds the pre-rotation trust key, so it could not accept a current manifest in any case, by design for a superseded internal build.)</div>
-      <p>There is no download for this build, see <a href="download.html#download">Download</a> for the current release, 0.9.5.</p>
+      <p>There is no download for this build, see <a href="download.html#download">Download</a> for the current release, 0.9.6.</p>
     </article>
 
     <div class="status-note">
@@ -291,7 +315,7 @@
         <a href="modules.html#reports">Reports+</a>
         <a href="download.html">Download</a>
         <a href="releases.html">Versions</a>
-        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">Releases</a>
+        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">GitHub downloads</a>
         <a href="support.html#faq">FAQ</a>
         <a href="support.html">Support</a>
         <a href="index.html#license">License</a>
@@ -304,7 +328,7 @@
 <div class="palette" data-palette role="dialog" aria-modal="true" aria-label="Site navigator">
   <div class="palette-box">
     <div class="pal-head">
-      <span>Go to</span>
+      <span>Site index</span>
       <input type="text" data-palette-input placeholder="Type a section, a module, an action&hellip;" aria-label="Filter destinations" autocomplete="off">
     </div>
     <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>

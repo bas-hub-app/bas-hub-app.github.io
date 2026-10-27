@@ -66,7 +66,7 @@
       <a href="releases.html">Versions</a>
       <a href="support.html">Support</a>
     </nav>
-    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Go to</span><kbd>Ctrl K</kbd></button>
+    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Site index</span><kbd>Ctrl K</kbd></button>
     <a class="btn btn-primary btn-sm header-cta" data-dl href="download.html#download">Download</a>
   </div>
 </header>
@@ -77,7 +77,7 @@
   <div class="wrap">
     <div class="section-head" style="margin-bottom:0;">
       <p class="eyebrow teal">Product &middot; Modules</p>
-      <h2 id="modules-page-title" style="font-size:clamp(32px,4.5vw,44px);">Four modules, one inventory</h2>
+      <h1 id="modules-page-title" style="font-size:clamp(32px,4.5vw,44px);">Four modules, one inventory</h1>
       <p class="lead">A device you find in Network+ is the same record everywhere. A write to a live controller goes through the same safety path every time. And the work itself — the files, the runs, the evidence — becomes finished reports in Reports+. Your data lives on your laptop, in the Library&rsquo;s real folders, and nothing leaves it unless you send it.</p>
     </div>
   </div>
@@ -100,8 +100,8 @@
         </ul>
       </div>
       <div class="split-media">
-        <a class="shot-frame" href="assets/img/home.png" data-lightbox data-alt="The BAS Hub home screen: the digest panel with the BAS Hub mark and version beside the module readiness list (Network+, Reports+ and Programmer+ Ready, BAS Copilot not installed), above a New category button" data-caption="Home: the digest panel with module readiness in plain words; your categories and shortcuts below.">
-          <img width="1400" height="900" src="assets/img/home.png" alt="The BAS Hub home screen: the digest panel with the BAS Hub mark and version beside the module readiness list (Network+, Reports+ and Programmer+ Ready, BAS Copilot not installed), above a New category button" loading="lazy">
+        <a class="shot-frame" href="assets/img/home.png" data-lightbox data-alt="The BAS Hub home screen in 0.9.6: the digest panel with the BAS Hub mark and Version 0.9.6 beside the module readiness list (Network+ v2.3.0, Reports+ v1.1.0 and Programmer+ v2.2.0 Ready, BAS Copilot not installed), above a New category button" data-caption="Home in 0.9.6: the digest panel with module readiness in plain words; your categories and shortcuts below.">
+          <img width="1180" height="760" src="assets/img/home.png" alt="The BAS Hub home screen in 0.9.6: the digest panel with the BAS Hub mark and Version 0.9.6 beside the module readiness list (Network+ v2.3.0, Reports+ v1.1.0 and Programmer+ v2.2.0 Ready, BAS Copilot not installed), above a New category button" loading="lazy">
           <span class="cap"><b>Home</b>: the digest panel with module readiness in plain words; your categories and shortcuts below.</span>
         </a>
       </div>
@@ -155,7 +155,7 @@
         <h4>Language &amp; checking</h4>
         <ul>
           <li>Full PPCL language core: lexer, error-tolerant parser (a bad line is flagged, never fatal to the file), and control/data-flow analysis across the whole program, including loop wrap-around.</li>
-          <li>90 lint rules in five families (syntax, flow, semantics, style, performance) each with a fix guide; panel-report findings (R-codes) for the problems panels themselves report; and two cross-line logic checks of Programmer+'s own (labelled as such in the panel, they are not manual rules).</li>
+          <li>90 lint rules in five families (syntax, flow, semantics, style, performance), each with a fix guide, and seven cross-line logic checks of Programmer+'s own (L101–L107, labelled as such in the panel — they are not manual rules): 90 + 7 is the 97 named diagnostics. Panel-report findings (R-codes), for the problems panels themselves report, are stated separately and are not part of the 97.</li>
           <li>Findings are a triad, always: what to do, why it matters, and the source the rule comes from.</li>
           <li>Formatter and transforms: DEFINE expand/collapse, separator swap, clone-range, enable/disable lines, comment tools, all reference-aware, so renumbering rewrites every GOTO, DEFINE, and point reference consistently.</li>
         </ul>
@@ -165,7 +165,7 @@
           <li>Sequence documents: describe the sequence in structured lines (points, modes, a decision table); the compiler writes the PPCL; sequences round-trip exactly between their text form and the model.</li>
           <li>Block diagrams: 31 block types, an expression-first compiler, and cycle refusal in plain language.</li>
           <li>Plain-English sequence-of-operations import: paste the SOO text and each item lands with a citation to the line it came from, and an honest list of what couldn't be resolved.</li>
-          <li>Vendor imports: block-diagram files and Desigo panel exports (.P2), each with a mapped / approximated / unmapped fidelity report. The .P2 importer is platform-first (D-123): real exports are decoded by the platform P2Parser, repaired and pinned against all 13 real held exports — 1,268 points, the module's counts equal to the platform's per file, point-name sets and program counts equal — with present values flowing through the decode (214 values, 125 of them carrying units). The older native grammar remains as a fallback for shapes the platform parser does not take, and the surface says so when the fallback is the one that decoded: its counts are checked against Desigo CC before they are trusted.</li>
+          <li>Vendor imports: block-diagram files and Desigo panel exports (.P2), each with a mapped / approximated / unmapped fidelity report. The .P2 importer is platform-first: real exports are decoded by the platform P2Parser, repaired and pinned against all 13 real held exports — 1,268 points, the module's counts equal to the platform's per file, point-name sets and program counts equal — with present values flowing through the decode (214 values, 125 of them carrying units). The older native grammar remains as a fallback for shapes the platform parser does not take, and the surface says so when the fallback is the one that decoded: its counts are checked against Desigo CC before they are trusted.</li>
           <li>Siemens ABT job archives (.ABTArchive) open through an in-house 7-Zip subset reader: the archive is analysed from its member index alone, the import popup lists the detected content groups (Controllers &amp; programs, Device parameters, Application types, Project information, Station, Balancer lists) for you to choose between, and only the checked groups import. Credential and key material is counted and classed from the index only — it carries no checkbox and is never imported. An archive outside the reader's subset (a solid archive, another compression coder, an encrypted archive) is refused honestly, by name.</li>
           <li>Redact-for-sharing: strip a program for sending with the point-name mapping kept on your machine only.</li>
         </ul>
@@ -196,12 +196,12 @@
     <div class="section-head">
       <p class="eyebrow teal">03 &middot; Network+</p>
       <h2 id="network-title">The network workbench</h2>
-      <p class="lead">Network+ opens on <strong>jobs, in plain language</strong>: find what's on this network, look at a device, why is this device offline, check this network's health, watch the traffic, prove this works, change something safely, talk to a device, what changed since last time. Pick the job, not the protocol.</p>
+      <p class="lead">Network+ opens on the <strong>Scan page</strong>: connect, run a scan, and the devices found form a temporary network for the session — save it, snapshot it, or back its devices up from the same page. Everything else starts from the device page: look at a device, ask why it is offline, check the network's health, watch the traffic, prove a change, talk to the device, see what changed since last time. The protocol is a property of the device, not a room you visit first.</p>
     </div>
     <div class="split">
       <div>
         <ul class="checklist" style="margin-top:0;">
-          <li><strong>Find.</strong> Ask the network who's out there. BACnet/IP discovery, Modbus, and OPC UA devices all land in the one shared inventory, you never re-type an address or a device number anywhere else in the app. The results land in one grid: the column headers and a per-column filter row stay in place while the rows scroll, the tick column and the Name block stay frozen at the left, and the grid is windowed — only the rows near the scroll position are drawn, however long the list is. Tick rows and the batch bar raises: back up the selection, save it, open its web interface, or report on it.</li>
+          <li><strong>Find.</strong> Ask the network what is out there. Discovery runs over BACnet/IP, EtherNet/IP, Modbus TCP and RTU, BACnet/SC, MQTT with Sparkplug B, SNMP, LLDP/CDP, Siemens S7comm, KNX IP, Johnson N2, and mDNS/SSDP, and a separate session-free detection read identifies OPC UA endpoints and the security they offer. Everything found lands in the one shared inventory — you never re-type an address or a device number anywhere else in the app. The results land in one grid: the column headers and a per-column filter row stay in place while the rows scroll, the tick column and the Name block stay frozen at the left, and the grid is windowed — only the rows near the scroll position are drawn, however long the list is. Tick two or more rows and the batch bar replaces the single-device card: back up the selection, save it, open its web interface, or report on it.</li>
           <li class="orange"><strong>Report on this&hellip;</strong> Find (a completed run, or just the ticked rows), the device page, Health, the Test Bench, Records, and the backup surface all hand their subjects to Reports+: the studio opens with the subject as a source and its report preselected.</li>
           <li class="orange"><strong>The device page is the spine.</strong> One page per device: its state, how it was found, its health axes, and every job for that device: points and values, schedules, trend history, its traffic, the console, its baseline. Protocols are capabilities of the device, never separate rooms to visit.</li>
           <li><strong>Watch.</strong> Packet capture that reads back in plain sentences (who asked, who answered, what changed) with a Capture completeness (interface drop counters) computed from the capture file's own counters, so you know what the capture can and cannot prove.</li>
@@ -209,9 +209,9 @@
         </ul>
       </div>
       <div class="split-media">
-        <a class="shot-frame" href="assets/img/network-front-door.png" data-lightbox data-alt="The Network+ front door: a grid of plain-language jobs such as Find what's on this network, Look at a device, and Why is this device offline" data-caption="Network+ front door, pick the job, not the protocol.">
-          <img width="1400" height="900" src="assets/img/network-front-door.png" alt="The Network+ front door: a grid of plain-language jobs such as Find what's on this network, Look at a device, and Why is this device offline" loading="lazy">
-          <span class="cap"><b>Front door</b>, pick the job, not the protocol.</span>
+        <a class="shot-frame" href="assets/img/netplus-find-results.png" data-lightbox data-alt="Rig capture of the Network+ Scan page in 0.9.4: the connection pill, the scan strip, and the temporary network table in its empty state, with fictional seed devices in the tree" data-caption="The Scan page: connect, scan, and the session's devices in one table. (Rig capture, 0.9.4.)">
+          <img width="1400" height="900" src="assets/img/netplus-find-results.png" alt="Rig capture of the Network+ Scan page in 0.9.4: the connection pill, the scan strip, and the temporary network table in its empty state, with fictional seed devices in the tree" loading="lazy">
+          <span class="cap"><b>The Scan page</b>: connect, scan, and the session's devices in one table. (Rig capture, 0.9.4.)</span>
         </a>
       </div>
     </div>
@@ -234,11 +234,11 @@
       <div class="deep-body">
         <h4>Find</h4>
         <ul>
-          <li>Discovery across BACnet/IP (its own BACnet stack, including BBMD foreign-device registration for reaching across subnets), Modbus, and OPC UA, plus an ARP / ping scan of what is answering on the wire.</li>
+          <li>Discovery across BACnet/IP (its own BACnet stack, including BBMD foreign-device registration for reaching across subnets), EtherNet/IP, Modbus TCP and RTU, BACnet/SC, MQTT with Sparkplug B, SNMP, LLDP/CDP, Siemens S7comm, KNX IP, Johnson N2, and mDNS/SSDP, plus an ARP / ping scan of what is answering on the wire. OPC UA is a detection read, not a census family: a session-free read identifies an endpoint and the security modes and policies it offers.</li>
           <li>Everything found lands in the shared Inventory Core as a DeviceRecord. Identity merges on BACnet instance + network first, then MAC, then IP, so re-finding a device updates its record instead of duplicating it.</li>
           <li>Field changes are logged against the record; snapshots diff as ADDED / REMOVED / CHANGED.</li>
           <li>The results grid: sticky column headers and filter row, the tick and Name columns frozen at the left, per-column filters that combine, sorting that never drops a selection, and windowing — only the rows near the scroll position are drawn, so a 10,000-device session set scrolls like a ten-device one.</li>
-          <li>The batch bar (with anything ticked): Back up selected, Report on selected&hellip; (the ticked devices become Reports+'s live device scope), Save selected list, Web interface, Clear selection. A completed run is reported separately, by Report on this run&hellip; beside the run summary.</li>
+          <li>The batch bar (two or more ticked — at one ticked device the single-device card stays in its place): Back up selected, Report on selected&hellip; (the ticked devices become Reports+'s live device scope), Save selected list, Web interface, Clear selection. A completed run is reported separately, by Report on this run&hellip; beside the run summary.</li>
         </ul>
         <h4>Look (the device page)</h4>
         <ul>
@@ -257,7 +257,7 @@
         <h4>Health</h4>
         <ul>
           <li>The full catalog: 40 checks in layers (this laptop, the network, the devices) including switch-port counters read over SNMP and a Wi-Fi section whose bounds are printed on its face; MS/TP bus checks that say plainly when a run holds no trunk evidence to judge.</li>
-          <li>Three-axis scoring (Connected / Performing / Clean) with a hard evidence rule: a check with no evidence reports <strong>Not run</strong> ("a pass would be a guess") never a silent pass.</li>
+          <li>Three-axis scoring (Connected / Performing / Clean) with a hard evidence rule: a check with no evidence reports <strong>Not run</strong> ("a pass would be a guess"), never a silent pass, and an axis with no measured checks reports <strong>Not measured</strong>.</li>
           <li>"Why is this device offline?": the evidence run: name, ping, switch port table, and this laptop's local measurements, gathered in the open, landing on one verdict card.</li>
           <li>Before/after compare against the previous run, and a report (Markdown) filed to a site with the run's evidence attached.</li>
         </ul>
@@ -392,7 +392,7 @@
           <span class="tc-state">Locked: needs 32 GB RAM</span>
         </article>
       </div>
-      <p class="tl-foot">Not sure what this machine has? <a href="download.html#pccheck">Check this PC</a>: the browser reads it and answers against these tiers, in the Download section. The gate is memory, and the reasons are shown, not hidden: this explorer runs the same rule Setup runs. Whichever tier is picked, the engine is a <b>local llama.cpp process</b> started per question and stopped after it; the module ships with <b>no networking code of its own</b>, and the one download (the model file) is verified against its published SHA-256 before use. Sizes are the catalog's exact byte counts.</p>
+      <p class="tl-foot">Not sure what this machine has? <a href="download.html#pccheck">Check this PC</a>: the browser reads it and answers against these tiers, in the Download section. The gate is memory, and the reasons are shown, not hidden: this explorer runs the same rule Setup runs. Whichever tier is picked, the engine is a <b>local llama.cpp process</b> started per conversation turn and stopped when the turn ends; the module ships with <b>no networking code of its own</b>, and the one download (the model file) is verified against its published SHA-256 before use. Sizes are the catalog's exact byte counts.</p>
     </div>
 
     <details class="deep">
@@ -595,7 +595,7 @@
         <a href="modules.html#reports">Reports+</a>
         <a href="download.html">Download</a>
         <a href="releases.html">Versions</a>
-        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">Releases</a>
+        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">GitHub downloads</a>
         <a href="support.html#faq">FAQ</a>
         <a href="support.html">Support</a>
         <a href="index.html#license">License</a>
@@ -608,7 +608,7 @@
 <div class="palette" data-palette role="dialog" aria-modal="true" aria-label="Site navigator">
   <div class="palette-box">
     <div class="pal-head">
-      <span>Go to</span>
+      <span>Site index</span>
       <input type="text" data-palette-input placeholder="Type a section, a module, an action&hellip;" aria-label="Filter destinations" autocomplete="off">
     </div>
     <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>
