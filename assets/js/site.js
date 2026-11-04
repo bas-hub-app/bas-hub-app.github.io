@@ -1,6 +1,6 @@
 /* Download behaviour (MAINTAIN.md, settled 2026-10-19): the Download action
    is an IMMEDIATE download of the visitor's package, never a scroll or a
-   trip to another page. 0.9.5 is a stable (non-prerelease) release and
+   trip to another page. 0.9.7 is a stable (non-prerelease) release and
    is the release marked latest, so these constants use
    releases/latest/download/<asset>, which resolves to the current
    stable release (MAINTAIN.md step 2: the prerelease exception that
@@ -20,7 +20,7 @@ function basHubPackageUrl() {
   document.documentElement.classList.add("js");
   if ("IntersectionObserver" in window &&
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    var revealEls = document.querySelectorAll(".shot-frame, .device-frame");
+    var revealEls = document.querySelectorAll(".device-frame");
     revealEls.forEach(function (el) { el.setAttribute("data-reveal", ""); });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -188,7 +188,7 @@ function basHubPackageUrl() {
       { kind: "Section", title: "Trust, by design", url: function () { return dest("#trust"); } },
       { kind: "Section", title: "FAQ", url: function () { return dest("#faq"); } },
       { kind: "Page", title: "Versions, every release, on the record", url: function () { return "releases.html"; } },
-      { kind: "Action", title: "Download BAS Hub 0.9.5", url: function () { return basHubPackageUrl() || dest("#download"); } },
+      { kind: "Action", title: "Download BAS Hub 0.9.7", url: function () { return basHubPackageUrl() || dest("#download"); } },
       { kind: "Support", title: "Report a bug", url: function () { return dest("#support-bug"); } },
       { kind: "Support", title: "Send feedback", url: function () { return dest("#support-feedback"); } }
     ];
@@ -398,7 +398,7 @@ function basHubPackageUrl() {
       hNone.style.display = visible === 0 ? "block" : "none";
       hCount.textContent = q
         ? visible + " of " + total + " topics match \u201C" + hInput.value.trim() + "\u201D"
-        : total + " topics, the complete index, as shipped in 0.9.5";
+        : total + " topics, the complete index, as shipped in 0.9.7";
     });
   }
 
@@ -609,13 +609,13 @@ function basHubPackageUrl() {
       sentence = "BAS Hub is 64-bit only, no package for this machine.";
     } else if (d.os.key === "windows") {
       if (d.arch.isArm) {
-        sentence = "Your download: the Windows package (x64) of 0.9.5; a native ARM64 candidate package is published with the release, and x64 runs under Windows emulation, as your explicit choice.";
+        sentence = "Your download: the Windows package (x64) of 0.9.7; a native ARM64 candidate package is published with the release, and x64 runs under Windows emulation, as your explicit choice.";
         highlight("windows", "This machine · ARM64 build");
       } else if (d.arch.known) {
-        sentence = "Your download: the Windows package (x64) of 0.9.5.";
+        sentence = "Your download: the Windows package (x64) of 0.9.7.";
         highlight("windows", "This machine");
       } else {
-        sentence = "Your download: the Windows package of 0.9.5: this browser did not report x64 or ARM64.";
+        sentence = "Your download: the Windows package of 0.9.7: this browser did not report x64 or ARM64.";
         highlight("windows", "This machine · architecture not reported");
       }
     } else if (d.os.key === "linux") {
@@ -623,7 +623,7 @@ function basHubPackageUrl() {
         sentence = "The Linux package is x64, no package for this machine's architecture.";
         highlight("linux", "This machine · Linux package is x64");
       } else {
-        sentence = "Your download: the Linux package of 0.9.5.";
+        sentence = "Your download: the Linux package of 0.9.7.";
         highlight("linux", "This machine");
       }
     } else if (d.os.key === "unknown") {
