@@ -220,7 +220,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   color: var(--orange); margin: 0 0 16px;
 }
 .eyebrow.teal { color: var(--teal); }
-.section h2 {
+.section h2, .section h1 {
   font-size: clamp(28px, 3.6vw, 38px); line-height: 1.16; margin: 0 0 16px;
   font-weight: 700; letter-spacing: -.015em;
 }
@@ -982,3 +982,32 @@ html:not(.js) .nav-group:focus-within .nav-dropdown,
 }
 .release-entry p code, .release-entry li code { overflow-wrap: anywhere; }
 .release-card .rc-foot code, .status-note code, .steps code { overflow-wrap: anywhere; }
+
+/* --- 0.9.6 website fix pass (audit WEB-03/09/13/21) ------------------------
+   WEB-21: the module grid lays out five cards (Hub, Programmer+, Network+,
+   Reports+, Copilot) — five columns on desktop so no card strands alone;
+   at the two-column breakpoint the last card spans the row.
+   WEB-09: on phone widths the palette button keeps its "Site index" label
+   and drops the keyboard badge, which no touch device can use.
+   WEB-13: gallery evidence is never dimmed by the reveal treatment.
+   WEB-03: the download package table stacks at phone width — package,
+   file (name, size, full hash, button) and status each on their own
+   line, nothing clipped off-screen. */
+.module-grid { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 1020px) {
+  .module-grid .module-card:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+  .palette-btn .pb-label { display: inline; }
+  .palette-btn kbd { display: none; }
+  .package-table, .package-table tbody, .package-table tr, .package-table td {
+    display: block; width: 100%;
+  }
+  .package-table thead { display: none; }
+  .package-table td { white-space: normal; overflow-wrap: anywhere; }
+  .package-table td:first-child { white-space: normal; }
+  .package-table .btn { margin-top: 10px; }
+}
+.gallery .shot-frame, .gallery .shot-frame img {
+  opacity: 1 !important; transform: none !important;
+}
