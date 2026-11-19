@@ -3,491 +3,211 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BAS Hub: One app for controls field work</title>
-<meta name="description" content="BAS Hub is a desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot, one inventory and one backup system.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="BAS Hub">
-<meta property="og:title" content="BAS Hub, One app for controls field work">
-<meta property="og:description" content="A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot, one inventory and one backup system.">
-<meta property="og:url" content="https://bas-hub-app.github.io/">
-<meta property="og:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="BAS Hub, one app for controls field work: Programmer+, Network+, Reports+, BAS Copilot">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BAS Hub, One app for controls field work">
-<meta name="twitter:description" content="A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot, one inventory and one backup system.">
-<meta name="twitter:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#17181A">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "BAS Hub",
-  "url": "https://bas-hub-app.github.io/",
-  "description": "A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot: one inventory and one backup system.",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Windows 10, Windows 11, Linux"
-}
-</script>
-<link rel="stylesheet" href="assets/css/site.css">
-<script>
-/* Restructure shim (2026-10-24): single-page anchors that external links
-   may still carry now live on their own pages; land each visitor on the
-   page that holds the section. Anchors that remain on this page are
-   untouched. */
-(function () {
-  var moved = {
-    "home": "modules.html#home", "programmer": "modules.html#programmer",
-    "network": "modules.html#network", "tour": "modules.html#tour",
-    "copilot": "modules.html#copilot", "help": "modules.html#help",
-    "reports": "modules.html#reports",
-    "download": "download.html#download", "pccheck": "download.html#pccheck",
-    "updates": "download.html#updates",
-    "faq": "support.html#faq", "support": "support.html#support",
-    "support-bug": "support.html#support-bug",
-    "support-feedback": "support.html#support-feedback"
-  };
-  var h = window.location.hash.replace(/^#/, "");
-  if (moved[h]) window.location.replace(moved[h]);
-})();
-</script>
-<link rel="preload" as="image" type="image/webp" href="assets/img/home.webp">
+<title>BAS Hub — desktop suite for building-automation field work</title>
+<style>
+  :root {
+    --bg: #000; --panel: #1c1c1e; --panel-2: #232326; --line: #333336;
+    --text: #ececec; --muted: #a3a3a8;
+    --accent: #f47a20; --accent-ink: #120800;
+    --amber: #f2b33d; --amber-bg: #241c0c;
+    --red: #ff6b5e; --red-bg: #2a1311;
+    --ok: #5fd27e; --ok-bg: #102116;
+    --cand: #c9c9cf;
+    --radius: 6px; --gap: 20px;
+    font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; line-height: 1.45; color: var(--text); background: var(--bg);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); }
+  a { color: inherit; }
+  p, ul, h1, h2 { margin: 0; }
+  :focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 3px; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip { position: absolute; left: 16px; top: -60px; background: var(--text); color: #000; padding: 8px 12px; z-index: 10; font-weight: 700; }
+  .skip:focus { top: 8px; }
+  svg { flex: none; }
+
+  /* Site bar = identity: the wordmark is the page's H1, stated once */
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap;
+    min-height: 72px; padding: 10px 32px; border-bottom: 1px solid var(--line); }
+  .id { display: flex; align-items: baseline; gap: 6px 18px; flex-wrap: wrap; }
+  h1 { font-size: 26px; line-height: 1.1; font-weight: 700; }
+  h1 a { text-decoration: none; }
+  .desc { font-size: 18px; }
+  nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+  nav a { display: block; padding: 8px 14px; border-radius: 4px; text-decoration: none; color: var(--muted); font-weight: 600; }
+  nav a:hover { color: var(--text); background: var(--panel); }
+  nav a[aria-current="page"] { color: var(--text); background: var(--panel-2); box-shadow: inset 0 -2px 0 var(--accent); }
+
+  main { padding: 28px 32px 32px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--gap); align-items: start; max-width: 1920px; }
+
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; padding: 16px 22px 14px; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 22px; line-height: 1.2; font-weight: 700; }
+  .meta { color: var(--muted); font-size: 15px; }
+  .meta b { color: var(--text); font-weight: 600; }
+  code, .mono { font-family: "Cascadia Mono", Consolas, Menlo, monospace; font-size: .94em; }
+
+  /* Release status band: sits between the heading and the buttons, so it is read before any download */
+  .status { display: flex; gap: 12px; padding: 14px 22px; border-bottom: 1px solid var(--line); border-left: 4px solid; }
+  .status svg { width: 20px; height: 20px; margin-top: 2px; }
+  .status .lead { font-weight: 700; }
+  .status .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .status.warn { background: var(--amber-bg); border-left-color: var(--amber); }
+  .status.warn svg, .status.warn .lead { color: var(--amber); }
+  .status.bad { background: var(--red-bg); border-left-color: var(--red); }
+  .status.bad svg, .status.bad .lead { color: var(--red); }
+  .status.good { background: var(--ok-bg); border-left-color: var(--ok); }
+  .status.good svg, .status.good .lead { color: var(--ok); }
+  .status.plain { background: var(--panel-2); border-left-color: var(--cand); }
+  .checks { list-style: none; padding: 0; margin-top: 8px; display: grid; grid-template-columns: max-content 1fr; gap: 4px 20px; }
+  .checks li { display: contents; }
+  .checks .r { font-weight: 600; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 13px; font-weight: 600; color: var(--muted); padding: 12px 22px 8px; border-bottom: 1px solid var(--line); }
+  td { padding: 14px 22px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: 0; }
+  .plat { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .def { display: block; margin-top: 4px; font-weight: 400; font-size: 14px; color: var(--muted); }
+  .st { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; white-space: nowrap; }
+  .st svg { width: 16px; height: 16px; }
+  .st.ovr { color: var(--amber); }
+  .st.bad { color: var(--red); }
+  .st.good { color: var(--ok); }
+  .st.cand { color: var(--cand); border: 1px dashed var(--cand); border-radius: 4px; padding: 1px 9px; }
+  .st.none { color: var(--muted); font-weight: 400; }
+  td.act { text-align: right; width: 1%; white-space: nowrap; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 4px; font-weight: 700;
+    text-decoration: none; white-space: nowrap; border: 1px solid transparent; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn.primary:hover { background: #ff8c37; }
+  .btn.secondary { background: var(--panel-2); color: var(--text); border-color: #55555a; }
+  .btn.secondary:hover { border-color: var(--text); }
+  .foot { padding: 12px 22px 14px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); }
+  .foot a { color: var(--text); }
+  .empty { padding: 22px; }
+  .empty p + p { margin-top: 6px; color: var(--muted); }
+
+  /* Suite: one panel, one list, one application */
+  .mods { list-style: none; padding: 0; }
+  .mods li { padding: 14px 22px; border-bottom: 1px solid var(--line); }
+  .mh { display: flex; align-items: baseline; gap: 12px; }
+  .mod { font-weight: 700; font-size: 17px; }
+  .ver { font-family: "Cascadia Mono", Consolas, Menlo, monospace; font-size: 15px; color: var(--muted); }
+  .ver.none { font-family: inherit; }
+  .scope { margin-top: 3px; }
+  .policy { display: flex; gap: 10px; align-items: flex-start; padding: 14px 22px 16px; }
+  .policy svg { width: 18px; height: 18px; margin-top: 3px; color: var(--text); }
+
+  /* 1366x768 class screens */
+  @media (max-width: 1600px) {
+    :root { font-size: 14px; --gap: 14px; }
+    header.site { min-height: 60px; padding: 8px 20px; }
+    h1 { font-size: 22px; } .desc { font-size: 16px; }
+    nav a { padding: 6px 11px; }
+    main { padding: 18px 20px 20px; }
+    h2 { font-size: 19px; }
+    .head { padding: 12px 16px 10px; }
+    .meta, .status .sub, .foot { font-size: 13px; }
+    .status { padding: 11px 16px; }
+    th { font-size: 12px; padding: 9px 16px 6px; }
+    td { padding: 10px 16px; }
+    .plat, .mod { font-size: 15px; } .def { font-size: 13px; } .ver { font-size: 13px; }
+    .btn { padding: 8px 14px; }
+    .foot { padding: 10px 16px 12px; }
+    .mods li { padding: 10px 16px; }
+    .policy { padding: 11px 16px 13px; }
+  }
+  /* Reflow (WCAG 1.4.10): single column, table rows become stacked blocks */
+  @media (max-width: 900px) {
+    header.site { padding: 10px 16px; }
+    main { grid-template-columns: minmax(0, 1fr); padding: 14px 12px; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    table, tbody, tr, td { display: block; width: auto; }
+    tbody tr { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+    tbody tr:last-child { border-bottom: 0; }
+    td { padding: 3px 0; border: 0; }
+    td.act { text-align: left; padding-top: 8px; }
+    .plat, .st { white-space: normal; }
+  }
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#download">Skip to download</a>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html" aria-label="BAS Hub: home">
-      <img src="assets/img/hub-icon.png" alt="" width="34" height="34">
-      <span class="wordmark">BAS <em>HUB</em></span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">☰</button>
-    <nav class="main-nav" id="main-nav" aria-label="Main">
-      <div class="nav-group" data-nav-group>
-        <button class="nav-group-btn" type="button" aria-expanded="false" aria-controls="modules-menu" data-nav-group-btn>Explore modules <span class="caret" aria-hidden="true"></span></button>
-        <span class="nav-group-label" aria-hidden="true">Explore modules</span>
-        <div class="nav-dropdown" id="modules-menu" data-nav-dropdown>
-          <a href="modules.html#home"><span class="nd-name">The Hub</span><span class="nd-spec">Home screen and launcher</span></a>
-          <a href="modules.html#programmer"><span class="nd-name">Programmer+</span><span class="nd-spec">PPCL workbench (editor, builder, simulator</span></a>
-          <a href="modules.html#network"><span class="nd-name">Network+</span><span class="nd-spec">Network workbench) find, watch, health, prove</span></a>
-          <a href="modules.html#reports"><span class="nd-name">Reports+</span><span class="nd-spec">The reporting studio: files and live subjects in, reports out</span></a>
-          <a href="modules.html#copilot"><span class="nd-name">BAS Copilot</span><span class="nd-spec">Optional assistant: runs on this computer</span></a>
-          <a class="nd-all" href="#stage"><span class="nd-name">All modules, on stage</span><span class="nd-arrow" aria-hidden="true">→</span></a>
-        </div>
-      </div>
-      <a href="modules.html">Modules</a>
-      <a href="#screenshots">Screenshots</a>
-      <a href="#trust">Trust</a>
-      <a href="download.html">Download</a>
-      <a href="releases.html">Versions</a>
-      <a href="support.html">Support</a>
-    </nav>
-    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Site index</span><kbd>Ctrl K</kbd></button>
-    <a class="btn btn-primary btn-sm header-cta" data-dl href="download.html#download">Download</a>
+<header class="site">
+  <div class="id">
+    <h1><a href="./">BAS Hub</a></h1>
+    <p class="desc">Desktop suite for building-automation field work</p>
   </div>
+  <nav aria-label="Site">
+    <ul>
+      <li><a href="./" aria-current="page">Home</a></li>
+      <li><a href="modules/">Modules</a></li>
+      <li><a href="download/">Download</a></li>
+      <li><a href="releases/">Releases</a></li>
+      <li><a href="support/">Support</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main id="main">
-<!-- ================= HERO ================= -->
-<section class="hero" aria-labelledby="hero-title">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="hero-eyebrow">Desktop suite (building-automation controls) Build 0.9.9</p>
-      <h1 id="hero-title">BAS <em>HUB</em></h1>
-      <p class="tagline">One app for controls field work.</p>
-      <p class="positioning">A desktop suite for building-automation controls work. Instead of separate tools (one for programming, one for discovery, one for captures, one for the terminal, a spreadsheet for the records) BAS Hub is one app whose modules share <strong>one device inventory and one backup system</strong>.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" data-dl href="download.html#download">Download 0.9.9</a>
-        <a class="btn btn-ghost" href="#demo">Watch the demo</a>
-      </div>
-      <p class="hero-modules">Programmer+ &nbsp;&middot;&nbsp; Network+ &nbsp;&middot;&nbsp; Reports+ &nbsp;&middot;&nbsp; BAS Copilot <span>(optional)</span></p>
+<main>
+<!-- download:start -->
+  <section class="panel" id="download" aria-labelledby="dl-h">
+    <div class="head">
+      <h2 id="dl-h">Download 0.9.9 iteration 6</h2>
+      <span class="meta">Published <b>2026-11-19</b> · tag <code>v0.9.9-iter6</code></span>
     </div>
-    <figure class="hero-art">
-      <svg class="hub-assembly" viewBox="35 40 250 222" role="img" aria-label="The BAS Hub R3 mark: a five-spoke hub with an orange centre and one teal live node, assembling spoke by spoke">
-        <line class="spoke s1" x1="160" y1="160" x2="160" y2="62"/>
-        <line class="spoke s2" x1="160" y1="160" x2="253" y2="130"/>
-        <line class="spoke s3" x1="160" y1="160" x2="218" y2="239"/>
-        <line class="spoke s4" x1="160" y1="160" x2="102" y2="239"/>
-        <line class="spoke s5" x1="160" y1="160" x2="67" y2="130"/>
-        <circle class="node n1" cx="160" cy="62" r="10"/>
-        <circle class="pulse-ring" cx="253" cy="130" r="10"/>
-        <circle class="node n2 live" cx="253" cy="130" r="10"/>
-        <circle class="node n3" cx="218" cy="239" r="10"/>
-        <circle class="node n4" cx="102" cy="239" r="10"/>
-        <circle class="node n5" cx="67" cy="130" r="10"/>
-        <circle class="hub-centre" cx="160" cy="160" r="15"/>
-      </svg>
-      <figcaption>The R3 hub mark: five spokes, one live node.</figcaption>
-    </figure>
-  </div>
-  <div class="wrap">
-    <div class="hero-stage">
-      <div class="app-window">
-        <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>BAS HUB (HOME) 0.9.9</span></div>
-        <picture>
-          <source srcset="assets/img/home.webp" type="image/webp">
-          <img src="assets/img/home.png" alt="Capture of the BAS Hub 0.9.9 home screen on Windows: the digest panel with the BAS Hub mark and Version 0.9.9 beside the module readiness list (Network+ v2.6.0, Programmer+ v2.2.1 and Reports+ v1.1.1 Ready; BAS Copilot needs attention, installed with no model), above the New category button" width="1180" height="633">
-        </picture>
-      </div>
-      <p class="window-note"><em>The current build, as it opens.</em> Capture of 0.9.9 on Windows: the digest panel — the mark and version on the left, module readiness on the right (Network+ 2.6.0, Programmer+ 2.2.1, Reports+ 1.1.1; BAS Copilot installed with no model on this machine) — and your own categories and shortcuts below.</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <dl class="spec-strip" aria-label="Product facts">
-      <div><dt>Release</dt><dd>0.9.9, current</dd></div>
-      <div><dt>Platform</dt><dd>Windows x64 · Linux x64</dd></div>
-      <div><dt>Modules</dt><dd>4</dd></div>
-      <div><dt>Telemetry</dt><dd>None</dd></div>
-      <div><dt>License</dt><dd>Proprietary</dd></div>
-    </dl>
-  </div>
-</section>
-
-
-<!-- ================= DEMO ================= -->
-<section class="section" id="demo" aria-labelledby="demo-title" style="padding-bottom:64px;">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow teal">01 &middot; The demo</p>
-      <h2 id="demo-title">The app in motion</h2>
-      <p class="lead">A recording of the 0.9.3 build: Home → Network+ → Health → Programmer+. Every frame is the real app, of the build named — the current build opens Network+ on the Scan page, and the shell has changed since this recording (see the screenshots below).</p>
-    </div>
-    <div class="device-frame">
-      <div class="chrome" aria-hidden="true"><i></i><i></i><i></i><span>BAS HUB, DEMO</span></div>
-      <div class="film" data-film data-gif="assets/img/demo.gif" data-alt="Recording of the 0.9.3 build in use: from the home screen into Network+, the network health workspace, back home, and into the Programmer+ Builder">
-        <a class="film-poster" href="assets/img/demo.gif" aria-label="Play the 26-second demo recording of the 0.9.3 build in use">
-          <picture>
-            <source srcset="assets/img/demo-poster.webp" type="image/webp">
-            <img class="poster-img" src="assets/img/demo-poster.png" alt="First frame of the demo: the BAS Hub home screen" width="1000" height="643">
-          </picture>
-          <span class="film-play" aria-hidden="true"><span class="disc"></span><span>Play, 26 sec</span></span>
-        </a>
+    <div class="status warn" role="note">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.8 15 14H1z"/><path d="M8 6.2v3.6M8 11.6v.1"/></svg>
+      <div>
+        <p class="lead">Released at the owner’s direction with its gate suites passed</p>
+        <ul class="checks" aria-label="Release checks">
+          <li><span>Laptop drive</span><span class="r">Not finished</span></li>
+          <li><span>Cold re-inspection</span><span class="r">Finished</span></li>
+        </ul>
+        <p class="sub">Results since publication: not recorded.</p>
       </div>
     </div>
-    <p class="figure-note"><em>The full 26-second loop, recorded on the test rig from the 0.9.3 build, shown as a still until you press Play, so the page never moves on its own.</em></p>
-  </div>
-</section>
+    <table>
+      <thead><tr><th scope="col">Platform</th><th scope="col">Build state</th><th scope="col"><span class="vh">Installer</span></th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="plat">Windows</td>
+          <td><span class="st ovr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.8 15 14H1z"/><path d="M8 6.2v3.6M8 11.6v.1"/></svg>Released</span></td>
+          <td class="act"><a class="btn primary" href="download/#windows" aria-label="Windows installer, 0.9.9 iteration 6, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
+        </tr>
+        <tr>
+          <td class="plat">Linux</td>
+          <td><span class="st ovr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.8 15 14H1z"/><path d="M8 6.2v3.6M8 11.6v.1"/></svg>Released</span></td>
+          <td class="act"><a class="btn primary" href="download/#linux" aria-label="Linux installer, 0.9.9 iteration 6, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
+        </tr>
+        <tr>
+          <td class="plat">Windows ARM64</td>
+          <td><span class="st cand">Candidate</span><span class="def">Not yet promoted to a release</span></td>
+          <td class="act"><a class="btn secondary" href="download/#windows-arm64" aria-label="Windows ARM64 candidate installer, 0.9.9 iteration 6, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="foot">Each installer opens on the Download page beside its file size and SHA-256.</p>
+  </section>
+<!-- download:end -->
 
-
-<!-- ================= WHO / COMPARISON ================= -->
-<section class="section alt" aria-labelledby="who-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">02 &middot; Who it's for</p>
-      <h2 id="who-title">Written in the language of the work</h2>
-      <p class="lead">Controls technicians and engineers who commission, service, and troubleshoot building automation systems: BACnet networks that misbehave, PPCL programs that need writing or fixing, devices that need proving before you leave the site. BAS Hub's screens start from the job you came to do, not from the protocol underneath it.</p>
+  <section class="panel" aria-labelledby="suite-h">
+    <div class="head">
+      <h2 id="suite-h">The suite</h2>
+      <span class="meta">Module versions in this release</span>
     </div>
-    <h3 style="font-size:22px;margin:0 0 18px;">One hub, not a folder of tools</h3>
-    <div class="table-scroll" tabindex="0">
-      <table class="data compare">
-        <thead>
-          <tr><th scope="col">The job</th><th scope="col">The usual sprawl</th><th scope="col">In BAS Hub</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Keep track of devices</td><td>Every tool keeps its own list, or a spreadsheet does</td><td><strong>One inventory</strong> every module shares; find a device once, use it everywhere</td></tr>
-          <tr><td>Write and check a PPCL program</td><td>An editor here, a separate checker there, files passed by hand</td><td>Editor, checks, builder, simulator, and debugger in <strong>one workbench</strong></td></tr>
-          <tr><td>Change something on a live controller</td><td>Command it and rely on your own ritual for safety</td><td><strong>Preview → backup → confirm → verify → rollback</strong>, the same path every time</td></tr>
-          <tr><td>Read a packet capture</td><td>Raw hex and a protocol reference open beside it</td><td><strong>Plain sentences first</strong>, full decode underneath</td></tr>
-          <tr><td>Know whether the network is healthy</td><td>Gut feel and spot checks</td><td>A <strong>40-check catalog</strong> whose score always shows its findings</td></tr>
-          <tr><td>Turn the work into a report</td><td>A document assembled by hand: screenshots, re-typed numbers, a spreadsheet&rsquo;s totals</td><td><strong>Reports+</strong>: 60 report subjects in one studio, fed by your files or handed over from Network+ and Programmer+; PDF, XLSX, CSV, TXT out</td></tr>
-          <tr><td>Get a second pair of eyes</td><td>A cloud chatbot, and your site data on someone else's server</td><td><strong>BAS Copilot</strong>: optional, on-device, or not installed at all</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= MODULES ================= -->
-<section class="section" id="modules" aria-labelledby="modules-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow teal">03 &middot; Modules</p>
-      <h2 id="modules-title">Four modules, one inventory</h2>
-      <p class="lead">A device you find in Network+ is the same record everywhere. A write to a live controller goes through the same safety path every time. And the work itself — the files, the runs, the evidence — becomes finished reports in Reports+. Your data lives on your laptop, in the Library&rsquo;s real folders, and nothing leaves it unless you send it.</p>
-    </div>
-    <div class="module-grid">
-      <article class="module-card">
-        <img src="assets/img/icon-hub.png" alt="Hub icon" width="62" height="62">
-        <h3>The Hub</h3>
-        <p>The home screen and launcher. The digest: module readiness in plain words, your own categories of shortcuts to the tools you already use, one settings home.</p>
-        <a class="more" href="modules.html#home">See the home screen →</a>
-      </article>
-      <article class="module-card">
-        <img src="assets/img/icon-programmer.png" alt="Programmer+ icon" width="62" height="62">
-        <h3>Programmer+</h3>
-        <p>The PPCL workbench: editor, block builder, simulator and debugger, point database, and code library.</p>
-        <a class="more" href="modules.html#programmer">Explore Programmer+ →</a>
-      </article>
-      <article class="module-card">
-        <img src="assets/img/icon-network.png" alt="Network+ icon" width="62" height="62">
-        <h3>Network+</h3>
-        <p>The network workbench: find devices, look at them, watch traffic, check health, prove changes, talk, and keep records.</p>
-        <a class="more" href="modules.html#network">Explore Network+ →</a>
-      </article>
-      <article class="module-card">
-        <span class="text-mark" aria-hidden="true">R+</span>
-        <h3>Reports+</h3>
-        <p>The reporting studio: 60 report subjects, built, previewed, edited, and exported in one place — fed by vendor files, and by live subjects handed over from Network+ and Programmer+. Audiences and redaction per build; configurations saved as definitions.</p>
-        <a class="more" href="modules.html#reports">Explore Reports+ &rarr;</a>
-      </article>
-      <article class="module-card">
-        <img src="assets/img/icon-copilot.png" alt="BAS Copilot icon" width="62" height="62">
-        <h3>BAS Copilot <span class="opt">(optional)</span></h3>
-        <p>An assistant that runs entirely on your computer. If you don't install it, there is no chat surface anywhere in BAS Hub.</p>
-        <a class="more" href="modules.html#copilot">How Copilot works →</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= ON STAGE (pinned showcase) ================= -->
-<section class="section alt" id="stage" aria-labelledby="stage-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">04 &middot; On stage</p>
-      <h2 id="stage-title">Each module, in turn</h2>
-      <p class="lead">Scroll, and the stage changes hands: the home screen, the programming workbench, the network workbench, the reporting studio, and the optional assistant, each with the facts that define it. (With reduced motion set, the stage unpins and every module simply follows its text.) The module figures are captures from earlier builds; the home figure is the current 0.9.9 capture.</p>
-    </div>
-    <div class="stage" data-stage>
-      <div class="stage-steps">
-        <article class="stage-step" data-stage-step data-img="assets/img/home.png" data-eyebrow="Stage 01: The Hub" data-cap="<b>The home screen.</b> The digest panel: mark and version at the left, module readiness at the right; your categories and shortcuts below.">
-          <h3>The Hub</h3>
-          <p>One launcher for the suite. The digest panel states, module by module, what is installed, what is ready, and what needs attention, in plain words; below it, your own categories hold shortcuts to the external tools you already use.</p>
-          <ul class="specs">
-            <li><b>Ready states are earned</b>, the digest says Ready only when the module checks out</li>
-            <li class="o"><b>No site mode</b>: nothing to pick before your tools open</li>
-            <li><b>One settings home</b> for the whole suite</li>
-          </ul>
-          <figure class="step-fig plain-frame"><img width="1180" height="760" src="assets/img/home.png" alt="The BAS Hub home screen: the digest panel with the BAS Hub mark and version beside the module readiness list (Network+, Reports+ and Programmer+ Ready, BAS Copilot not installed), above a New category button" loading="lazy"><span class="cap"><b>The home screen</b>, the digest: readiness at the right; your categories below.</span></figure>
-        </article>
-        <article class="stage-step" data-stage-step data-img="assets/img/editor.png" data-eyebrow="Stage 02: Programmer+" data-cap="<b>The PPCL editor.</b> Checks run as you type; the findings panel says what to do and why.">
-          <h3>Programmer+</h3>
-          <p>The PPCL workbench: an editor that checks as you type, a block builder and decision tables that compile to program text, and a simulator and debugger for proving logic before a panel ever sees it.</p>
-          <ul class="specs">
-            <li><b>97 named diagnostics</b>, every finding states the fix, the reason, and its source</li>
-            <li class="o"><b>31 block types</b>, sequences, and decision tables compile to PPCL</li>
-            <li><b>Time-scrub</b> back through every recorded pass of a run</li>
-          </ul>
-          <figure class="step-fig plain-frame"><img width="1400" height="900" src="assets/img/editor.png" alt="The Programmer+ editor checking a program as it is typed, with the findings panel below the code" loading="lazy"><span class="cap"><b>The PPCL editor</b>: checks as you type.</span></figure>
-        </article>
-        <article class="stage-step" data-stage-step data-img="assets/img/device-page.png" data-eyebrow="Stage 03: Network+" data-cap="<b>The device page.</b> One device, one page; every job for it starts from the same record.">
-          <h3>Network+</h3>
-          <p>The network workbench. Network+ opens on the Scan page — connect, scan, and the session's devices in one table — and one page per device is the spine from there: protocols are capabilities of the device, never separate rooms to visit.</p>
-          <ul class="specs">
-            <li><b>40-check health catalog</b>, three axes, and an axis with no evidence says <i>Not measured</i></li>
-            <li class="o"><b>Test Bench is the only door that writes</b>, preview, backup, confirm, verify, rollback</li>
-            <li><b>Watch</b> reads captures back in plain sentences, decode underneath</li>
-          </ul>
-          <figure class="step-fig plain-frame"><img width="1400" height="900" src="assets/img/device-page.png" alt="A Network+ device page for a BACnet controller: state and health cards, then the cards for every job on that device" loading="lazy"><span class="cap"><b>The device page</b>, one device, one page.</span></figure>
-        </article>
-        <article class="stage-step" data-stage-step data-img="assets/img/reportsplus-studio-build.png" data-eyebrow="Stage 04: Reports+" data-cap="<b>Reports+ Build.</b> The catalog by subject; a report the sources cannot feed states the source it needs.">
-          <h3>Reports+</h3>
-          <p>The reporting studio. Vendor files and live subjects in; finished reports out — built, previewed, edited, and exported in one place, from one catalog the studio and its coverage page both read, so they cannot drift apart.</p>
-          <ul class="specs">
-            <li><b>60 report subjects</b>, grouped by the job: inventory, programs, files, captures, network, commissioning, live, compare, site</li>
-            <li class="o"><b>File-fed and module-fed</b>: files you add, and subjects handed over by Network+ and Programmer+ with Report on this&hellip;</li>
-            <li><b>Audiences, redaction, depth</b> per build; configurations saved as named definitions; PDF, XLSX, CSV, TXT out</li>
-          </ul>
-          <figure class="step-fig plain-frame"><img width="1400" height="900" src="assets/img/reportsplus-studio-build.png" alt="The Reports+ studio at the Build stage: report cards grouped by subject, each stating what it answers and the source it needs" loading="lazy"><span class="cap"><b>Reports+ Build</b>: the catalog, by subject.</span></figure>
-        </article>
-        <article class="stage-step" data-stage-step data-img="assets/img/copilot.png" data-eyebrow="Stage 05: BAS Copilot" data-cap="<b>BAS Copilot.</b> States its terms on its face: everything runs on this computer.">
-          <h3>BAS Copilot <span class="opt">(optional)</span></h3>
-          <p>An assistant that runs entirely on your computer: chosen at install, sized to your hardware, and absent without a trace if you skip it. It explains and drafts; it never acts.</p>
-          <ul class="specs">
-            <li><b>Zero egress by construction</b>, the module ships with no networking code of its own</li>
-            <li class="o"><b>Four tiers, gated by RAM</b>: Setup offers only what the machine runs well</li>
-            <li><b>Skip it, and there is no chat surface anywhere</b> in the suite</li>
-          </ul>
-          <figure class="step-fig plain-frame"><img width="1400" height="900" src="assets/img/copilot.png" alt="The BAS Copilot panel open beside the Programmer+ editor, stating that it runs entirely on this computer" loading="lazy"><span class="cap"><b>BAS Copilot</b>: runs on this computer, or not at all.</span></figure>
-        </article>
-      </div>
-      <div class="stage-visual" aria-hidden="true">
-        <div class="stage-progress"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-        <div class="stage-frame">
-          <img width="1180" height="760" data-stage-img src="assets/img/home.png" alt="">
-          <div class="stage-cap"><span class="sc-eyebrow" data-stage-eyebrow>Stage 01: The Hub</span><span data-stage-cap><b>The home screen.</b> Built-in Modules pinned at top; your categories and shortcuts below.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= GALLERY ================= -->
-<section class="section alt" id="screenshots" aria-labelledby="shots-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow teal">05 &middot; Screenshots</p>
-      <h2 id="shots-title">The real app, as shipped</h2>
-      <p class="lead">Real captures of earlier builds (0.9.4 and before) and their test rigs, no mockups, no staged data presented as a real site: they show those builds, not the current one — the current build is the 0.9.9 home capture at the top of this page. Select any screenshot to view it full-size.</p>
-    </div>
-    <div class="gallery">
-      <a class="shot-frame" href="assets/img/device-page.png" data-lightbox data-alt="Rig capture of the Network+ device page in 0.9.4, Properties tab: the constant header with device actions, the alarm banner, and the three across fact sheet for a fictional seed controller" data-caption="<b>The device page (rig capture)</b>, Properties first: identity, state, and network facts for one device, with fictional seed data.">
-        <img width="1400" height="900" src="assets/img/device-page.png" alt="Rig capture of the Network+ device page in 0.9.4, Properties tab: the constant header with device actions, the alarm banner, and the three across fact sheet for a fictional seed controller" loading="lazy">
-        <span class="cap"><b>The device page (rig capture)</b>, Properties first: identity, state, and network facts for one device, with fictional seed data.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/health.png" data-lightbox data-alt="Rig capture of the Help window opened by Contextual Help in 0.9.4, resolved to the topic for the current screen and stamped Help for BAS Hub 0.9.4" data-caption="<b>Contextual Help (rig capture)</b>: Help opens at the topic for the screen you are on, stamped to this build.">
-        <img width="1400" height="900" src="assets/img/health.png" alt="Rig capture of the Help window opened by Contextual Help in 0.9.4, resolved to the topic for the current screen and stamped Help for BAS Hub 0.9.4" loading="lazy">
-        <span class="cap"><b>Contextual Help (rig capture)</b>: Help opens at the topic for the screen you are on, stamped to this build.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/watch.png" data-lightbox data-alt="Network+ Watch reading a capture back as a list of plain-language sentences, one per conversation event" data-caption="Watch, a capture read back in plain sentences. (Demonstration capture file; live capture uses the optional Npcap step at install.)">
-        <img width="1400" height="900" src="assets/img/watch.png" alt="Network+ Watch reading a capture back as a list of plain-language sentences, one per conversation event" loading="lazy">
-        <span class="cap"><b>Watch</b>: a capture read back in plain sentences. <em>(Demonstration capture file; live capture uses the optional Npcap step at install.)</em></span>
-      </a>
-      <a class="shot-frame" href="assets/img/console.png" data-lightbox data-alt="The Network+ console in a terminal session, with canned commands and special keys offered beside the terminal" data-caption="Console, a real VT terminal, your usual commands one tap away, session logs filed to Records.">
-        <img width="1400" height="900" src="assets/img/console.png" alt="The Network+ console in a terminal session, with canned commands and special keys offered beside the terminal" loading="lazy">
-        <span class="cap"><b>Console</b>, a real VT terminal, your usual commands one tap away, session logs filed to Records.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/settings.png" data-lightbox data-alt="Rig capture of BAS Hub Settings, General page, in 0.9.4, on the test rig profile" data-caption="<b>Settings (rig capture)</b>: one Settings home for the suite and its modules, as shipped in 0.9.4.">
-        <img width="1400" height="900" src="assets/img/settings.png" alt="Rig capture of BAS Hub Settings, General page, in 0.9.4, on the test rig profile" loading="lazy">
-        <span class="cap"><b>Settings (rig capture)</b>: one Settings home for the suite and its modules, as shipped in 0.9.4.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/prove-run.png" data-lightbox data-alt="Rig capture of the Programmer+ Editor in 0.9.4, in its honest empty state: no program open, nothing preloaded" data-caption="<b>Programmer+ (rig capture)</b>: the Editor as it opens, no program loaded until you open one.">
-        <img width="1400" height="900" src="assets/img/prove-run.png" alt="Rig capture of the Programmer+ Editor in 0.9.4, in its honest empty state: no program open, nothing preloaded" loading="lazy">
-        <span class="cap"><b>Programmer+ (rig capture)</b>: the Editor as it opens, no program loaded until you open one.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/netplus-find-results.png" data-lightbox data-alt="Rig capture of the Network+ Scan Network page in 0.9.4: the connection pill at the top right, the scan strip, and the temporary network table in its honest empty state, with fictional seed devices in the tree" data-caption="<b>Scan Network (rig capture)</b>: one page, a temporary network for this session, devices in their kind bands. Fictional seed data.">
-        <img width="1400" height="900" src="assets/img/netplus-find-results.png" alt="Rig capture of the Network+ Scan Network page in 0.9.4: the connection pill at the top right, the scan strip, and the temporary network table in its honest empty state, with fictional seed devices in the tree" loading="lazy">
-        <span class="cap"><b>Scan Network (rig capture)</b>: one page, a temporary network for this session, devices in their kind bands. Fictional seed data.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/netplus-find-grid.png" data-lightbox data-alt="Rig capture of the Scan Network connection control expanded in the Not connected state in 0.9.4: BACnet/IP fields, the adapter editor door, and the UDP port" data-caption="<b>The connection control (rig capture)</b>: one pill, three honest states; editable only while not connected.">
-        <img width="1400" height="900" src="assets/img/netplus-find-grid.png" alt="Rig capture of the Scan Network connection control expanded in the Not connected state in 0.9.4: BACnet/IP fields, the adapter editor door, and the UDP port" loading="lazy">
-        <span class="cap"><b>The connection control (rig capture)</b>: one pill, three honest states; editable only while not connected.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/reportsplus-studio-sources.png" data-lightbox data-alt="The Reports+ studio at Sources: source cards with their verdicts, Read in full and Read in part, their coverage and counts, and the backup-drift analysis set-up below" data-caption="Reports+ Sources: every source read on the spot, its verdict on its card.">
-        <img width="1400" height="900" src="assets/img/reportsplus-studio-sources.png" alt="The Reports+ studio at Sources: source cards with their verdicts, Read in full and Read in part, their coverage and counts, and the backup-drift analysis set-up below" loading="lazy">
-        <span class="cap"><b>Reports+ Sources</b>: every source read on the spot, its verdict and coverage on its card.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/reportsplus-studio-build.png" data-lightbox data-alt="The Reports+ studio at the Build stage: report cards grouped by subject, each stating what it answers and, where the sources cannot feed it, the source it needs" data-caption="Reports+ Build: the catalog by subject.">
-        <img width="1400" height="900" src="assets/img/reportsplus-studio-build.png" alt="The Reports+ studio at the Build stage: report cards grouped by subject, each stating what it answers and, where the sources cannot feed it, the source it needs" loading="lazy">
-        <span class="cap"><b>Reports+ Build</b>: the catalog by subject; a report the sources cannot feed says what it needs.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/reportsplus-studio-comparison-panel.png" data-lightbox data-alt="The Sources stage&rsquo;s Comparison and site reports panel: the order-is-time rule stated on its face, the program findings subject&rsquo;s analyse action, and a program change subject being assembled from two panel exports" data-caption="Comparison panel: order is time, subjects assembled in the open.">
-        <img width="1400" height="900" src="assets/img/reportsplus-studio-comparison-panel.png" alt="The Sources stage&rsquo;s Comparison and site reports panel: the order-is-time rule stated on its face, the program findings subject&rsquo;s analyse action, and a program change subject being assembled from two panel exports" loading="lazy">
-        <span class="cap"><b>Comparison panel</b>: order is time; the findings and program-change subjects are assembled here, in the open.</span>
-      </a>
-      <a class="shot-frame" href="assets/img/demo.gif" data-lightbox data-alt="Recording of the 0.9.3 build in use: from the home screen into Network+, the network health workspace, back home, and into the Programmer+ Builder" data-caption="In motion: a recording of the 0.9.3 build — home → Network+ → Health → Programmer+, on the test rig. The current build opens Network+ on the Scan page.">
-        <img width="1000" height="643" src="assets/img/demo.gif" alt="BAS Hub in use: from the home screen into Network+, the network health workspace, back home, and into the Programmer+ Builder" loading="lazy">
-        <span class="cap"><b>In motion</b> (0.9.3 recording), home → Network+ → Health → Programmer+, on the test rig.</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= TRUST ================= -->
-<section class="section" id="trust" aria-labelledby="trust-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">06 &middot; Trust, by design</p>
-      <h2 id="trust-title">Built like it has to earn its place on the laptop</h2>
-    </div>
-    <div class="card-grid">
-      <article class="trust-card">
-        <div class="glyph" aria-hidden="true">◉</div>
-        <h3>No telemetry. No phone-home.</h3>
-        <p>Nothing is sent anywhere automatically, including crash reports. If BAS Hub ever crashes, it saves a structured report on <em>your</em> computer (the last 10 are kept, secrets kept out), and the next launch tells you in plain language that one was saved. Sending it anywhere is your act, never the app's.</p>
-      </article>
-      <article class="trust-card">
-        <div class="glyph" aria-hidden="true">⌂</div>
-        <h3>Local-first data</h3>
-        <p>One standard per-user folder; it survives updates and uninstalls; exports never contain credentials.</p>
-      </article>
-      <article class="trust-card">
-        <div class="glyph" aria-hidden="true">⬢</div>
-        <h3>Secrets stay in the vault</h3>
-        <p>Credentials are kept in Windows Credential Manager / DPAPI, never in plain-text files. Console passwords are held in session memory only and are never stored at all; console profiles by design have no password field.</p>
-      </article>
-      <article class="trust-card">
-        <div class="glyph" aria-hidden="true">◈</div>
-        <h3>Write safety on live controllers</h3>
-        <p>The Test Bench is the only door that writes. Preview from real reads → backup persisted first → your confirm → graded writes with read-back verify → a receipt, and rollback through the same path. A failed backup read stops the run cold: nothing is written. Browsing surfaces hold no write code path at all.</p>
-      </article>
-      <article class="trust-card">
-        <div class="glyph" aria-hidden="true">✓</div>
-        <h3>Verified downloads</h3>
-        <p>Release manifests are digitally signed and payloads are checksummed; a download that doesn't verify is refused, not installed. The installer itself verifies the payload hash before it stages a single file.</p>
-      </article>
-      <article class="trust-card">
-        <div class="glyph" aria-hidden="true">☰</div>
-        <h3>Least privilege, nothing lurking</h3>
-        <p>Per-user install, no administrator rights for the app, no background services installed, no listening sockets opened by default. Anything that listens runs only while you run it, shows its state, and stops when you stop it.</p>
-      </article>
-    </div>
-    <div class="status-note">
-      <strong>Honest surfaces.</strong> Where the app can't do something (a capture that proves less than it seems, a health axis with no evidence, a break a wire doesn't support) the surface says so, in words, on its face. That posture is a feature, and it is tested like one.
-    </div>
-  </div>
-</section>
-
-
-<!-- ================= LICENSE / CTA ================= -->
-<section class="section" id="license" aria-labelledby="license-title" style="padding-bottom:64px;">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">07 &middot; License</p>
-      <h2 id="license-title">Proprietary software</h2>
-      <p class="lead" style="margin-left:auto;margin-right:auto;">BAS Hub is <strong>proprietary software</strong>. © 2026. All rights reserved. Downloads are binaries only: no source code is published. Your use of the software is governed by the proprietary terms stated in the download.</p>
-      <div class="cta-row" style="margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-primary" data-dl href="download.html#download">Download 0.9.9</a>
-        <a class="btn btn-ghost" href="releases.html">See all versions</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+    <ul class="mods">
+      <li><div class="mh"><span class="mod">Network+</span><span class="ver">2.7.0</span></div><p class="scope">Network discovery · device connection · points · trends · schedules · traffic · console</p></li>
+      <li><div class="mh"><span class="mod">Programmer+</span><span class="ver">2.2.1</span></div><p class="scope">Siemens PPCL</p></li>
+      <li><div class="mh"><span class="mod">Reports+</span><span class="ver">1.1.1</span></div><p class="scope">Report building</p></li>
+      <li><div class="mh"><span class="mod">TBC+</span><span class="ver">0.1.0</span></div><p class="scope">Automated PM testing</p></li>       <li><div class="mh"><span class="mod">BAS Copilot</span><span class="ver">1.1.0</span></div><p class="scope">Embedded assistant</p></li>
+    </ul>
+    <p class="policy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 2.5h9l2 2v9h-11z"/><path d="M5 2.5v4h6v-4M5 13.5v-4h6v4"/></svg><span>Nothing is saved automatically. Work is kept only when you save it.</span></p>
+  </section>
 </main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="assets/img/hub-icon.png" alt="" width="30" height="30">
-        <span style="font-weight:700;letter-spacing:.04em;">BAS <span style="color:var(--orange);">HUB</span></span>
-      </div>
-      <nav aria-label="Footer">
-        <a href="modules.html">Modules</a>
-        <a href="modules.html#reports">Reports+</a>
-        <a href="download.html">Download</a>
-        <a href="releases.html">Versions</a>
-        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">GitHub downloads</a>
-        <a href="support.html#faq">FAQ</a>
-        <a href="support.html">Support</a>
-        <a href="#license">License</a>
-      </nav>
-    </div>
-    <p class="legal">BAS Hub is proprietary software · © 2026</p>
-  </div>
-</footer>
-
-<div class="palette" data-palette role="dialog" aria-modal="true" aria-label="Site navigator">
-  <div class="palette-box">
-    <div class="pal-head">
-      <span>Site index</span>
-      <input type="text" data-palette-input placeholder="Type a section, a module, an action&hellip;" aria-label="Filter destinations" autocomplete="off">
-    </div>
-    <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>
-    <div class="pal-foot"><span>&uarr;&darr; move</span><span>Enter opens</span><span>Esc closes</span><span>Ctrl K / &#8984;K anywhere</span></div>
-  </div>
-</div>
-
-
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
-  <button class="lb-close" type="button" aria-label="Close viewer">✕</button>
-  <figure>
-    <img alt="">
-    <figcaption></figcaption>
-  </figure>
-</div>
-<script src="assets/js/site.js"></script>
 </body>
 </html>
