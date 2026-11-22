@@ -3,232 +3,316 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Support & FAQ: BAS Hub</title>
-<meta name="description" content="BAS Hub support and FAQ: answers to common questions, and bug-report and feedback forms that prefill an issue on the releases repository with everything filled in, BAS Hub version included.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="BAS Hub">
-<meta property="og:title" content="Support & FAQ, BAS Hub">
-<meta property="og:description" content="Answers to common BAS Hub questions, plus bug-report and feedback forms that hand off to the releases repository.">
-<meta property="og:url" content="https://bas-hub-app.github.io/support.html">
-<meta property="og:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="BAS Hub, one app for controls field work: Programmer+, Network+, Reports+, BAS Copilot">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Support & FAQ, BAS Hub">
-<meta name="twitter:description" content="Answers to common BAS Hub questions, plus bug-report and feedback forms that hand off to the releases repository.">
-<meta name="twitter:image" content="https://bas-hub-app.github.io/assets/img/og-card.png">
+<title>Support — BAS Hub</title>
+<meta name="description" content="Report a bug, send feedback, and answers about BAS Hub.">
 <link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#17181A">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "BAS Hub",
-  "url": "https://bas-hub-app.github.io/",
-  "description": "A desktop suite for building-automation controls work: Programmer+ for PPCL, Network+ for BACnet networks, Reports+ for reporting, and optional on-device BAS Copilot: one inventory and one backup system.",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Windows 10, Windows 11, Linux"
-}
-</script>
-<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  :root {
+    --bg: #000; --panel: #1c1c1e; --panel-2: #232326; --line: #333336;
+    --text: #ececec; --muted: #a3a3a8;
+    --accent: #f47a20; --accent-ink: #120800;
+    --amber: #f2b33d; --amber-bg: #241c0c;
+    --red: #ff6b5e; --red-bg: #2a1311;
+    --ok: #5fd27e; --ok-bg: #102116;
+    --cand: #c9c9cf;
+    --radius: 6px; --gap: 20px;
+    font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; line-height: 1.45; color: var(--text); background: var(--bg);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); }
+  a { color: inherit; }
+  p, ul, h1, h2 { margin: 0; }
+  :focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 3px; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip { position: absolute; left: 16px; top: -60px; background: var(--text); color: #000; padding: 8px 12px; z-index: 10; font-weight: 700; }
+  .skip:focus { top: 8px; }
+  svg { flex: none; }
+
+  /* Site bar = identity: the wordmark is the page's H1, stated once */
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap;
+    min-height: 72px; padding: 10px 32px; border-bottom: 1px solid var(--line); }
+  .id { display: flex; align-items: baseline; gap: 6px 18px; flex-wrap: wrap; }
+  h1 { font-size: 26px; line-height: 1.1; font-weight: 700; }
+  h1 a { text-decoration: none; }
+  .desc { font-size: 18px; }
+  nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+  nav a { display: block; padding: 8px 14px; border-radius: 4px; text-decoration: none; color: var(--muted); font-weight: 600; }
+  nav a:hover { color: var(--text); background: var(--panel); }
+  nav a[aria-current="page"] { color: var(--text); background: var(--panel-2); box-shadow: inset 0 -2px 0 var(--accent); }
+
+  main { padding: 28px 32px 32px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--gap); align-items: start; max-width: 1920px; }
+
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; padding: 16px 22px 14px; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 22px; line-height: 1.2; font-weight: 700; }
+  .meta { color: var(--muted); font-size: 15px; }
+  .meta b { color: var(--text); font-weight: 600; }
+  code, .mono { font-family: "Cascadia Mono", Consolas, Menlo, monospace; font-size: .94em; }
+
+  /* Release status band: sits between the heading and the buttons, so it is read before any download */
+  .status { display: flex; gap: 12px; padding: 14px 22px; border-bottom: 1px solid var(--line); border-left: 4px solid; }
+  .status svg { width: 20px; height: 20px; margin-top: 2px; }
+  .status .lead { font-weight: 700; }
+  .status .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .status.warn { background: var(--amber-bg); border-left-color: var(--amber); }
+  .status.warn svg, .status.warn .lead { color: var(--amber); }
+  .status.bad { background: var(--red-bg); border-left-color: var(--red); }
+  .status.bad svg, .status.bad .lead { color: var(--red); }
+  .status.good { background: var(--ok-bg); border-left-color: var(--ok); }
+  .status.good svg, .status.good .lead { color: var(--ok); }
+  .status.plain { background: var(--panel-2); border-left-color: var(--cand); }
+  .checks { list-style: none; padding: 0; margin-top: 8px; display: grid; grid-template-columns: max-content 1fr; gap: 4px 20px; }
+  .checks li { display: contents; }
+  .checks .r { font-weight: 600; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 13px; font-weight: 600; color: var(--muted); padding: 12px 22px 8px; border-bottom: 1px solid var(--line); }
+  td { padding: 14px 22px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: 0; }
+  .plat { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .def { display: block; margin-top: 4px; font-weight: 400; font-size: 14px; color: var(--muted); }
+  .st { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; white-space: nowrap; }
+  .st svg { width: 16px; height: 16px; }
+  .st.ovr { color: var(--amber); }
+  .st.bad { color: var(--red); }
+  .st.good { color: var(--ok); }
+  .st.cand { color: var(--cand); border: 1px dashed var(--cand); border-radius: 4px; padding: 1px 9px; }
+  .st.none { color: var(--muted); font-weight: 400; }
+  td.act { text-align: right; width: 1%; white-space: nowrap; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 4px; font-weight: 700;
+    text-decoration: none; white-space: nowrap; border: 1px solid transparent; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn.primary:hover { background: #ff8c37; }
+  .btn.secondary { background: var(--panel-2); color: var(--text); border-color: #55555a; }
+  .btn.secondary:hover { border-color: var(--text); }
+  .foot { padding: 12px 22px 14px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); }
+  .foot a { color: var(--text); }
+  .empty { padding: 22px; }
+  .empty p + p { margin-top: 6px; color: var(--muted); }
+
+  /* Suite: one panel, one list, one application */
+  .mods { list-style: none; padding: 0; }
+  .mods li { padding: 14px 22px; border-bottom: 1px solid var(--line); }
+  .mh { display: flex; align-items: baseline; gap: 12px; }
+  .mod { font-weight: 700; font-size: 17px; }
+  .ver { font-family: "Cascadia Mono", Consolas, Menlo, monospace; font-size: 15px; color: var(--muted); }
+  .ver.none { font-family: inherit; }
+  .scope { margin-top: 3px; }
+  .policy { display: flex; gap: 10px; align-items: flex-start; padding: 14px 22px 16px; }
+  .policy svg { width: 18px; height: 18px; margin-top: 3px; color: var(--text); }
+
+  /* 1366x768 class screens */
+  @media (max-width: 1600px) {
+    :root { font-size: 14px; --gap: 14px; }
+    header.site { min-height: 60px; padding: 8px 20px; }
+    h1 { font-size: 22px; } .desc { font-size: 16px; }
+    nav a { padding: 6px 11px; }
+    main { padding: 18px 20px 20px; }
+    h2 { font-size: 19px; }
+    .head { padding: 12px 16px 10px; }
+    .meta, .status .sub, .foot { font-size: 13px; }
+    .status { padding: 11px 16px; }
+    th { font-size: 12px; padding: 9px 16px 6px; }
+    td { padding: 10px 16px; }
+    .plat, .mod { font-size: 15px; } .def { font-size: 13px; } .ver { font-size: 13px; }
+    .btn { padding: 8px 14px; }
+    .foot { padding: 10px 16px 12px; }
+    .mods li { padding: 10px 16px; }
+    .policy { padding: 11px 16px 13px; }
+  }
+  /* Reflow (WCAG 1.4.10): single column, table rows become stacked blocks */
+  @media (max-width: 900px) {
+    header.site { padding: 10px 16px; }
+    main { grid-template-columns: minmax(0, 1fr); padding: 14px 12px; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    table, tbody, tr, td { display: block; width: auto; }
+    tbody tr { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+    tbody tr:last-child { border-bottom: 0; }
+    td { padding: 3px 0; border: 0; }
+    td.act { text-align: left; padding-top: 8px; }
+    .plat, .st { white-space: normal; }
+  }
+
+  /* Extensions for the pages beyond the home page: same tokens, same components.
+     Added by the Section 5 build; the block above is the fix101 finals' CSS, verbatim. */
+  main.single { grid-template-columns: minmax(0, 1fr); }
+  /* Download files table: fixed layout with stated shares — auto layout
+     starved the file column beside the nowrap button (measured 847/144/188
+     in a 1,118px panel at 1920x1080, the table overflowing its panel). */
+  table.dl { table-layout: fixed; }
+  table.dl th:first-child, table.dl td:first-child { width: 26%; }
+  table.dl th:last-child, table.dl td:last-child { width: 19%; }
+  /* .plat is nowrap (finals' CSS, for the platform name); its .def child
+     inherited that, so the one long def (Windows ARM64) painted across
+     the row instead of wrapping — measured scrollW 825 in a 291px cell. */
+  td.plat .def { white-space: normal; }
+  main.single .panel, main.single .entry { max-width: 1120px; width: 100%; margin-inline: auto; }
+  .stack { display: grid; gap: var(--gap); }
+  footer.site { border-top: 1px solid var(--line); padding: 14px 32px 18px; color: var(--muted); font-size: 15px; max-width: 1920px; }
+  .body { padding: 16px 22px 18px; }
+  .body p + p { margin-top: 10px; }
+  .body p.lede { font-size: 17px; }
+  h3.sub { font-size: 17px; font-weight: 700; margin: 20px 0 6px; }
+  .body h3.sub:first-child { margin-top: 0; }
+  ul.list { list-style: none; padding: 0; }
+  ul.list li { padding: 10px 22px; border-bottom: 1px solid var(--line); }
+  ul.list li:last-child { border-bottom: 0; }
+  ul.list .t { font-weight: 700; }
+  ul.list .d { display: block; margin-top: 2px; color: var(--muted); font-size: 15px; }
+  .faq { list-style: none; padding: 0; }
+  .faq li { padding: 14px 22px; border-bottom: 1px solid var(--line); }
+  .faq li:last-child { border-bottom: 0; }
+  .faq .q { font-weight: 700; font-size: 17px; }
+  .faq .a { margin-top: 4px; }
+  .faq .a p + p { margin-top: 8px; }
+  .file { display: block; font-weight: 400; font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .file code { color: var(--text); word-break: break-all; }
+  .hash { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; word-break: break-all; }
+  .entry { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .entry .head h3 { font-size: 20px; line-height: 1.2; font-weight: 700; margin: 0; }
+  .entry .title { padding: 14px 22px 0; font-size: 17px; font-weight: 600; }
+  .entry .body { font-size: 15.5px; }
+  .entry ul.bl { margin: 10px 0 0; padding-left: 20px; }
+  .entry ul.bl li { margin-top: 6px; }
+  .entry .status { border-bottom: 0; border-top: 1px solid var(--line); margin-top: 14px; }
+  .entry .status p { font-size: 15px; }
+  .banner { padding: 12px 22px; background: var(--panel-2); border-bottom: 1px solid var(--line); border-left: 4px solid var(--cand); font-size: 15px; }
+  form.f { padding: 16px 22px 18px; display: grid; gap: 14px; }
+  form.f label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+  form.f input[type="text"], form.f textarea, form.f select {
+    background: var(--panel-2); color: var(--text); border: 1px solid #8a8a90; border-radius: 4px;
+    padding: 9px 12px; font: inherit; font-weight: 400; width: 100%; }
+  form.f textarea { min-height: 110px; resize: vertical; }
+  form.f .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  form.f .hint { color: var(--muted); font-size: 14px; font-weight: 400; }
+  button.btn { font: inherit; cursor: pointer; }
+  .doors { display: flex; gap: 12px; flex-wrap: wrap; padding: 16px 22px 18px; }
+  td .rowbtn { text-align: right; }
+  .catgroup td { background: var(--panel-2); font-weight: 700; font-size: 15px; padding-top: 10px; padding-bottom: 10px; }
+  ul.mods.hub li { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  ul.mods.hub .open { flex: none; }
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  main { flex: 1 0 auto; width: 100%; margin-inline: auto; }
+  .body p, .faq .a p { max-width: 72ch; }
+  main.single .panel.narrow { max-width: 560px; }
+  .files { list-style: none; padding: 0; }
+  .files li { padding: 10px 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; flex-wrap: wrap; }
+  .files li:last-child { border-bottom: 0; }
+  .files .fl { font-weight: 600; }
+  .files .fm { color: var(--muted); font-size: 14px; }
+  .files .fh { display: block; color: var(--muted); font-size: 13px; word-break: break-all; }
+  .entry .status ul { margin: 8px 0 0; padding-left: 20px; }
+  .entry .status li { margin-top: 6px; font-size: 15px; }
+  .entry .status li:first-child { margin-top: 0; }
+  .toc { list-style: none; padding: 0; }
+  .toc li { padding: 9px 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .toc li:last-child { border-bottom: 0; }
+  .toc a { font-weight: 600; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc .d { color: var(--muted); font-size: 14px; }
+  .fam { font-weight: 700; font-size: 15px; }
+  @media (max-width: 900px) {
+    .proofcell::before { content: "Proof: "; font-weight: 600; color: var(--muted); }
+  }
+  @media (max-width: 1600px) {
+    footer.site { padding: 12px 20px 14px; font-size: 13px; }
+    .body { padding: 12px 16px 14px; }
+    ul.list li, .faq li { padding: 10px 16px; }
+    .entry .title { padding: 10px 16px 0; }
+    .banner { padding: 10px 16px; }
+    form.f { padding: 12px 16px 14px; }
+    .doors { padding: 12px 16px 14px; }
+  }
+  @media (max-width: 900px) {
+    footer.site { padding: 12px 16px; }
+  }
+</style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to main content</a>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="index.html" aria-label="BAS Hub: home">
-      <img src="assets/img/hub-icon.png" alt="" width="34" height="34">
-      <span class="wordmark">BAS <em>HUB</em></span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">☰</button>
-    <nav class="main-nav" id="main-nav" aria-label="Main">
-      <div class="nav-group" data-nav-group>
-        <button class="nav-group-btn" type="button" aria-expanded="false" aria-controls="modules-menu" data-nav-group-btn>Explore modules <span class="caret" aria-hidden="true"></span></button>
-        <span class="nav-group-label" aria-hidden="true">Explore modules</span>
-        <div class="nav-dropdown" id="modules-menu" data-nav-dropdown>
-          <a href="modules.html#home"><span class="nd-name">The Hub</span><span class="nd-spec">Home screen and launcher</span></a>
-          <a href="modules.html#programmer"><span class="nd-name">Programmer+</span><span class="nd-spec">PPCL workbench (editor, builder, simulator</span></a>
-          <a href="modules.html#network"><span class="nd-name">Network+</span><span class="nd-spec">Network workbench) find, watch, health, prove</span></a>
-          <a href="modules.html#reports"><span class="nd-name">Reports+</span><span class="nd-spec">The reporting studio: files and live subjects in, reports out</span></a>
-          <a href="modules.html#copilot"><span class="nd-name">BAS Copilot</span><span class="nd-spec">Optional assistant: runs on this computer</span></a>
-          <a class="nd-all" href="index.html#stage"><span class="nd-name">All modules, on stage</span><span class="nd-arrow" aria-hidden="true">→</span></a>
-        </div>
-      </div>
-      <a href="modules.html">Modules</a>
-      <a href="index.html#screenshots">Screenshots</a>
-      <a href="index.html#trust">Trust</a>
-      <a href="download.html">Download</a>
-      <a href="releases.html">Versions</a>
-      <a href="support.html" aria-current="page">Support</a>
-    </nav>
-    <button class="palette-btn" type="button" data-palette-open aria-label="Open the site navigator (Control K)"><span class="pb-label">Site index</span><kbd>Ctrl K</kbd></button>
-    <a class="btn btn-primary btn-sm header-cta" data-dl href="download.html#download">Download</a>
+<header class="site">
+  <div class="id">
+    <h1><a href="index.html">BAS Hub</a></h1>
+    <p class="desc">Desktop suite for building-automation field work</p>
   </div>
+  <nav aria-label="Site">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html">Modules</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="releases.html">Releases</a></li>
+      <li><a href="support.html" aria-current="page">Support</a></li>
+    </ul>
+  </nav>
 </header>
 
-<main id="main">
-<!-- ================= FAQ ================= -->
-<section class="section alt" id="faq" aria-labelledby="faq-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow teal">01 &middot; FAQ</p>
-      <h1 id="faq-title">Questions, answered straight</h1>
+<main class="single" id="main">
+ <div class="stack">
+  <section class="panel" aria-labelledby="sup-h">
+    <div class="head"><h2 id="sup-h">Support</h2></div>
+    <div class="body"><p>Bug reports and feedback are filed as GitHub issues in the releases repository — a free GitHub account is needed. The questions below are answered on this page.</p></div>
+    <div class="doors">
+      <a class="btn secondary" href="#questions">Questions</a>
+      <a class="btn secondary" href="#bug">Report a bug</a>
+      <a class="btn secondary" href="#feedback">Send feedback</a>
     </div>
-    <details class="deep">
-      <summary>Is BAS Hub open source?</summary>
-      <div class="deep-body"><p>No. BAS Hub is proprietary software, distributed as binaries. The <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">releases repository</a> is the releases and information point; it does not and will not contain source code.</p></div>
-    </details>
-    <details class="deep">
-      <summary>Does it work on a site with no internet?</summary>
-      <div class="deep-body"><p>Yes: it was designed for exactly that. Field networks are often offline, so everything works locally; the only features that want a connection are the ones you start yourself (an update check, a Copilot model download: which can also be pre-staged beside the installer and hash-verified offline).</p></div>
-    </details>
-    <details class="deep">
-      <summary>Do I need administrator rights to install or run it?</summary>
-      <div class="deep-body"><p>No. The one exception is the optional Npcap packet-capture driver, which installs through its own signed installer and asks for approval then. Everything else in BAS Hub works without it, and without admin rights at all.</p></div>
-    </details>
-    <details class="deep">
-      <summary>Is Copilot a cloud AI? Does it send my data anywhere?</summary>
-      <div class="deep-body"><p>No, and no. Copilot is an optional module that runs a model entirely on your computer; it ships with no networking code. If you don't install it, BAS Hub has no chat or AI surface anywhere.</p></div>
-    </details>
-    <details class="deep">
-      <summary>Can Copilot change anything on a device?</summary>
-      <div class="deep-body"><p>No. Copilot explains and drafts, it never acts. It has no path to device writes, sends, or file changes. Every write in BAS Hub goes through the Test Bench's confirm path, by a person.</p></div>
-    </details>
-    <details class="deep">
-      <summary>How good are Copilot's answers?</summary>
-      <div class="deep-body"><p>It depends on the tier, bigger models reason better, and Setup only offers tiers your machine can run well. Treat it as a capable assistant, not an authority: check its work the way you'd check a junior tech's.</p></div>
-    </details>
-    <details class="deep">
-      <summary>Where does my data live? What happens when I uninstall?</summary>
-      <div class="deep-body"><p>Everything lives in <code>%LOCALAPPDATA%\BAS Hub\data</code>. Uninstalling removes the program and leaves your records in place; they reconnect if you reinstall. Deleting the data too is an explicit opt-in, never the default.</p></div>
-    </details>
-    <details class="deep">
-      <summary>Can IT deploy it silently?</summary>
-      <div class="deep-body"><p>Yes. Silent per-user deployment with module and Copilot selection, verification and uninstall verbs, and documented exit codes (full table on the <a href="download.html">Download page</a> and in the installer's own <code>--help</code> text). An SBOM ships with every release, and an IT-policy switch can disable update checking on managed machines.</p></div>
-    </details>
-    <details class="deep">
-      <summary>Does Programmer+ download programs to panels?</summary>
-      <div class="deep-body"><p>No. Programmer+ is an authoring workbench: it works on program files (editing, checking, simulation, imports). It never communicates with a panel.</p></div>
-    </details>
-    <details class="deep">
-      <summary>What does Reports+ report on?</summary>
-      <div class="deep-body"><p>60 report subjects, fed two ways. <strong>Files you add in the studio</strong>: Tridium station backups (.dist) and wiresheets (.bog), Siemens panel exports (.P2) and ABT projects (a folder tree, or an .ABTArchive opened through its analyse, choose, import popup), Distech GFX projects (.gfx) and ECLYPSE controller backups (.ecybackup), packet captures, discovery exports, health run files, and PPCL program files. <strong>Live and module-fed subjects</strong>, handed over with Report on this&hellip;: a Find run or its selected rows, a device page and its watch session, a Health run or offline verdict, a Test Bench run, Records, a device backup — and from Programmer+, a program or session set, a Simulator bench run or debug session, a conversion, the code library, and the loaded point database. A family of Live reports needs no file at all: it reads the devices you picked, live, when you build. The full index of the 60, each explained, is on the <a href="modules.html#reports">Modules page, under Reports+</a>.</p></div>
-    </details>
-    <details class="deep">
-      <summary>Who is a report for, and what does redaction do?</summary>
-      <div class="deep-body"><p>Every report is built for one of three audiences: <strong>Tech</strong> (full detail, trade terms, provenance complete), <strong>Boss</strong> (summary first; headline numbers and totals lead), or <strong>Customer</strong> (a copy for release). Some reports are Tech-only or Tech-and-Boss by their subject — station account names, for one, are site security data and have no Customer copy. <strong>Redaction is a per-build choice</strong>, on by default for the Customer audience and flippable for any build: IP addresses are masked to their first two octets, MAC addresses are masked out, and account names and network-identifying details are covered. Credential values are never part of a report in the first place — parsers flag credential material by existence and role only. The cover states the redaction choice either way, and every export's provenance prints it.</p></div>
-    </details>
-    <details class="deep">
-      <summary>What formats do reports come out in?</summary>
-      <div class="deep-body"><p>PDF, XLSX, CSV, and TXT — the preview and every export render the same built report, section for section. Depth (Summary, Detailed, or Mixed), the sections included, typed filters, and the print theme (BAS Hub Graphite or BAS Hub Light) are build-time choices, and a configuration can be saved as a named definition for its report and applied in one pick. In the Preview you edit the built report itself — title, sections, your own added text, and, under a per-report unlock, individual sourced values — before it exports; an export can also be filed into the Library in the same step, under the site you name.</p></div>
-    </details>
-    <details class="deep">
-      <summary>What does "0.9.0" mean: is this finished software?</summary>
-      <div class="deep-body"><p>The version number means what it says. 0.9.x is the pre-1.0 line. The current release is <strong>0.9.9, a stable release</strong> (0.9.4 was the first release published as stable): it is the public download, and because it is a stable release the app&rsquo;s update check (which reads the latest stable release) offers it to an installed 0.9.7, 0.9.6, 0.9.5, 0.9.4, 0.9.3 or 0.9.2. 0.9.7 is now a legacy build, unsupported, kept for reference and rollback, as are 0.9.6, 0.9.5 and 0.9.4. The stable label does not retire the reservation: <strong>1.0.0 is reserved for the first release proven end-to-end in the field</strong>. 0.9.3 was an internal staged build, superseded by 0.9.4 before publish and never publicly released. 0.9.2 is a legacy build, unsupported, kept for reference and rollback; 0.9.0 and 0.9.1 are internal builds, not public releases. Every version ships with its own release notes, and this site is updated with every release: a site that no longer matches the shipped build is treated as a defect, same as stale help. See <a href="releases.html">Versions</a> for each release&rsquo;s summary.</p></div>
-    </details>
-  </div>
-</section>
+  </section>
 
+  <section class="panel" id="bug" aria-labelledby="bug-h">
+    <div class="head"><h2 id="bug-h">Report a bug</h2></div>
+    <form class="f" action="https://github.com/JacobHamrac/bas-hub-releases/issues/new" method="get">
+      <input type="hidden" name="template" value="bug_report.yml">
+      <label>Title (required) <input type="text" name="title" required></label>
+      <label>Version <input type="text" name="version" value="0.9.9 iteration 8"></label>
+      <label>What happened? (required) <textarea name="what-happened" required></textarea></label>
+      <label>What did you expect? <textarea name="expected"></textarea></label>
+      <label>Steps to reproduce <textarea name="steps"></textarea></label>
+      <div class="row"><button class="btn primary" type="submit">Continue on GitHub<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></button><span class="hint">The form finishes on GitHub. These fields carry over into the issue template.</span></div>
+    </form>
+  </section>
 
-<!-- ================= SUPPORT ================= -->
-<section class="section alt" id="support" aria-labelledby="support-title">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow teal">02 &middot; Support</p>
-      <h2 id="support-title">Report it where it can be acted on</h2>
-      <p class="lead">Bugs and feedback land as issues on the <a href="https://github.com/JacobHamrac/bas-hub-releases/issues">releases repository</a>: in the open, where their state is visible. There is no ticket system and no support inbox; these two forms build the issue for you and hand it to GitHub with everything filled in. Review it there, then submit.</p>
+  <section class="panel" id="feedback" aria-labelledby="fb-h">
+    <div class="head"><h2 id="fb-h">Send feedback</h2></div>
+    <form class="f" action="https://github.com/JacobHamrac/bas-hub-releases/issues/new" method="get">
+      <input type="hidden" name="template" value="feedback.yml">
+      <input type="hidden" name="labels" value="feedback">
+      <label>Title (required) <input type="text" name="title" required></label>
+      <label>Kind (required) <select name="kind" required><option value="" selected disabled>Choose one</option><option>Idea</option><option>Feature request</option><option>General impression</option></select></label>
+      <label>Feedback (required) <textarea name="feedback" required></textarea></label>
+      <div class="row"><button class="btn primary" type="submit">Continue on GitHub<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></button><span class="hint">The form finishes on GitHub. Feedback opens as an issue labelled “feedback”.</span></div>
+    </form>
+  </section>
+
+  <section class="panel" aria-labelledby="next-h">
+    <div class="head"><h2 id="next-h">What happens next</h2></div>
+    <div class="body">
+      <p>Reports are reviewed against the product as shipped and answered on the issue, in the open. Fixes land in a later build and are named in its release notes. Support is best-effort — there is no promised response time.</p>
     </div>
-    <div class="support-grid">
-      <form class="support-form" id="support-bug" data-issue-form action="https://github.com/JacobHamrac/bas-hub-releases/issues/new" method="get" target="_blank" rel="noopener">
-        <h3>Report a bug</h3>
-        <p class="sf-lede">Something BAS Hub did wrong, on a machine, in the field. Say what happened, in order.</p>
-        <input type="hidden" name="template" value="bug_report.yml">
-        <label for="bug-title">Summary</label>
-        <input type="text" id="bug-title" name="title" placeholder="One line: what broke, where" autocomplete="off">
-        <label for="bug-version">BAS Hub version</label>
-        <input type="text" id="bug-version" name="version" value="0.9.9" autocomplete="off">
-        <label for="bug-happened">What happened</label>
-        <textarea id="bug-happened" name="what-happened" placeholder="What the app did, including the exact words of any message it showed"></textarea>
-        <label for="bug-expected">What you expected</label>
-        <textarea id="bug-expected" name="expected" placeholder="What should have happened instead"></textarea>
-        <label for="bug-steps">Steps to reproduce</label>
-        <textarea id="bug-steps" name="steps" placeholder="1. …  2. …  3. …, or &ldquo;happened once, not reproducible&rdquo;, which is also useful"></textarea>
-        <p class="sf-note"><strong>Attach the failure log.</strong> BAS Hub writes a log file for <em>every</em> failure, at the moment it happens. Settings &rarr; <em>Open logs folder</em> takes you to it. Attach that file to the issue on GitHub: it carries the full diagnostics and is the single most useful thing you can send. Issues are public: leave out site data, addresses, and credentials.</p>
-        <button class="btn btn-primary" type="submit">Continue on GitHub &rarr;</button>
-      </form>
-      <form class="support-form" id="support-feedback" data-issue-form action="https://github.com/JacobHamrac/bas-hub-releases/issues/new" method="get" target="_blank" rel="noopener">
-        <h3>Send feedback</h3>
-        <p class="sf-lede">An idea, a request, or a general impression of the tool as it stands. All of it is read.</p>
-        <input type="hidden" name="template" value="feedback.yml">
-        <label for="fb-kind">Kind</label>
-        <select id="fb-kind" name="kind">
-          <option>Idea</option>
-          <option>Feature request</option>
-          <option>General impression</option>
-        </select>
-        <label for="fb-title">Summary</label>
-        <input type="text" id="fb-title" name="title" placeholder="One line: the idea or the impression" autocomplete="off">
-        <label for="fb-body">The feedback</label>
-        <textarea id="fb-body" name="feedback" placeholder="What you would change, add, or keep, and the work it comes from, if that matters" style="min-height:150px;"></textarea>
-        <p class="sf-note">Feedback is filed as a public issue labelled as feedback, so its outcome is visible too. Say what the field work needs; feature claims on this site are only ever made for what has shipped, and good requests are how the next release earns them.</p>
-        <button class="btn btn-primary" type="submit">Continue on GitHub &rarr;</button>
-      </form>
-    </div>
-    <div class="status-note">
-      <strong>What happens next.</strong> Every report is reviewed and checked against the product as shipped, reproduced, or the issue says plainly that it could not be. Each report is answered on its own issue, in the open. Fixes ship in releases, and the reporter-visible outcome lands in that release&rsquo;s patch notes (and on this site&rsquo;s <a href="releases.html">Versions</a> page). Support is best-effort by the maintainer: no response-time promise is made, and none should be inferred: what <em>is</em> promised is that nothing disappears into a private inbox.
-    </div>
-  </div>
-</section>
+  </section>
 
-
+  <section class="panel" id="questions" aria-labelledby="faq-h">
+    <div class="head"><h2 id="faq-h">Questions</h2></div>
+    <ul class="faq">
+      <li><p class="q">Is BAS Hub open source?</p><div class="a"><p>No. BAS Hub is proprietary software. The releases repository holds installers, the user guide and the software bill of materials — it will never contain source code.</p></div></li>
+      <li><p class="q">Does BAS Hub work offline?</p><div class="a"><p>Yes. Everything runs locally. A connection is made only for an action you start: an update check, or a Copilot model download. Copilot models can be pre-staged beside the installer and are hash-verified, which is the offline route for a site with no internet.</p></div></li>
+      <li><p class="q">Does it need administrator rights?</p><div class="a"><p>No. BAS Hub installs per user; the Download page’s Install section covers the one exception, an optional driver.</p></div></li>
+      <li><p class="q">Can Copilot change anything on a device?</p><div class="a"><p>Copilot itself never writes to a device — it explains and drafts only. Device writes exist in Network+ and in TBC+, each behind its own confirmation and proof steps, and are made by the person running the module, not by the assistant.</p></div></li>
+      <li><p class="q">What does Copilot do with my data?</p><div class="a"><p>Inference runs on your own computer; there is no telemetry. The only network moment is a model download you start, verified against its SHA-256 before use. Chat history is stored locally and deletes in one click. If Copilot is not installed, there is no chat or AI surface anywhere in BAS Hub.</p></div></li>
+      <li><p class="q">How much should I trust Copilot’s answers?</p><div class="a"><p>Check its work the way you’d check a junior tech’s. It works from your own material, but an answer can be wrong; the modules show their evidence so you can verify before you act.</p></div></li>
+      <li><p class="q">Where does my work live?</p><div class="a"><p>Settings and logs live in the data folder (<code>%LOCALAPPDATA%\BAS Hub\data</code> on Windows). Work you file lives in My Files &amp; Library, organised by site. Device records stay in a module’s working set until you file them. Updating or uninstalling never removes the data folder; an uninstall with <code>/purge</code> does.</p></div></li>
+      <li><p class="q">Something failed. What should I send?</p><div class="a"><p>Settings → Open logs folder takes you to BAS Hub’s logs. The log from the run where it happened carries the diagnostics, and it is the single most useful thing you can attach to a bug report.</p></div></li>
+      <li><p class="q">Can I deploy BAS Hub silently across machines?</p><div class="a"><p>Yes. Setup’s command-line switches and exit codes are listed on the <a href="download.html">Download page</a> — including which modules a silent install includes and when a Copilot model downloads.</p></div></li>
+      <li><p class="q">Does Programmer+ download programs to panels?</p><div class="a"><p>No. Programmer+ is an authoring workbench — editor, builder, library, simulator. It never communicates with a panel.</p></div></li>
+      <li><p class="q">What can Reports+ produce?</p><div class="a"><p>Sixty report subjects over filed records and module output, for three audiences, with mechanical redaction. The full catalogue is on the <a href="reports-plus.html">Reports+ page</a>.</p></div></li>
+      <li><p class="q">What do the version numbers mean?</p><div class="a"><p>0.9.9 is the current pre-1.0 line; its builds are numbered by iteration, and iteration 8 is the current build. 1.0.0 is reserved for the first release proven end-to-end in the field.</p></div></li>
+    </ul>
+  </section>
+ </div>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="assets/img/hub-icon.png" alt="" width="30" height="30">
-        <span style="font-weight:700;letter-spacing:.04em;">BAS <span style="color:var(--orange);">HUB</span></span>
-      </div>
-      <nav aria-label="Footer">
-        <a href="modules.html">Modules</a>
-        <a href="modules.html#reports">Reports+</a>
-        <a href="download.html">Download</a>
-        <a href="releases.html">Versions</a>
-        <a href="https://github.com/JacobHamrac/bas-hub-releases/releases">GitHub downloads</a>
-        <a href="support.html#faq">FAQ</a>
-        <a href="support.html">Support</a>
-        <a href="index.html#license">License</a>
-      </nav>
-    </div>
-    <p class="legal">BAS Hub is proprietary software · © 2026</p>
-  </div>
-</footer>
-
-<div class="palette" data-palette role="dialog" aria-modal="true" aria-label="Site navigator">
-  <div class="palette-box">
-    <div class="pal-head">
-      <span>Site index</span>
-      <input type="text" data-palette-input placeholder="Type a section, a module, an action&hellip;" aria-label="Filter destinations" autocomplete="off">
-    </div>
-    <ul class="palette-list" data-palette-list role="listbox" aria-label="Destinations"></ul>
-    <div class="pal-foot"><span>&uarr;&darr; move</span><span>Enter opens</span><span>Esc closes</span><span>Ctrl K / &#8984;K anywhere</span></div>
-  </div>
-</div>
-
-
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer">
-  <button class="lb-close" type="button" aria-label="Close viewer">✕</button>
-  <figure>
-    <img alt="">
-    <figcaption></figcaption>
-  </figure>
-</div>
-<script src="assets/js/site.js"></script>
+<footer class="site">BAS Hub is proprietary software · © 2026</footer>
 </body>
 </html>
