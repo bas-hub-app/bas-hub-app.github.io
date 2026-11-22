@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://bas-hub-app.github.io/</loc>
-  </url>
-  <url>
-    <loc>https://bas-hub-app.github.io/modules.html</loc>
-  </url>
-  <url>
-    <loc>https://bas-hub-app.github.io/download.html</loc>
-  </url>
-  <url>
-    <loc>https://bas-hub-app.github.io/releases.html</loc>
-  </url>
-  <url>
-    <loc>https://bas-hub-app.github.io/support.html</loc>
-  </url>
+  <url><loc>https://bas-hub-app.github.io/</loc></url>
+  <url><loc>https://bas-hub-app.github.io/modules.html</loc></url>
+  <url><loc>https://bas-hub-app.github.io/download.html</loc></url>
+  <url><loc>https://bas-hub-app.github.io/releases.html</loc></url>
+  <url><loc>https://bas-hub-app.github.io/support.html</loc></url>
+  <url><loc>https://bas-hub-app.github.io/network-plus.html</loc></url>
+  <url><loc>https://bas-hub-app.github.io/programmer-plus.html</loc></url>
+  <url><loc>https://bas-hub-app.github.io/reports-plus.html</loc></url>
+  <url><loc>https://bas-hub-app.github.io/bas-copilot.html</loc></url>
+  <url><loc>https://bas-hub-app.github.io/tbc-plus.html</loc></url>
 </urlset>
