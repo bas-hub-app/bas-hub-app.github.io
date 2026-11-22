@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports+ — BAS Hub</title>
+<meta name="description" content="Reports+ — sixty report subjects for three audiences, with mechanical redaction.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<style>
+  :root {
+    --bg: #000; --panel: #1c1c1e; --panel-2: #232326; --line: #333336;
+    --text: #ececec; --muted: #a3a3a8;
+    --accent: #f47a20; --accent-ink: #120800;
+    --amber: #f2b33d; --amber-bg: #241c0c;
+    --red: #ff6b5e; --red-bg: #2a1311;
+    --ok: #5fd27e; --ok-bg: #102116;
+    --cand: #c9c9cf;
+    --radius: 6px; --gap: 20px;
+    font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; line-height: 1.45; color: var(--text); background: var(--bg);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); }
+  a { color: inherit; }
+  p, ul, h1, h2 { margin: 0; }
+  :focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 3px; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .skip { position: absolute; left: 16px; top: -60px; background: var(--text); color: #000; padding: 8px 12px; z-index: 10; font-weight: 700; }
+  .skip:focus { top: 8px; }
+  svg { flex: none; }
+
+  /* Site bar = identity: the wordmark is the page's H1, stated once */
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap;
+    min-height: 72px; padding: 10px 32px; border-bottom: 1px solid var(--line); }
+  .id { display: flex; align-items: baseline; gap: 6px 18px; flex-wrap: wrap; }
+  h1 { font-size: 26px; line-height: 1.1; font-weight: 700; }
+  h1 a { text-decoration: none; }
+  .desc { font-size: 18px; }
+  nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+  nav a { display: block; padding: 8px 14px; border-radius: 4px; text-decoration: none; color: var(--muted); font-weight: 600; }
+  nav a:hover { color: var(--text); background: var(--panel); }
+  nav a[aria-current="page"] { color: var(--text); background: var(--panel-2); box-shadow: inset 0 -2px 0 var(--accent); }
+
+  main { padding: 28px 32px 32px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--gap); align-items: start; max-width: 1920px; }
+
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; padding: 16px 22px 14px; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 22px; line-height: 1.2; font-weight: 700; }
+  .meta { color: var(--muted); font-size: 15px; }
+  .meta b { color: var(--text); font-weight: 600; }
+  code, .mono { font-family: "Cascadia Mono", Consolas, Menlo, monospace; font-size: .94em; }
+
+  /* Release status band: sits between the heading and the buttons, so it is read before any download */
+  .status { display: flex; gap: 12px; padding: 14px 22px; border-bottom: 1px solid var(--line); border-left: 4px solid; }
+  .status svg { width: 20px; height: 20px; margin-top: 2px; }
+  .status .lead { font-weight: 700; }
+  .status .sub { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .status.warn { background: var(--amber-bg); border-left-color: var(--amber); }
+  .status.warn svg, .status.warn .lead { color: var(--amber); }
+  .status.bad { background: var(--red-bg); border-left-color: var(--red); }
+  .status.bad svg, .status.bad .lead { color: var(--red); }
+  .status.good { background: var(--ok-bg); border-left-color: var(--ok); }
+  .status.good svg, .status.good .lead { color: var(--ok); }
+  .status.plain { background: var(--panel-2); border-left-color: var(--cand); }
+  .checks { list-style: none; padding: 0; margin-top: 8px; display: grid; grid-template-columns: max-content 1fr; gap: 4px 20px; }
+  .checks li { display: contents; }
+  .checks .r { font-weight: 600; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align: left; font-size: 13px; font-weight: 600; color: var(--muted); padding: 12px 22px 8px; border-bottom: 1px solid var(--line); }
+  td { padding: 14px 22px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: 0; }
+  .plat { font-weight: 700; font-size: 17px; white-space: nowrap; }
+  .def { display: block; margin-top: 4px; font-weight: 400; font-size: 14px; color: var(--muted); }
+  .st { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; white-space: nowrap; }
+  .st svg { width: 16px; height: 16px; }
+  .st.ovr { color: var(--amber); }
+  .st.bad { color: var(--red); }
+  .st.good { color: var(--ok); }
+  .st.cand { color: var(--cand); border: 1px dashed var(--cand); border-radius: 4px; padding: 1px 9px; }
+  .st.none { color: var(--muted); font-weight: 400; }
+  td.act { text-align: right; width: 1%; white-space: nowrap; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 4px; font-weight: 700;
+    text-decoration: none; white-space: nowrap; border: 1px solid transparent; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); }
+  .btn.primary:hover { background: #ff8c37; }
+  .btn.secondary { background: var(--panel-2); color: var(--text); border-color: #55555a; }
+  .btn.secondary:hover { border-color: var(--text); }
+  .foot { padding: 12px 22px 14px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); }
+  .foot a { color: var(--text); }
+  .empty { padding: 22px; }
+  .empty p + p { margin-top: 6px; color: var(--muted); }
+
+  /* Suite: one panel, one list, one application */
+  .mods { list-style: none; padding: 0; }
+  .mods li { padding: 14px 22px; border-bottom: 1px solid var(--line); }
+  .mh { display: flex; align-items: baseline; gap: 12px; }
+  .mod { font-weight: 700; font-size: 17px; }
+  .ver { font-family: "Cascadia Mono", Consolas, Menlo, monospace; font-size: 15px; color: var(--muted); }
+  .ver.none { font-family: inherit; }
+  .scope { margin-top: 3px; }
+  .policy { display: flex; gap: 10px; align-items: flex-start; padding: 14px 22px 16px; }
+  .policy svg { width: 18px; height: 18px; margin-top: 3px; color: var(--text); }
+
+  /* 1366x768 class screens */
+  @media (max-width: 1600px) {
+    :root { font-size: 14px; --gap: 14px; }
+    header.site { min-height: 60px; padding: 8px 20px; }
+    h1 { font-size: 22px; } .desc { font-size: 16px; }
+    nav a { padding: 6px 11px; }
+    main { padding: 18px 20px 20px; }
+    h2 { font-size: 19px; }
+    .head { padding: 12px 16px 10px; }
+    .meta, .status .sub, .foot { font-size: 13px; }
+    .status { padding: 11px 16px; }
+    th { font-size: 12px; padding: 9px 16px 6px; }
+    td { padding: 10px 16px; }
+    .plat, .mod { font-size: 15px; } .def { font-size: 13px; } .ver { font-size: 13px; }
+    .btn { padding: 8px 14px; }
+    .foot { padding: 10px 16px 12px; }
+    .mods li { padding: 10px 16px; }
+    .policy { padding: 11px 16px 13px; }
+  }
+  /* Reflow (WCAG 1.4.10): single column, table rows become stacked blocks */
+  @media (max-width: 900px) {
+    header.site { padding: 10px 16px; }
+    main { grid-template-columns: minmax(0, 1fr); padding: 14px 12px; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    table, tbody, tr, td { display: block; width: auto; }
+    tbody tr { padding: 12px 16px; border-bottom: 1px solid var(--line); }
+    tbody tr:last-child { border-bottom: 0; }
+    td { padding: 3px 0; border: 0; }
+    td.act { text-align: left; padding-top: 8px; }
+    .plat, .st { white-space: normal; }
+  }
+
+  /* Extensions for the pages beyond the home page: same tokens, same components.
+     Added by the Section 5 build; the block above is the fix101 finals' CSS, verbatim. */
+  main.single { grid-template-columns: minmax(0, 1fr); }
+  /* Download files table: fixed layout with stated shares — auto layout
+     starved the file column beside the nowrap button (measured 847/144/188
+     in a 1,118px panel at 1920x1080, the table overflowing its panel). */
+  table.dl { table-layout: fixed; }
+  table.dl th:first-child, table.dl td:first-child { width: 26%; }
+  table.dl th:last-child, table.dl td:last-child { width: 19%; }
+  /* .plat is nowrap (finals' CSS, for the platform name); its .def child
+     inherited that, so the one long def (Windows ARM64) painted across
+     the row instead of wrapping — measured scrollW 825 in a 291px cell. */
+  td.plat .def { white-space: normal; }
+  main.single .panel, main.single .entry { max-width: 1120px; width: 100%; margin-inline: auto; }
+  .stack { display: grid; gap: var(--gap); }
+  footer.site { border-top: 1px solid var(--line); padding: 14px 32px 18px; color: var(--muted); font-size: 15px; max-width: 1920px; }
+  .body { padding: 16px 22px 18px; }
+  .body p + p { margin-top: 10px; }
+  .body p.lede { font-size: 17px; }
+  h3.sub { font-size: 17px; font-weight: 700; margin: 20px 0 6px; }
+  .body h3.sub:first-child { margin-top: 0; }
+  ul.list { list-style: none; padding: 0; }
+  ul.list li { padding: 10px 22px; border-bottom: 1px solid var(--line); }
+  ul.list li:last-child { border-bottom: 0; }
+  ul.list .t { font-weight: 700; }
+  ul.list .d { display: block; margin-top: 2px; color: var(--muted); font-size: 15px; }
+  .faq { list-style: none; padding: 0; }
+  .faq li { padding: 14px 22px; border-bottom: 1px solid var(--line); }
+  .faq li:last-child { border-bottom: 0; }
+  .faq .q { font-weight: 700; font-size: 17px; }
+  .faq .a { margin-top: 4px; }
+  .faq .a p + p { margin-top: 8px; }
+  .file { display: block; font-weight: 400; font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .file code { color: var(--text); word-break: break-all; }
+  .hash { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; word-break: break-all; }
+  .entry { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .entry .head h3 { font-size: 20px; line-height: 1.2; font-weight: 700; margin: 0; }
+  .entry .title { padding: 14px 22px 0; font-size: 17px; font-weight: 600; }
+  .entry .body { font-size: 15.5px; }
+  .entry ul.bl { margin: 10px 0 0; padding-left: 20px; }
+  .entry ul.bl li { margin-top: 6px; }
+  .entry .status { border-bottom: 0; border-top: 1px solid var(--line); margin-top: 14px; }
+  .entry .status p { font-size: 15px; }
+  .banner { padding: 12px 22px; background: var(--panel-2); border-bottom: 1px solid var(--line); border-left: 4px solid var(--cand); font-size: 15px; }
+  form.f { padding: 16px 22px 18px; display: grid; gap: 14px; }
+  form.f label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+  form.f input[type="text"], form.f textarea, form.f select {
+    background: var(--panel-2); color: var(--text); border: 1px solid #8a8a90; border-radius: 4px;
+    padding: 9px 12px; font: inherit; font-weight: 400; width: 100%; }
+  form.f textarea { min-height: 110px; resize: vertical; }
+  form.f .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  form.f .hint { color: var(--muted); font-size: 14px; font-weight: 400; }
+  button.btn { font: inherit; cursor: pointer; }
+  .doors { display: flex; gap: 12px; flex-wrap: wrap; padding: 16px 22px 18px; }
+  td .rowbtn { text-align: right; }
+  .catgroup td { background: var(--panel-2); font-weight: 700; font-size: 15px; padding-top: 10px; padding-bottom: 10px; }
+  ul.mods.hub li { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  ul.mods.hub .open { flex: none; }
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  main { flex: 1 0 auto; width: 100%; margin-inline: auto; }
+  .body p, .faq .a p { max-width: 72ch; }
+  main.single .panel.narrow { max-width: 560px; }
+  .files { list-style: none; padding: 0; }
+  .files li { padding: 10px 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; flex-wrap: wrap; }
+  .files li:last-child { border-bottom: 0; }
+  .files .fl { font-weight: 600; }
+  .files .fm { color: var(--muted); font-size: 14px; }
+  .files .fh { display: block; color: var(--muted); font-size: 13px; word-break: break-all; }
+  .entry .status ul { margin: 8px 0 0; padding-left: 20px; }
+  .entry .status li { margin-top: 6px; font-size: 15px; }
+  .entry .status li:first-child { margin-top: 0; }
+  .toc { list-style: none; padding: 0; }
+  .toc li { padding: 9px 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .toc li:last-child { border-bottom: 0; }
+  .toc a { font-weight: 600; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc .d { color: var(--muted); font-size: 14px; }
+  .fam { font-weight: 700; font-size: 15px; }
+  @media (max-width: 900px) {
+    .proofcell::before { content: "Proof: "; font-weight: 600; color: var(--muted); }
+  }
+  @media (max-width: 1600px) {
+    footer.site { padding: 12px 20px 14px; font-size: 13px; }
+    .body { padding: 12px 16px 14px; }
+    ul.list li, .faq li { padding: 10px 16px; }
+    .entry .title { padding: 10px 16px 0; }
+    .banner { padding: 10px 16px; }
+    form.f { padding: 12px 16px 14px; }
+    .doors { padding: 12px 16px 14px; }
+  }
+  @media (max-width: 900px) {
+    footer.site { padding: 12px 16px; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="site">
+  <div class="id">
+    <h1><a href="index.html">BAS Hub</a></h1>
+    <p class="desc">Desktop suite for building-automation field work</p>
+  </div>
+  <nav aria-label="Site">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html" aria-current="page">Modules</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="releases.html">Releases</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="single" id="main">
+ <div class="stack">
+  <section class="panel" aria-labelledby="mod-h">
+    <div class="head">
+      <h2 id="mod-h">Reports+</h2>
+      <span class="meta">Version <b>1.1.1</b> · in 0.9.9 iteration 8</span>
+    </div>
+    <div class="body"><p class="lede">Report building over filed records and module output: pick a subject, pick an audience, and the redaction rules are applied mechanically — the same facts, written for a tech, a boss, or a customer.</p></div>
+    <div class="doors">
+      <a class="btn secondary" href="modules.html">All modules</a>
+      <a class="btn secondary" href="download.html">Download BAS Hub<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </section>
+  <section class="panel" aria-labelledby="proof-h">
+    <div class="head"><h2 id="proof-h">Proof state</h2><span class="meta">As of 0.9.9 iteration 8</span></div>
+    <div class="status warn" role="note">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.8 15 14H1z"/><path d="M8 6.2v3.6M8 11.6v.1"/></svg>
+      <div>
+        <ul class="checks" aria-label="Proof state">
+      <li><span>Redaction</span><span class="r">Mechanical: addresses masked; a report carries no credential fields</span></li>
+      <li><span>Report titles</span><span class="r">Known defect — two stray closing brackets can print in report titles; open at iteration 7, and no fix is recorded in iteration 8</span></li>
+      <li><span>Studio face</span><span class="r">Not re-checked with fresh screenshots on this build</span></li>
+      <li><span>Laptop drive</span><span class="r">Not finished</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="panel" aria-labelledby="mp0-h">
+    <div class="head"><h2 id="mp0-h">How reports are built</h2></div>
+    <div class="body">
+      <p>A report starts from a named definition: the subject, the audience, the redaction rules. Reports are fed by filed records and by module output, as the catalogue below states per subject. Output is PDF, XLSX, CSV or TXT, and the preview is editable before anything is filed or sent.</p>
+      <p>Three audiences — Tech, Boss, Customer — get three registers of the same facts. Redaction is mechanical: IP addresses are masked to their first two octets, MAC addresses are masked out, and reports carry no credential fields — a credential is flagged by its existence and role only.</p>
+    </div>
+  </section>
+  <section class="panel" aria-labelledby="mp1-h">
+    <div class="head"><h2 id="mp1-h">The catalogue — 60 subjects</h2></div>
+    <table>
+      <thead><tr><th scope="col">Report</th><th scope="col">What it does</th><th scope="col">Fed by</th><th scope="col">Audiences · configuration</th></tr></thead>
+      <tbody>
+        <tr class="catgroup"><td colspan="4">Inventory</td></tr>
+        <tr><td class="fam">Device and point inventory</td><td>Every device the source reports, its points, and the totals reconciled against the source&#x27;s own counts.</td><td>File-fed: any file source carrying devices (station backups, panel exports, project files, discovery exports).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Point list</td><td>One row per point: device, point name, object, present value and units as the source states them. An ABT station&#x27;s points come from its BALXR2 point-name table, decoded in-app.</td><td>File-fed: any file source carrying points.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Station dossier</td><td>One station backup read as a dossier: station identity, devices and their points, wiresheets, histories, and user accounts (names only; credential material is flagged by role, never read), plus a Licensing section — host ID, brand, Niagara version, license dates, and the SMA expiration, flagged in plain language when it has expired or expires within 12 months. A backup with no license members gets the section anyway, stating that plainly.</td><td>File-fed: a Tridium station backup (.dist).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Station user account list</td><td>Who can sign in to this station: account names with a per-account password-existence flag, and keystore/certificate entries by role. Credential values are never read.</td><td>File-fed: a Tridium station backup (.dist).</td><td>Audiences: Tech, Boss. The Boss copy carries counts only; there is no Customer copy, because account names are site security data.</td></tr>
+        <tr><td class="fam">Station history configuration report</td><td>Which histories this station keeps: history names grouped by parent device, with the count reconciled to the station dossier&#x27;s history count.</td><td>File-fed: a Tridium station backup (.dist).</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">ECLYPSE controller backup report</td><td>What this controller backup holds: controller identity (name, instance, vendor, hostname), the area census, the BACnet network-ports table, root configuration facts, and credential material flagged by role only.</td><td>File-fed: a Distech ECLYPSE controller backup (.ecybackup).</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Panel point database report</td><td>A Siemens panel export read as a point database: panel identity, the full point table by record class, the record-class census reconciled to the corrected point census, and the gaps as they now stand named on the report.</td><td>File-fed: a Siemens panel export (.P2).</td><td>Audiences: Tech, Boss. Point-class filter: the record classes 0x02, I, P and B, any subset; a filtered build states it, with its counts, and the filter rides any saved definition.</td></tr>
+        <tr><td class="fam">Panel point values report</td><td>The values this panel export carries: TC24 present values with units, binary present states with their state texts, alarm limit pairs as decoded, &#x27;B&#x27; parameter vectors by id, and &#x27;P&#x27; schedule series and tuples. TC24 panels carry present values; BLN values exist only where a &#x27;B&#x27; table or a &#x27;P&#x27; series carries them, and none is invented where the export carries none.</td><td>File-fed: a Siemens panel export (.P2).</td><td>Audiences: Tech, Boss. Point-class filter, as for the panel point database report.</td></tr>
+        <tr><td class="fam">APOGEE estate census</td><td>A set of Siemens panel exports (.P2) read as one estate: every panel, the TEC entries each panel hosts (&#x27;I&#x27; class), and the points each panel carries by record class, with the estate roll-up reconciled to a per-panel census. A panel backup carries the TEC device entry only, never the TEC&#x27;s application points, and the census states that boundary on its face. A panel whose records carry present values but no unit strings is surfaced as unit-degraded, by name.</td><td>File-fed: Siemens panel exports (.P2) — a set of panel backups read as one estate.</td><td>Audiences: Tech, Boss. Point-class filter, as for the panel point database report; a filtered build rides a saved definition.</td></tr>
+        <tr><td class="fam">ABT project dossier</td><td>The whole ABT project read as one dossier: the device census by model with the station named, the distinct programs, the application types, the balancer coverage with tag origins kept separate, and the parameter totals. The project&#x27;s named gaps are carried onto the report, not dropped.</td><td>File-fed: an ABT project — a folder tree, or an .ABTArchive imported through the analyse, choose, import popup.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">DXR parameter report</td><td>Every configured parameter the instances&#x27; parameter caches carry: per device, per object and property — description, unit, the value as stored, min/max, resolution and required access level. The values are the files&#x27; stored configuration, not live readings.</td><td>File-fed: sources whose instances carry parameter caches (ABT projects).</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Air balancing (TAB) report</td><td>The air balancer&#x27;s reporting lists as filed: per list, per device, per tag — each value with its origin kept separate (an uploaded read against a device-stored recorded value, never merged), the list&#x27;s created timestamp from its own file header, and read completeness stated per list; an empty list is named, not dropped.</td><td>File-fed: an ABT project carrying an air balancer reporting list.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Water balancing (TAB) report</td><td>The water balancer&#x27;s reporting lists as filed, in the air report&#x27;s grammar on the water-side tag set: per list, per device, per tag, each value&#x27;s origin kept separate, its created timestamp from its file header, and read completeness per list.</td><td>File-fed: an ABT project carrying a water balancer reporting list.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Application type dossier</td><td>The application types this project runs: each distinct type document — its title, type and target controller, its export ID, its engineering-object census, and the instances running it. A document filed under several containers is counted once; its copies are named as copies.</td><td>File-fed: sources carrying application types (ABT projects).</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">PXC station structure report</td><td>The PXC station&#x27;s BA model tree as BAINF2.pbf states it: every node in the order the file carries them, with its name, description and type id. The decoded records carry no parent links, so no hierarchy is drawn that the file does not state.</td><td>File-fed: sources carrying BAINF2.pbf (PXC station files).</td><td>Audiences: Tech.</td></tr>
+        <tr><td class="fam">Data acquisition configuration report</td><td>The station&#x27;s data acquisition configuration from PLTDAQ.xml at element level: every zone — the LTE address it sits at, the block type and property it acquires, its direction, heartbeat and service property — in filed order, with the zones also counted by block type.</td><td>File-fed: sources carrying PLTDAQ.xml zones.</td><td>Audiences: Tech.</td></tr>
+        <tr class="catgroup"><td colspan="4">Programs</td></tr>
+        <tr><td class="fam">Program set report</td><td>The programs in the set: line counts, a statement census, and the points each program references.</td><td>File-fed: sources carrying programs (program listings, panel exports, project files). Module-fed: Programmer+ Editor&#x27;s Report on this program… hands the current program over.</td><td>Audiences: Tech.</td></tr>
+        <tr><td class="fam">Wiresheet report</td><td>What this wiresheet is built from and how it is wired: the component census by type, the full link table (source slot to target slot), and every unresolved link named.</td><td>File-fed: a Tridium wiresheet (.bog).</td><td>Audiences: Tech.</td></tr>
+        <tr><td class="fam">GFX program report</td><td>What this GFX program contains: the function-block census by type, the binding counts, the internal point table, the per-block listing, and the Block parameters section — every block&#x27;s scalar parameter values as stored in Main.xml, listed per block. Structured sub-values inside blocks are counted with their blocks, not read as scalar parameters.</td><td>File-fed: a Distech GFX project (.gfx).</td><td>Audiences: Tech.</td></tr>
+        <tr><td class="fam">PPCL program findings report</td><td>What the Programmer+ analysis engine found in these programs, and what to do about each finding: counts by severity and by rule with the worst programs named first, then every finding grouped by program with its rule, severity, line and the engine&#x27;s own fix guidance. One findings subject builds the single form; two subjects, earlier first, build the longitudinal form, which prints movement only when both state the same engine configuration and otherwise states they are not comparable. A logic-check finding carries its provenance label wherever it renders.</td><td>Analysis-fed, never from a raw parse: Analyse included program sources in the studio; PPCL files via Add program files…; or Programmer+ Editor&#x27;s Report on these programs…, which hands the session set over through the same adapter. Report on this program… in the Editor preselects the subject over the current program.</td><td>Audiences: Tech, Boss. Severity picks (error / warning / info / style) in Build; a rule filter is set in a saved definition only — the studio offers no rule picker.</td></tr>
+        <tr><td class="fam">Program execution state report</td><td>What is actually running in this panel: the programs one panel report record carries, each program&#x27;s execution state as the record states it, and the panel identity. The Panel Inspector holds the .P2 decode and carries no report door.</td><td>Module-fed: a panel display report checked in the Programmer+ Library, handed over by the Library pane&#x27;s Report on this panel report….</td><td>Audiences: Tech. Its state-class picks ride a saved definition.</td></tr>
+        <tr><td class="fam">SOO import report</td><td>What this sequence-of-operations import produced, and what it did not settle: the sequence as imported, the sentences that mapped, the ones that did not, named and never guessed, and the defaults the import applied, scanned from the import result&#x27;s own words and labelled as scanned.</td><td>Module-fed: the Builder&#x27;s held import, handed over by Report on this import….</td><td>Audiences: Tech, Boss. Its unresolved-only choice rides a saved definition.</td></tr>
+        <tr><td class="fam">Conversion fidelity report</td><td>What survived this conversion, and what did not: per-line fidelity classes, the lines that converted clean, the ones that converted with loss, named with their loss, and the conversion&#x27;s coverage. Conversions that produce no fidelity record clear the held record rather than leaving a stale one to report from.</td><td>Module-fed: the Library&#x27;s held conversion record, handed over by Report on this conversion… while that record is held.</td><td>Audiences: Tech, Boss. Its fidelity-class picks ride a saved definition.</td></tr>
+        <tr><td class="fam">Simulation test report</td><td>What this simulated run proved: one bench run of one program — the run&#x27;s checks with their outcomes, the point traces and per-pass snapshots the run recorded, and the run&#x27;s own verdict. Badged SIMULATION on the cover and every page, in every format.</td><td>Module-fed: a held bench run from the Programmer+ Simulator, handed over by Report on this run….</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Program library census report</td><td>What is in this code library: every item in the Programmer+ program library as listed when the report builds — kind, collection, equipment family and lint state per item, the census by kind and by equipment family as charts, and the items carrying lint errors named first. Listing recomputes automatic categorisation and lint, so the census is that fresh pass, and the report says so. An empty library&#x27;s census is a true report of an empty library.</td><td>Module-fed: the Library pane&#x27;s Report on this library…, which lists fresh when you click.</td><td>Audiences: Tech, Boss. Its collection, kind and lint-state picks ride a saved definition.</td></tr>
+        <tr><td class="fam">Debugger session report</td><td>Where this debug session stopped, and what it never reached: one Simulator debug session — the breakpoints set, every stop in order with its reason, the point overrides applied, the watch list, the executed lines, and the executable lines never executed, named. Badged SIMULATION throughout; its assessment leads with the write-watchpoint stops&#x27; own words.</td><td>Module-fed: the session the Simulator&#x27;s Debug tab hands over with Report on this session…, once the session has executed.</td><td>Audiences: Tech. Its stop-kind picks ride a saved definition.</td></tr>
+        <tr><td class="fam">Point database report</td><td>What points this panel actually has, as the working database the Programmer+ checks run against: point counts by type, the full point table (name, type, descriptor, units, device, address, and the present value where the source carried one), the points-by-type chart, and the load record — the source and its kind (a Desigo CC / Insight / spreadsheet file export, a .P2 conversion, or a Network+ conversion), the column mapping as matched where the load retained one, and the unrecognised columns and load problems, reported and never guessed at. A JSON load and the converters retain no mapping, and the report states that rather than inventing one.</td><td>Module-fed: the point database loaded in Programmer+, handed over by the module chrome&#x27;s Report on this database…. With no database loaded the door is disabled and states why. Not the Panel point database report under Inventory, which renders one .P2 file.</td><td>Audiences: Tech, Boss. Its point-type and has-value picks ride a saved definition.</td></tr>
+        <tr class="catgroup"><td colspan="4">Files</td></tr>
+        <tr><td class="fam">Reference data report</td><td>The reference tables a vendor file carries (vendor identifiers, property maps, group and recipe lists), including the AbtBaData BACnet device/object references an ABT station carries, decoded in-app.</td><td>File-fed: vendor files carrying reference tables.</td><td>Audiences: Tech.</td></tr>
+        <tr><td class="fam">Vendor file coverage report</td><td>How completely each source was read, with gaps and credential flags: every source&#x27;s verdict — read in full, read in part (with the gaps named), or refused honestly (with the reason).</td><td>File-fed: the included file sources; the coverage rides each source&#x27;s own read.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr class="catgroup"><td colspan="4">Captures</td></tr>
+        <tr><td class="fam">Capture summary</td><td>What a capture file holds at the container level: packet count, span, link type. Packet decode lives in Network+.</td><td>File-fed: packet captures (.pcap / .pcapng).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr class="catgroup"><td colspan="4">Network</td></tr>
+        <tr><td class="fam">Network health report</td><td>How healthy this network is, from a Network+ health run: a one-page score layer (the overall score and the Connected / Performing / Clean axes; an axis the run did not measure states Not measured, never zero), every check with its status and note, each finding in plain language with what it means, how to fix it and its evidence, and an offender appendix naming the devices behind every warning or fault, at every audience. Impact is stated as the finding&#x27;s severity and statement — the run carries no impact percentage and no per-device scores, and none is invented. Its Source provenance section states the feed: the capture name, size, SHA-256 and window; the filed run&#x27;s identity for a filed run; for a live run, that there is no source file.</td><td>Module- and file-fed, not a vendor file: a filed .health.json run file; a .pcap / .pcapng capture decoded and evaluated in Sources; or a live run handed over from Health&#x27;s Report on this run….</td><td>Audiences: Tech, Boss, Customer. Tech and Boss also get the check detail table and a checks-by-status chart. The Customer copy keeps the score layer, the assessment, the source provenance and the offender appendix, with wire addresses masked under redaction and device names standing.</td></tr>
+        <tr class="catgroup"><td colspan="4">Commissioning</td></tr>
+        <tr><td class="fam">VAV commissioning report</td><td>The commissioning record for the VAV devices in the source, generated from the parsed application type: device identity, the application type and its target controller model as filed, the type&#x27;s engineering-object set, each device&#x27;s parameter values as configured, the program census, and completeness reconciled per section (objects in the type against objects found against parameters read; where the counts differ, both stand).</td><td>File-fed: an ABT project carrying VAV instances with parameter caches, or a Distech GFX project the file&#x27;s own stated facts place as a VAV project (controller type ECY-VAV).</td><td>Audiences: Tech, Boss. Its point and parameter tables are named sections, excluded by the section exclusion, not by the charts toggle.</td></tr>
+        <tr><td class="fam">AHU commissioning report</td><td>The commissioning record for the air handler in the source, generated from the parsed project: device identity, the project and its controller family as the file states them (where the file states no controller type, the report says so rather than claiming one), the internal points, the function-block program census, the per-block parameter values as configured, and completeness reconciled per section. A GFX project whose stated facts place it in neither class is offered neither commissioning report.</td><td>File-fed: a Distech GFX project the file&#x27;s stated facts place as an AHU project on the ECY-S1000 family.</td><td>Audiences: Tech, Boss. Its point and parameter tables are named sections, as for the VAV record.</td></tr>
+        <tr><td class="fam">Heat pump commissioning report</td><td>The commissioning record for the heat pump devices in the source, generated from the parsed application type in the same grammar as the VAV record: device identity, the application type and its target controller model as filed, the type&#x27;s engineering-object set, each device&#x27;s parameter values as configured, the program census, and completeness reconciled per section. The evidence is read from the parse, never from the container: an archive-fed VAV job offers the VAV report, a folder-fed heat-pump job offers this one, and a source with neither class of evidence is offered neither ABT commissioning report.</td><td>File-fed: an ABT project — a folder tree, or an .ABTArchive opened as the project tree it contains — whose parse itself states heat-pump evidence: an application-type document naming a heat-pump type, or at least half of the parameter-carrying devices named as heat-pump devices.</td><td>Audiences: Tech, Boss. Its point and parameter tables are named sections, as for the VAV record.</td></tr>
+        <tr class="catgroup"><td colspan="4">Live</td></tr>
+        <tr><td class="fam">Discovery census report</td><td>What a discovery run found: the device set grouped by how each device was found, per-scope outcomes, duplicate instances and addresses named first, and the run settings. The two forms — a live run and a saved filing — are labelled on the cover and never blended.</td><td>Module-fed: a completed Find run handed over from Network+ (Report on this run…). File-fed: a saved discovery filing added in Sources.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Live point values report</td><td>What the picked points read right now, read live at build time: a per-device roll-up (points read, points failed, flagged points), the full point table per device with each value&#x27;s read time, and the read failures the read recorded.</td><td>Live read: the live device scope picked in Sources, read live at build time over Network+&#x27;s shared connection. Live values are never merged with file values.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Comfort report</td><td>Which spaces are not at their setpoint, by how much, and which are worst: space temperature against setpoint per device from the role picks you confirm, deviation bands against the tolerance stated on the report&#x27;s face, worst deviators named first, damper and valve positions alongside where picked, and the match basis for every point used.</td><td>Live read: the live device scope, read live at build time; each candidate point is shown with the basis it was matched on, for you to confirm or correct.</td><td>Audiences: Tech, Boss, Customer. The tolerance and the confirmed role picks ride a saved definition; a malformed tolerance blocks the build with its reason — no default is substituted.</td></tr>
+        <tr><td class="fam">Live override report</td><td>Which points are being held, at which priority, with what value, right now: the priority arrays read live per device, held points by device and by priority with the manual priorities 1 to 8 named first, and the full slot table with relinquish defaults.</td><td>Live read: the live device scope, read live at build time.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Out-of-service points list</td><td>Which points are flagged out of service across the picked devices, read live, with each point&#x27;s present value and read time, and the points and devices that did not answer listed separately from the read&#x27;s own failure lines. A backup file carries no per-point out-of-service state, and the read carries no staleness, so no stale list is printed.</td><td>Live only: the live device scope, read live at build time.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Schedule census report</td><td>What schedules and calendars the picked devices carry and what each one commands: schedule and calendar counts per device, every object&#x27;s contents as read in order, and the points each schedule drives where the object reports them. Two things the read cannot settle (schedules with no exceptions, calendars no schedule references) are not counted, and the report states that.</td><td>Live read: the live device scope, read live at build time.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Device health report</td><td>Whether a device is healthy and what exactly is wrong with it: one device&#x27;s slice of a Network+ health run, its findings worst-first with evidence and fix paths, the run&#x27;s scores stated as network context (the run carries no per-device score), and attention points from a live read in the same build where one is included.</td><td>Module- and file-fed: a health run subject (the same handovers as the network health report); its device pick is headed by All devices with findings.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Trend report</td><td>How these points behaved over the logged window: per trend log read live, the statistics computed from the samples themselves (count, first, last, minimum, maximum, mean), the series chart, and the sample table in the device&#x27;s logged order. The read carries no device timestamps and none is invented.</td><td>Live read: trend logs on the scoped devices, read live at build time.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Point watch report</td><td>What changed on these points while we watched, and how often: per-point change counts busiest first, and the full notification table in time order. A point watched by polling is labelled polled wherever it appears.</td><td>Module-fed: one COV watch-board session, handed over from a Network+ device page&#x27;s Report on this watch… (once a point is being watched). Nothing is re-read at build time.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Checkout report</td><td>Did this device pass its checkout, step by step, with the measured evidence: the graded Test Bench run, its failed steps named first, release steps as steps of their own, and the run&#x27;s backup references. A simulated run is badged SIMULATED on the cover subtitle, in the summary and in the provenance; a blocked run renders its block reason and no grade.</td><td>Module-fed: a completed Test Bench run, handed over by Report on this run…. The bench&#x27;s own Markdown report is the in-module form of the same run.</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Write receipt report</td><td>What did we change, where, from what to what, and can it be undone: the write-safety receipts in scope, entries whose read-back did not verify named first, and each receipt&#x27;s rollback state. A receipt records its backup file, not whether a rollback was later run from it, so a rollback state of &#x27;used&#x27; is never printed; a receipt with no backup file is stated as such.</td><td>Module-fed: the session&#x27;s write receipts, handed over from a device page&#x27;s Report on these changes… (it wakes when a receipt exists for the device).</td><td>Audiences: Tech, Boss. An internal control record: Tech and Boss only.</td></tr>
+        <tr><td class="fam">Offline verdict report</td><td>Why this device is offline, proven layer by layer: one WhyOffline run&#x27;s verdict headline, every evidence line in order (layers that could not run keep their lines), what the evidence ruled out, the next actions, and what would settle it. No before/after proof pair is printed: no record holds one.</td><td>Module-fed: one offline verdict run, handed over from the verdict card&#x27;s Report on this run… (once a verdict exists).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">Modbus device report</td><td>What this Modbus device says, in our terms: register values read through the site&#x27;s register map, named, scaled and unit-ed with the raw values beside them, every honest decode reading with the map&#x27;s reading marked as chosen, and bus health lines where the read carries them. The register map carries no expected ranges, so no register is called out of range.</td><td>Module-fed: a Modbus read, handed over from a device page&#x27;s Modbus Look, Report on this device… (after a successful read).</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr><td class="fam">OPC UA endpoint and security report</td><td>What this OPC UA server offers and whether its security posture is sound: endpoints with security modes and policies as the server reported them in the session-free detection read, endpoints with security mode None named first, and the strongest and weakest policies in use. The read assesses no certificate trust, so no trust verdict is printed, and the report states that address-space browsing is not offered in this build.</td><td>Module-fed: a session-free OPC UA detection read, handed over from OPC UA Look&#x27;s Report on this server….</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Laptop state report</td><td>Was our own laptop healthy on this job: one laptop probe&#x27;s sections as tables, in the probe&#x27;s own order, stamped with the machine it describes and the probe time.</td><td>Module-fed: one laptop probe, handed over from Health&#x27;s Report on this laptop… (once a probe exists).</td><td>Audiences: Tech.</td></tr>
+        <tr><td class="fam">Device backup census report</td><td>What this device backup holds: one Network+ device backup — device identity, backup metadata, the object census with the census by BACnet object type, and the backup&#x27;s gaps named.</td><td>Module-fed: a backup subject, never a parsed file — a .backup.json is not a file type BAS Hub reads. It arrives from the backup surface&#x27;s Report on this backup…, or is assembled in Sources with Add device backup snapshot… over a filed snapshot.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Restore compare report</td><td>What this restore would change: the restore surface&#x27;s own comparison of a filed snapshot against the device&#x27;s current state — objects added, removed and changed with old and new values, and reconciled counts. The comparison is the surface&#x27;s own, never recomputed here.</td><td>Module-fed: the compare the restore screen hands over with Report on this compare….</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Switch and port report</td><td>What this switch shows, port by port: one switch evidence record from a Network+ Health run — the switch identity, the port table with link state and speed, and the evidence&#x27;s findings for the switch. Nothing is re-read at build time: the report renders the run&#x27;s captured evidence as that run&#x27;s.</td><td>Module-fed: a completed Health run&#x27;s switch evidence, handed over with Report on this switch….</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Wi-Fi site report</td><td>What the wireless site looks like: one Wi-Fi evidence record from a Network+ Health run — the access points seen, their channels and signal facts as the evidence carries them, and its findings. As with the switch report, nothing is re-read at build time.</td><td>Module-fed: a completed Health run&#x27;s Wi-Fi evidence, handed over with Report on this….</td><td>Audiences: Tech, Boss, Customer.</td></tr>
+        <tr class="catgroup"><td colspan="4">Compare</td></tr>
+        <tr><td class="fam">Source drift report</td><td>What changed between two or more sources, earliest to latest: devices, points, programs and reference tables added, removed and changed, every changed field named old to new, and the key used per class stated. Two sources build the pair form; three or more build the series form — one section per step, and a net computed directly from the first and last, with any step that cannot reconcile to the net named, its transient items listed. A class a source&#x27;s grammar cannot carry is stated as not compared, never as removed.</td><td>Selection-fed: the included sources together, consumed in the order they are listed in Sources — the studio never reorders them, and for these reports that order is the time order.</td><td>Audiences: Tech, Boss. Its Changed only card in Build keeps only the moved rows in the class tables; the choice rides a saved definition.</td></tr>
+        <tr><td class="fam">Discovery reconciliation report</td><td>What a network scan sees against what the engineering files claim: the devices in both, only in discovery, and only in configuration, the counts reconciled per side on the report&#x27;s face, and pairs that agree on one identity key while contradicting another listed as mismatches, in neither set. Several sources on one side merge.</td><td>File-fed: a discovery export (Workbench discovery CSV, BDT, BQT) against a station backup or ABT project. The sides are set by file type, not by order.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Capture comparison report</td><td>How the network&#x27;s health moved between two health subjects: the score delta printed only where both sides carry scores, a check-by-check delta over the union of checks, the device-set delta, and findings by severity per side, with both subjects&#x27; hashes on the report. A capture&#x27;s summary parse alone does not count — the health subject beside it is the compared unit.</td><td>Module- and file-fed: two health subjects — captures decoded in Sources, filed .health.json runs, or a run handed over from Health. The first health subject is the earlier side, the last the later.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Program change report</td><td>What changed between two program sets, earlier against later: programs matched by name, line-level additions, deletions and changes from Programmer+&#x27;s renumber-aware ProgramDiff, the statement-census delta and the referenced-point delta, and programs on one side only named as added or removed. Wherever line diffs render, the text basis is stated: a listing&#x27;s text is verbatim; a .P2 program&#x27;s text is reconstructed from the export&#x27;s records and is not the panel&#x27;s original listing.</td><td>Assembled in Sources: mark the earlier and later program sets, name them in your own words, and press Assemble program change subject. The one assembled subject carries the comparison.</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Revisit diff report</td><td>What changed on this site between two visits: two filed visit snapshots from Network+ Records compared — devices added, removed and changed field by field, with the counts reconciled per side and the pair named by its own dates. The deltas are the Records comparison&#x27;s own.</td><td>Module-fed: the pair the Records surface hands over with Report on this…, or a pair assembled in Sources with Add revisit pair….</td><td>Audiences: Tech, Boss.</td></tr>
+        <tr><td class="fam">Simulation comparison report</td><td>How these two simulated runs differ: two bench runs of the same bench in the Programmer+ Simulator compared — the check outcomes that moved and the trace deltas, with the runs named by their own labels. Badged SIMULATION throughout.</td><td>Module-fed: the two held runs the Simulator hands over with Report on this comparison….</td><td>Audiences: Tech, Boss. Its traced-points picks ride a saved definition.</td></tr>
+        <tr class="catgroup"><td colspan="4">Site</td></tr>
+        <tr><td class="fam">Whole-site dossier</td><td>One site as all of its evidence states it, composed across vendors: the site identity the sources state (a disagreement printed, never resolved), a unified device, point and program census merged across Tridium, Distech, Siemens and tool-export sources with per-source counts beside the unified totals and the reconciliation on the face, a station section per station backup with its licensing, the programs and findings where a findings subject is in the set, the network health where a health subject is in the set, and a section computed from the set stating what this evidence does not know. An ABT project enters as its one aggregate, never as its per-folder results beside it.</td><td>Selection-fed: two or more included sources, composed exactly as they stand.</td><td>Audiences: Tech, Boss, Customer. The Customer copy carries station account information as counts only, never names.</td></tr>
+      </tbody>
+    </table>
+  </section>
+ </div>
+</main>
+
+<footer class="site">BAS Hub is proprietary software · © 2026</footer>
+</body>
+</html>
