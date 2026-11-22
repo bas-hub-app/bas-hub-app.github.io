@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BAS Hub — desktop suite for building-automation field work</title>
+<link rel="icon" href="favicon.ico" sizes="any">
 <style>
   :root {
     --bg: #000; --panel: #1c1c1e; --panel-2: #232326; --line: #333336;
@@ -132,10 +133,104 @@
     td.act { text-align: left; padding-top: 8px; }
     .plat, .st { white-space: normal; }
   }
+
+  /* Extensions for the pages beyond the home page: same tokens, same components.
+     Added by the Section 5 build; the block above is the fix101 finals' CSS, verbatim. */
+  main.single { grid-template-columns: minmax(0, 1fr); }
+  /* Download files table: fixed layout with stated shares — auto layout
+     starved the file column beside the nowrap button (measured 847/144/188
+     in a 1,118px panel at 1920x1080, the table overflowing its panel). */
+  table.dl { table-layout: fixed; }
+  table.dl th:first-child, table.dl td:first-child { width: 26%; }
+  table.dl th:last-child, table.dl td:last-child { width: 19%; }
+  /* .plat is nowrap (finals' CSS, for the platform name); its .def child
+     inherited that, so the one long def (Windows ARM64) painted across
+     the row instead of wrapping — measured scrollW 825 in a 291px cell. */
+  td.plat .def { white-space: normal; }
+  main.single .panel, main.single .entry { max-width: 1120px; width: 100%; margin-inline: auto; }
+  .stack { display: grid; gap: var(--gap); }
+  footer.site { border-top: 1px solid var(--line); padding: 14px 32px 18px; color: var(--muted); font-size: 15px; max-width: 1920px; }
+  .body { padding: 16px 22px 18px; }
+  .body p + p { margin-top: 10px; }
+  .body p.lede { font-size: 17px; }
+  h3.sub { font-size: 17px; font-weight: 700; margin: 20px 0 6px; }
+  .body h3.sub:first-child { margin-top: 0; }
+  ul.list { list-style: none; padding: 0; }
+  ul.list li { padding: 10px 22px; border-bottom: 1px solid var(--line); }
+  ul.list li:last-child { border-bottom: 0; }
+  ul.list .t { font-weight: 700; }
+  ul.list .d { display: block; margin-top: 2px; color: var(--muted); font-size: 15px; }
+  .faq { list-style: none; padding: 0; }
+  .faq li { padding: 14px 22px; border-bottom: 1px solid var(--line); }
+  .faq li:last-child { border-bottom: 0; }
+  .faq .q { font-weight: 700; font-size: 17px; }
+  .faq .a { margin-top: 4px; }
+  .faq .a p + p { margin-top: 8px; }
+  .file { display: block; font-weight: 400; font-size: 14px; color: var(--muted); margin-top: 4px; }
+  .file code { color: var(--text); word-break: break-all; }
+  .hash { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; word-break: break-all; }
+  .entry { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+  .entry .head h3 { font-size: 20px; line-height: 1.2; font-weight: 700; margin: 0; }
+  .entry .title { padding: 14px 22px 0; font-size: 17px; font-weight: 600; }
+  .entry .body { font-size: 15.5px; }
+  .entry ul.bl { margin: 10px 0 0; padding-left: 20px; }
+  .entry ul.bl li { margin-top: 6px; }
+  .entry .status { border-bottom: 0; border-top: 1px solid var(--line); margin-top: 14px; }
+  .entry .status p { font-size: 15px; }
+  .banner { padding: 12px 22px; background: var(--panel-2); border-bottom: 1px solid var(--line); border-left: 4px solid var(--cand); font-size: 15px; }
+  form.f { padding: 16px 22px 18px; display: grid; gap: 14px; }
+  form.f label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+  form.f input[type="text"], form.f textarea, form.f select {
+    background: var(--panel-2); color: var(--text); border: 1px solid #8a8a90; border-radius: 4px;
+    padding: 9px 12px; font: inherit; font-weight: 400; width: 100%; }
+  form.f textarea { min-height: 110px; resize: vertical; }
+  form.f .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  form.f .hint { color: var(--muted); font-size: 14px; font-weight: 400; }
+  button.btn { font: inherit; cursor: pointer; }
+  .doors { display: flex; gap: 12px; flex-wrap: wrap; padding: 16px 22px 18px; }
+  td .rowbtn { text-align: right; }
+  .catgroup td { background: var(--panel-2); font-weight: 700; font-size: 15px; padding-top: 10px; padding-bottom: 10px; }
+  ul.mods.hub li { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  ul.mods.hub .open { flex: none; }
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  main { flex: 1 0 auto; width: 100%; margin-inline: auto; }
+  .body p, .faq .a p { max-width: 72ch; }
+  main.single .panel.narrow { max-width: 560px; }
+  .files { list-style: none; padding: 0; }
+  .files li { padding: 10px 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 8px 24px; flex-wrap: wrap; }
+  .files li:last-child { border-bottom: 0; }
+  .files .fl { font-weight: 600; }
+  .files .fm { color: var(--muted); font-size: 14px; }
+  .files .fh { display: block; color: var(--muted); font-size: 13px; word-break: break-all; }
+  .entry .status ul { margin: 8px 0 0; padding-left: 20px; }
+  .entry .status li { margin-top: 6px; font-size: 15px; }
+  .entry .status li:first-child { margin-top: 0; }
+  .toc { list-style: none; padding: 0; }
+  .toc li { padding: 9px 22px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .toc li:last-child { border-bottom: 0; }
+  .toc a { font-weight: 600; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc .d { color: var(--muted); font-size: 14px; }
+  .fam { font-weight: 700; font-size: 15px; }
+  @media (max-width: 900px) {
+    .proofcell::before { content: "Proof: "; font-weight: 600; color: var(--muted); }
+  }
+  @media (max-width: 1600px) {
+    footer.site { padding: 12px 20px 14px; font-size: 13px; }
+    .body { padding: 12px 16px 14px; }
+    ul.list li, .faq li { padding: 10px 16px; }
+    .entry .title { padding: 10px 16px 0; }
+    .banner { padding: 10px 16px; }
+    form.f { padding: 12px 16px 14px; }
+    .doors { padding: 12px 16px 14px; }
+  }
+  @media (max-width: 900px) {
+    footer.site { padding: 12px 16px; }
+  }
 </style>
 </head>
 <body>
-<a class="skip" href="#download">Skip to download</a>
+<a class="skip" href="#download">Skip to main content</a>
 
 <header class="site">
   <div class="id">
@@ -144,17 +239,16 @@
   </div>
   <nav aria-label="Site">
     <ul>
-      <li><a href="./" aria-current="page">Home</a></li>
-      <li><a href="modules/">Modules</a></li>
-      <li><a href="download/">Download</a></li>
-      <li><a href="releases/">Releases</a></li>
-      <li><a href="support/">Support</a></li>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="modules.html">Modules</a></li>
+      <li><a href="download.html">Download</a></li>
+      <li><a href="releases.html">Releases</a></li>
+      <li><a href="support.html">Support</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-<!-- download:start -->
   <section class="panel" id="download" aria-labelledby="dl-h">
     <div class="head">
       <h2 id="dl-h">Download 0.9.9 iteration 8</h2>
@@ -163,12 +257,12 @@
     <div class="status warn" role="note">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.8 15 14H1z"/><path d="M8 6.2v3.6M8 11.6v.1"/></svg>
       <div>
-        <p class="lead">Released at the owner’s direction with its gate suites passed</p>
+        <p class="lead">Released with its release checks passed; the laptop drive is still open</p>
         <ul class="checks" aria-label="Release checks">
+          <li><span>Release checks</span><span class="r">Passed</span></li>
+          <li><span>Design conformance</span><span class="r">31 of 35 surfaces verbatim</span></li>
           <li><span>Laptop drive</span><span class="r">Not finished</span></li>
-          <li><span>Cold re-inspection</span><span class="r">Finished</span></li>
         </ul>
-        <p class="sub">Results since publication: not recorded.</p>
       </div>
     </div>
     <table>
@@ -176,24 +270,23 @@
       <tbody>
         <tr>
           <td class="plat">Windows</td>
-          <td><span class="st ovr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.8 15 14H1z"/><path d="M8 6.2v3.6M8 11.6v.1"/></svg>Released</span></td>
-          <td class="act"><a class="btn primary" href="download/#windows" aria-label="Windows installer, 0.9.9 iteration 8, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
+          <td><span class="st">Released</span><span class="def">Windows 10 or 11, 64-bit</span></td>
+          <td class="act"><a class="btn primary" href="download.html#windows" aria-label="Windows installer, 0.9.9 iteration 8, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
         </tr>
         <tr>
           <td class="plat">Linux</td>
-          <td><span class="st ovr"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.8 15 14H1z"/><path d="M8 6.2v3.6M8 11.6v.1"/></svg>Released</span></td>
-          <td class="act"><a class="btn primary" href="download/#linux" aria-label="Linux installer, 0.9.9 iteration 8, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
+          <td><span class="st">Released</span><span class="def">Linux, 64-bit</span></td>
+          <td class="act"><a class="btn primary" href="download.html#linux" aria-label="Linux installer, 0.9.9 iteration 8, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
         </tr>
         <tr>
           <td class="plat">Windows ARM64</td>
-          <td><span class="st cand">Candidate</span><span class="def">Not yet promoted to a release</span></td>
-          <td class="act"><a class="btn secondary" href="download/#windows-arm64" aria-label="Windows ARM64 candidate installer, 0.9.9 iteration 8, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
+          <td><span class="st cand">Candidate</span><span class="def">Not verified on ARM64 hardware</span></td>
+          <td class="act"><a class="btn secondary" href="download.html#windows-arm64" aria-label="Windows ARM64 installer, 0.9.9 iteration 8, with size and SHA-256">Installer<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"/></svg></a></td>
         </tr>
       </tbody>
     </table>
     <p class="foot">Each installer opens on the Download page beside its file size and SHA-256.</p>
   </section>
-<!-- download:end -->
 
   <section class="panel" aria-labelledby="suite-h">
     <div class="head">
@@ -204,10 +297,13 @@
       <li><div class="mh"><span class="mod">Network+</span><span class="ver">2.7.0</span></div><p class="scope">Network discovery · device connection · points · trends · schedules · traffic · console</p></li>
       <li><div class="mh"><span class="mod">Programmer+</span><span class="ver">2.2.1</span></div><p class="scope">Siemens PPCL</p></li>
       <li><div class="mh"><span class="mod">Reports+</span><span class="ver">1.1.1</span></div><p class="scope">Report building</p></li>
-      <li><div class="mh"><span class="mod">TBC+</span><span class="ver">0.1.0</span></div><p class="scope">Automated PM testing</p></li>       <li><div class="mh"><span class="mod">BAS Copilot</span><span class="ver">1.1.0</span></div><p class="scope">Embedded assistant</p></li>
+      <li><div class="mh"><span class="mod">BAS Copilot</span><span class="ver">1.1.0</span></div><p class="scope">Embedded assistant</p></li>
+      <li><div class="mh"><span class="mod">TBC+</span><span class="ver">0.1.0</span></div><p class="scope">Automated PM testing</p></li>
     </ul>
-    <p class="policy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 2.5h9l2 2v9h-11z"/><path d="M5 2.5v4h6v-4M5 13.5v-4h6v4"/></svg><span>Nothing is saved automatically. Work is kept only when you save it.</span></p>
+    <p class="policy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2.5 2.5h9l2 2v9h-11z"/><path d="M5 2.5v4h6v-4M5 13.5v-4h6v4"/></svg><span>Your work is saved only when you save it. BAS Hub keeps its own settings and window arrangement between runs.</span></p>
   </section>
 </main>
+
+<footer class="site">BAS Hub is proprietary software · © 2026</footer>
 </body>
 </html>
